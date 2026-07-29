@@ -1,4 +1,4 @@
-# Company Profile XYZ
+# Company Profile DNA
 
 Website Company Profile untuk memperkenalkan perusahaan, layanan, project, penghargaan, dan meningkatkan branding melalui SEO.
 
