@@ -15,6 +15,7 @@ type Project = {
 };
 
 const clientList = [
+  { name: "Danantara Indonesia", logo: "/logo-danantara.png" },
   { name: "Bank Indonesia", logo: "/logo-bank-indonesia.png" },
   { name: "MIND ID", logo: "/logo-mind-id.png" },
   { name: "Telkom Indonesia", logo: "/logo-telkom-indonesia.png" },
@@ -1045,7 +1046,7 @@ export default function WorkSection() {
             {/* Slider Baris 1: Bergerak ke KANAN (reverse=true) */}
             <InfiniteSlider gap={64} duration={120} durationOnHover={240} reverse={true} className="w-full py-0">
               {clientList.map((client, idx) => {
-                const isWide = client.name === "Bank Indonesia" || client.name === "Cikarang Listrindo Energy";
+                const isWide = client.name === "Bank Indonesia" || client.name === "Cikarang Listrindo Energy" || client.name === "Danantara Indonesia";
                 return (
                   <div
                     key={`slider-r1-${idx}`}
@@ -1073,7 +1074,7 @@ export default function WorkSection() {
             {/* Slider Baris 2: Bergerak ke KIRI (reverse=false) */}
             <InfiniteSlider gap={64} duration={135} durationOnHover={260} reverse={false} className="w-full py-0">
               {clientList.slice().reverse().map((client, idx) => {
-                const isWide = client.name === "Bank Indonesia" || client.name === "Cikarang Listrindo Energy";
+                const isWide = client.name === "Bank Indonesia" || client.name === "Cikarang Listrindo Energy" || client.name === "Danantara Indonesia";
                 return (
                   <div
                     key={`slider-r2-${idx}`}
