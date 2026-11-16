@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description:
     "DNA Komunika adalah studio desain kreatif yang mengubah cerita perusahaan menjadi identitas visual yang kuat dan berkesan. Spesialis annual report, branding, dan publikasi korporat.",
   keywords: "DNA Komunika, desain grafis, annual report, branding, visual identity, corporate design",
+  icons: {
+    icon: "/logo-dna.png",
+    shortcut: "/logo-dna.png",
+    apple: "/logo-dna.png",
+  },
   openGraph: {
     title: "DNA Komunika – We Turn Corporate Stories Into Powerful Visual Identity",
     description:
@@ -21,6 +26,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://dnakomunika.com",
     siteName: "DNA Komunika",
+    images: [
+      {
+        url: "/logo-dna.png",
+        width: 800,
+        height: 600,
+        alt: "DNA Komunika Logo",
+      },
+    ],
   },
 };
 
