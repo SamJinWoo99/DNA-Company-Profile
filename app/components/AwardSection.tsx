@@ -20,6 +20,7 @@ interface AwardItem {
   year: string;
   category: string;
   subCategory: string;
+  subCategory_id?: string;
   awardName: string;
   edition: string;
   badgeType: string;
@@ -27,7 +28,9 @@ interface AwardItem {
   client: string;
   clientIndustry: string;
   description: string;
+  description_id?: string;
   scope: string[];
+  scope_id?: string[];
   image: string;
   location: string;
 }
@@ -41,12 +44,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "38th Year • World's Best Annual Reports (New York)",
     category: 'Annual Report',
     subCategory: 'Best of Cover Design',
+    subCategory_id: 'Desain Sampul Terbaik',
     badgeType: 'Grand Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Permata Graha Nusantara',
     clientIndustry: 'Real Estate & Infrastructure',
     description: 'Recognized as the pinnacle of cover design artwork combining tactile embossing and sustainable luxury foil finishes for corporate storytelling.',
+    description_id: 'Diakui sebagai puncak karya desain sampul yang memadukan teknik cetak timbul taktil dan sentuhan foil mewah berkelanjutan untuk narasi korporat.',
     scope: ['Concept & Art Direction', 'Custom Typography', 'Print Finishing & Production'],
+    scope_id: ['Konsep & Arahan Seni', 'Tipografi Kustom', 'Finishing & Produksi Cetak'],
     image: '/award-arc-plaque-podium.jpg',
     location: 'New York, USA',
   },
@@ -57,12 +63,15 @@ const prestigeAwards: AwardItem[] = [
     edition: '2024 Stevie Awards Winner',
     category: 'Annual Report',
     subCategory: 'Best Annual Report – Government Agencies',
+    subCategory_id: 'Laporan Tahunan Terbaik – Lembaga & Badan Usaha Milik Negara',
     badgeType: 'Bronze Stevie® Winner',
     badgeClass: 'from-amber-700 to-orange-800 text-amber-100',
     client: 'PT Mineral Industri Indonesia (MIND ID)',
     clientIndustry: 'Mining & Natural Resources',
     description: 'Awarded for exceptional transparency and structural narrative highlighting Indonesia state mining holding sustainability milestones.',
+    description_id: 'Dianugerahi penghargaan atas transparansi luar biasa dan struktur narasi yang menonjolkan tonggak keberlanjutan holding industri pertambangan Indonesia.',
     scope: ['Information Architecture', 'Infographic Design', 'Editorial Translation'],
+    scope_id: ['Arsitektur Informasi', 'Desain Infografis', 'Penyusunan Editorial'],
     image: '/award-stevie-trophy.jpg',
     location: 'Vienna, Austria',
   },
@@ -75,12 +84,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "37th Year • World's Best Annual Reports (New York)",
     category: 'Annual Report',
     subCategory: 'Best of Cover Design',
+    subCategory_id: 'Desain Sampul Terbaik',
     badgeType: 'Grand Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT PGN LNG Indonesia',
     clientIndustry: 'Energy & Liquefied Gas',
     description: 'Innovative translucent overlay cover concept signifying clean energy transition and corporate transparency.',
+    description_id: 'Konsep sampul inovatif dengan lapisan transparan tembus pandang yang melambangkan transisi energi bersih dan keterbukaan korporasi.',
     scope: ['Visual Identity System', 'Photo Shoot Direction', 'Specialty Binding'],
+    scope_id: ['Sistem Identitas Visual', 'Arahan Pemotretan', 'Jilid Khusus Eksklusif'],
     image: '/award-arc-holder-pgn.jpg',
     location: 'New York, USA',
   },
@@ -91,12 +103,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "37th Year • World's Best Annual Reports (New York)",
     category: 'Annual Report',
     subCategory: 'Best of Indonesia',
+    subCategory_id: 'Laporan Tahunan Terbaik dari Indonesia',
     badgeType: 'Grand Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT PGN LNG Indonesia',
     clientIndustry: 'Energy & Liquefied Gas',
     description: 'Crowned as the top-ranking annual report originating from Indonesia across all competitive categories in 2023.',
+    description_id: 'Dinobatkan sebagai laporan tahunan peringkat teratas asal Indonesia di seluruh kategori kompetisi dunia tahun 2023.',
     scope: ['Comprehensive Editorial Design', 'ESG Data Visualization', 'Digital Interactive PDF'],
+    scope_id: ['Desain Editorial Komprehensif', 'Visualisasi Data ESG', 'PDF Interaktif Digital'],
     image: '/award-arc-holder-indonesia.jpg',
     location: 'New York, USA',
   },
@@ -107,12 +122,15 @@ const prestigeAwards: AwardItem[] = [
     edition: '34th Annual International Competition • Asia/Pacific',
     category: 'Sustainability Report',
     subCategory: 'Galaxy Gold Winner (Non-Traditional)',
+    subCategory_id: 'Pemenang Emas Galaxy (Format Non-Tradisional)',
     badgeType: 'Gold Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Permata Graha Nusantara',
     clientIndustry: 'Real Estate & Infrastructure',
     description: 'Honored for creative storytelling through eco-friendly paper selection and interactive QR grid integration.',
+    description_id: 'Dianugerahi penghargaan atas penyampaian cerita kreatif melalui pemilihan kertas ramah lingkungan dan integrasi kisi kode QR interaktif.',
     scope: ['Sustainable Paper Sourcing', 'UX/UI Digital Companion', 'Copywriting'],
+    scope_id: ['Pemilihan Kertas Berkelanjutan', 'Pendamping Digital UX/UI', 'Penulisan Naskah'],
     image: '/award-galaxy-2023-gold-framed.jpg',
     location: 'Carlsbad, California',
   },
@@ -123,12 +141,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "37th Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Cover Photo/Design – Property Development',
+    subCategory_id: 'Foto & Desain Sampul – Pengembangan Properti',
     badgeType: 'Gold Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Permata Graha Nusantara',
     clientIndustry: 'Real Estate & Infrastructure',
     description: 'Harmonious geometric architectural photography combined with metallic ink treatments.',
+    description_id: 'Fotografi arsitektur geometris yang selaras dipadukan dengan teknik cetak tinta metalik presisi.',
     scope: ['Architectural Photography', 'Foil Stamping', 'Layout Typography'],
+    scope_id: ['Fotografi Arsitektur', 'Stempel Foil Emas', 'Tipografi Tata Letak'],
     image: '/award-arc-2023-gold-cover-framed.jpg',
     location: 'New York, USA',
   },
@@ -139,12 +160,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "37th Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Printing & Production – Property Development',
+    subCategory_id: 'Pencetakan & Produksi – Pengembangan Properti',
     badgeType: 'Gold Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Permata Graha Nusantara',
     clientIndustry: 'Real Estate & Infrastructure',
     description: 'Exemplary offset printing calibration, precise color balance, and FSC-certified fine paper binding.',
+    description_id: 'Kalibrasi cetak offset teladan, keseimbangan warna presisi, dan jilid kertas halus bersertifikat FSC.',
     scope: ['Color Separation Quality Control', 'Paper Sourcing', 'Precision Binding'],
+    scope_id: ['Kontrol Kualitas Separasi Warna', 'Penyediaan Kertas Halus', 'Penjilidan Presisi'],
     image: '/award-arc-2023-gold-printing-framed.jpg',
     location: 'New York, USA',
   },
@@ -155,12 +179,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "37th Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Non-Traditional Annual Report',
+    subCategory_id: 'Laporan Tahunan Non-Tradisional',
     badgeType: 'Bronze Winner',
     badgeClass: 'from-amber-700 to-orange-800 text-amber-100',
     client: 'PT Permata Graha Nusantara',
     clientIndustry: 'Real Estate & Infrastructure',
     description: 'Creative report format breaking standard annual corporate publication templates with modular chapters.',
+    description_id: 'Format publikasi kreatif yang mendobrak pakem laporan korporat konvensional dengan susunan bab modular dinamis.',
     scope: ['Modular Architecture', 'Data Infographics', 'Editorial Strategy'],
+    scope_id: ['Arsitektur Modular', 'Infografis Data', 'Strategi Editorial'],
     image: '/award-arc-2023-bronze-framed.jpg',
     location: 'New York, USA',
   },
@@ -173,12 +200,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "36th Year • World's Best Annual Reports (New York)",
     category: 'Annual Report',
     subCategory: 'Best of Cover Design (Plaque)',
+    subCategory_id: 'Desain Sampul Terbaik (Plakat Dunia)',
     badgeType: 'Grand Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT PGN LNG Indonesia',
     clientIndustry: 'Energy & Liquefied Gas',
     description: 'Prestigious global acrylic trophy for excellence in annual report cover design aesthetics.',
+    description_id: 'Piala plakat akrilik bergengsi dunia atas keunggulan estetika desain sampul laporan tahunan.',
     scope: ['Cover Concept', 'Typography System', 'Art Direction'],
+    scope_id: ['Konsep Sampul', 'Sistem Tipografi', 'Arahan Seni'],
     image: '/award-arc-2022-plaque.jpg',
     location: 'New York, USA',
   },
@@ -189,12 +219,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "36th Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Gold Winner – Banks: National',
+    subCategory_id: 'Pemenang Emas – Perbankan Nasional',
     badgeType: 'Gold Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'Bank Indonesia',
     clientIndustry: 'Central Banking & Monetary',
     description: 'Rise and Be Optimistic: Institutional transformation narrative crafted for Indonesia central bank.',
+    description_id: 'Bangkit dan Optimis: Narasi transformasi kelembagaan yang dirancang khusus untuk bank sentral Republik Indonesia.',
     scope: ['Macroeconomic Data Viz', 'Institutional Narrative', 'Executive Summary'],
+    scope_id: ['Visualisasi Data Makroekonomi', 'Narasi Institusi', 'Ringkasan Eksekutif'],
     image: '/award-arc-2022-bi-gold.jpg',
     location: 'New York, USA',
   },
@@ -205,12 +238,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "36th Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Gold (Non-Traditional), Silver (Printing), Honors',
+    subCategory_id: 'Emas (Non-Tradisional), Perak (Pencetakan), & Kehormatan',
     badgeType: 'Trio Winner',
     badgeClass: 'from-slate-200 to-slate-400 text-slate-900',
     client: 'PT Telkom Indonesia (Persero) Tbk',
     clientIndustry: 'Telecommunications & Tech',
     description: 'Triple ARC award win for digital transformation storytelling, non-traditional infographics and printing.',
+    description_id: 'Kemenangan tiga penghargaan ARC sekaligus untuk narasi transformasi digital, infografis non-tradisional, dan mutu cetak istimewa.',
     scope: ['Digital Graphics', 'Comprehensive ESG Design', 'Custom Print Production'],
+    scope_id: ['Grafis Digital Modern', 'Desain ESG Komprehensif', 'Produksi Cetak Khusus'],
     image: '/award-arc-2022-telkom-trio.jpg',
     location: 'New York, USA',
   },
@@ -221,12 +257,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "36th Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Double Gold (Cover & Traditional) & Bronze',
+    subCategory_id: 'Dua Emas (Sampul & Tradisional) serta Perunggu',
     badgeType: 'Double Gold',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT PGN LNG Indonesia',
     clientIndustry: 'Energy & Liquefied Gas',
     description: 'Double Gold for Cover Design & Traditional Annual Report, complemented with Bronze for specialty printing.',
+    description_id: 'Meraih Dua Emas untuk Desain Sampul & Laporan Tahunan Tradisional, disempurnakan dengan Perunggu untuk teknik cetak khusus.',
     scope: ['Visual Identity', 'Photo Shoot', 'Printing Oversight'],
+    scope_id: ['Identitas Visual', 'Pemotretan Lapangan', 'Pengawasan Produksi Cetak'],
     image: '/award-arc-2022-pgn-lng-trio.jpg',
     location: 'New York, USA',
   },
@@ -239,12 +278,15 @@ const prestigeAwards: AwardItem[] = [
     edition: 'Brand Communication – Print (Frankfurt, Germany)',
     category: 'Brand Strategy',
     subCategory: 'Excellence in Brand Strategy and Creation',
+    subCategory_id: 'Keunggulan dalam Strategi & Penciptaan Merek',
     badgeType: 'Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Perusahaan Gas Negara Tbk',
     clientIndustry: 'Energy & Natural Gas',
     description: 'Selected and published in the German Design Council prestigious annual compendium in Frankfurt.',
+    description_id: 'Terpilih dan dipublikasikan resmi dalam buku kompendium tahunan bergengsi German Design Council di Frankfurt.',
     scope: ['Brand Strategy', 'Editorial Book Production', 'Identity System'],
+    scope_id: ['Strategi Merek', 'Produksi Buku Editorial', 'Sistem Identitas'],
     image: '/award-german-brand-2020-book.jpg',
     location: 'Frankfurt, Germany',
   },
@@ -255,12 +297,15 @@ const prestigeAwards: AwardItem[] = [
     edition: 'Excellence in Brand Strategy • German Design Council',
     category: 'Brand Strategy',
     subCategory: 'Brand Communication – Print & Editorial',
+    subCategory_id: 'Komunikasi Merek – Media Cetak & Editorial',
     badgeType: 'Special Mention',
     badgeClass: 'from-slate-200 to-slate-400 text-slate-900',
     client: 'PT PGN LNG Indonesia',
     clientIndustry: 'Energy & Marine Gas',
     description: 'Recognized for pioneering marine clean energy editorial narrative presented to European jurists.',
+    description_id: 'Apresiasi kehormatan atas narasi editorial pelopor energi gas maritim bersih yang dipresentasikan di hadapan dewan juri Eropa.',
     scope: ['Marine Gas Editorial', 'Infographic Design', 'Editorial Translation'],
+    scope_id: ['Editorial Gas Maritim', 'Desain Infografis', 'Penerjemahan Bahasa'],
     image: '/award-german-brand-pgn-lng-page.jpg',
     location: 'Frankfurt, Germany',
   },
@@ -271,12 +316,15 @@ const prestigeAwards: AwardItem[] = [
     edition: 'Frankfurt am Main, 18 June 2020',
     category: 'Brand Strategy',
     subCategory: 'Winner Official Certificate',
+    subCategory_id: 'Sertifikat Resmi Pemenang Penghargaan',
     badgeType: 'Official Winner',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Perusahaan Gas Negara Tbk',
     clientIndustry: 'Energy Infrastructure',
     description: 'Framed formal citation of distinction issued by German Brand Institute and German Design Council.',
+    description_id: 'Piagam kehormatan resmi berbingkai yang dianugerahkan oleh German Brand Institute dan German Design Council.',
     scope: ['Corporate Annual Report', 'Visual Communication', 'Editorial Production'],
+    scope_id: ['Laporan Tahunan Korporat', 'Komunikasi Visual', 'Produksi Editorial'],
     image: '/award-german-brand-2020-framed.jpg',
     location: 'Frankfurt, Germany',
   },
@@ -289,12 +337,15 @@ const prestigeAwards: AwardItem[] = [
     edition: "33rd Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Gold (Printing) & Bronze (Traditional)',
+    subCategory_id: 'Emas (Teknik Cetak) & Perunggu (Tradisional)',
     badgeType: 'Gold & Bronze',
     badgeClass: 'from-amber-400 to-amber-600 text-slate-950',
     client: 'PT Permata Graha Nusantara',
     clientIndustry: 'Real Estate & Infrastructure',
     description: 'Gold Winner for Printing & Production and Bronze for Traditional Annual Report.',
+    description_id: 'Pemenang Emas untuk kategori Percetakan & Produksi serta Perunggu untuk Laporan Tahunan Tradisional.',
     scope: ['Specialty Printing', 'Visual Layout', 'Executive Summary'],
+    scope_id: ['Teknik Cetak Khusus', 'Tata Letak Visual', 'Ringkasan Eksekutif'],
     image: '/award-arc-2019-certificates-gold.jpg',
     location: 'New York, USA',
   },
@@ -305,19 +356,22 @@ const prestigeAwards: AwardItem[] = [
     edition: "33rd Year • World's Best Annual Reports",
     category: 'Annual Report',
     subCategory: 'Triple Silver Winner',
+    subCategory_id: 'Pemenang Tiga Penghargaan Perak',
     badgeType: 'Triple Silver',
     badgeClass: 'from-slate-200 to-slate-400 text-slate-900',
     client: 'PT PGN LNG Indonesia',
     clientIndustry: 'Energy & Liquefied Gas',
     description: 'Triple Silver honors across Non-Traditional Annual Report, Custom Illustrations and Specialty Printing.',
+    description_id: 'Meraih Tiga Penghargaan Perak di kategori Laporan Tahunan Non-Tradisional, Ilustrasi Kustom, dan Teknik Cetak Khusus.',
     scope: ['Custom Illustrations', 'Production QC', 'Creative Strategy'],
+    scope_id: ['Ilustrasi Kustom', 'Kontrol Kualitas Produksi', 'Strategi Kreatif'],
     image: '/award-arc-2019-certificates-silver.jpg',
     location: 'New York, USA',
   }
 ];
 
 export default function AwardSection() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [selectedYear, setSelectedYear] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -768,7 +822,7 @@ export default function AwardSection() {
                             lineHeight: "1",
                           }}
                         >
-                          VIEW
+                          {lang === "id" ? "LIHAT" : "VIEW"}
                         </span>
                       </div>
                     </div>
@@ -801,9 +855,9 @@ export default function AwardSection() {
                           letterSpacing: "-0.01em",
                           marginBottom: "0.4rem",
                         }}
-                        title={item.subCategory}
+                        title={lang === "id" && item.subCategory_id ? item.subCategory_id : item.subCategory}
                       >
-                        {item.subCategory}
+                        {lang === "id" && item.subCategory_id ? item.subCategory_id : item.subCategory}
                       </h3>
 
                       {/* Client Name */}
@@ -842,7 +896,7 @@ export default function AwardSection() {
                       <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
                         <div className="pr-2">
                           <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-widest block mb-1">
-                            SPOTLIGHT FEATURE
+                            {t("award.spotlight_feature")}
                           </span>
                           <h4 className="text-xl sm:text-2xl font-black text-white leading-tight drop-shadow-md">
                             {currentSpotlight.client}
@@ -888,7 +942,7 @@ export default function AwardSection() {
                       className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight"
                       style={{ marginTop: "0.35rem", marginBottom: "0.2rem" }}
                     >
-                      {currentSpotlight.subCategory}
+                      {lang === "id" && currentSpotlight.subCategory_id ? currentSpotlight.subCategory_id : currentSpotlight.subCategory}
                     </h2>
 
                     {/* Description Paragraph with breathing room */}
@@ -896,13 +950,13 @@ export default function AwardSection() {
                       className="text-white/85 text-sm sm:text-base leading-relaxed"
                       style={{ marginTop: "0.35rem", marginBottom: "0.35rem", lineHeight: "1.7" }}
                     >
-                      {currentSpotlight.description}
+                      {lang === "id" && currentSpotlight.description_id ? currentSpotlight.description_id : currentSpotlight.description}
                     </p>
 
                     {/* Scope Deliverables */}
                     <div style={{ paddingTop: "0.5rem", paddingBottom: "0.35rem" }}>
                       <div className="flex flex-wrap items-center gap-2.5">
-                        {currentSpotlight.scope.map((s, idx) => (
+                        {((lang === "id" && currentSpotlight.scope_id) ? currentSpotlight.scope_id : currentSpotlight.scope).map((s, idx) => (
                           <div 
                             key={idx} 
                             className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 text-xs text-white/90 shadow-sm leading-none"
@@ -1058,7 +1112,7 @@ export default function AwardSection() {
                                 {item.awardName}
                               </span>
                               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
-                                {item.subCategory}
+                                {lang === "id" && item.subCategory_id ? item.subCategory_id : item.subCategory}
                               </h3>
                             </div>
                             
@@ -1088,7 +1142,7 @@ export default function AwardSection() {
                             className="text-sm sm:text-base text-white/85 line-clamp-2 leading-relaxed font-normal"
                             style={{ marginBottom: "0.85rem" }}
                           >
-                            {item.description}
+                            {lang === "id" && item.description_id ? item.description_id : item.description}
                           </p>
 
                           <div 
@@ -1230,7 +1284,7 @@ export default function AwardSection() {
                     lineHeight: "1.35",
                   }}
                 >
-                  {activeModalAward.subCategory}
+                  {lang === "id" && activeModalAward.subCategory_id ? activeModalAward.subCategory_id : activeModalAward.subCategory}
                 </h4>
 
                 {/* Description */}
@@ -1241,13 +1295,13 @@ export default function AwardSection() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  {activeModalAward.description}
+                  {lang === "id" && activeModalAward.description_id ? activeModalAward.description_id : activeModalAward.description}
                 </p>
 
                 {/* Scope of Work Tags */}
-                {activeModalAward.scope && activeModalAward.scope.length > 0 && (
+                {((lang === "id" && activeModalAward.scope_id) ? activeModalAward.scope_id : activeModalAward.scope) && (
                   <div className="flex flex-wrap items-center gap-2 pt-1">
-                    {activeModalAward.scope.map((tag, idx) => (
+                    {((lang === "id" && activeModalAward.scope_id) ? activeModalAward.scope_id : activeModalAward.scope).map((tag, idx) => (
                       <span 
                         key={idx}
                         className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs text-white/90"
