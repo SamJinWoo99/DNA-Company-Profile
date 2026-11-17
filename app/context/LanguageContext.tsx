@@ -172,6 +172,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.about_dna": "about dna komunika",
     "footer.contact_us": "contact us",
     "footer.rights": "© 2027 DNA Komunika. All rights reserved.",
+    "footer.lets_talk": "Let's talk",
+    "footer.join_team": "Join our team",
+    "footer.careers": "Careers",
   },
   id: {
     // Nav
@@ -334,6 +337,9 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.about_dna": "tentang dna komunika",
     "footer.contact_us": "hubungi kami",
     "footer.rights": "© 2027 DNA Komunika. Hak cipta dilindungi undang-undang.",
+    "footer.lets_talk": "Mari bicara",
+    "footer.join_team": "Bergabung dengan tim kami",
+    "footer.careers": "Karier",
   },
 };
 
