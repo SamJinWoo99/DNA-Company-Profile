@@ -127,10 +127,10 @@ export default function ContactSection() {
             className={`lg:col-span-4 flex flex-col transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
           >
-            <div className="h-full flex flex-col justify-between items-stretch text-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl px-6 sm:px-8 py-5 overflow-hidden">
+            <div className="h-full flex flex-col justify-between items-stretch text-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl px-6 sm:px-8 py-12 overflow-hidden">
 
               {/* 1. Address Section */}
-              <div className="flex-1 flex flex-col items-center justify-center text-center py-4">
+              <div className="flex-1 flex flex-col items-center justify-center text-center py-6">
                 <div className="inline-flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-2">
                   <svg className="w-4 h-4 text-cyan-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
