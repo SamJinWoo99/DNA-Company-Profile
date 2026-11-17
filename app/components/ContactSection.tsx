@@ -127,7 +127,7 @@ export default function ContactSection() {
             className={`lg:col-span-4 flex flex-col transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
           >
-            <div className="h-full flex flex-col justify-between items-stretch text-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl px-6 sm:px-8 py-12 overflow-hidden">
+            <div className="h-full flex flex-col justify-between items-stretch text-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl px-6 sm:px-8 py-16 overflow-hidden">
 
               {/* 1. Address Section */}
               <div className="flex-1 flex flex-col items-center justify-center text-center py-6">
