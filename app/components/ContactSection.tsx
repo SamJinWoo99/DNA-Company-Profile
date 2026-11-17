@@ -130,53 +130,53 @@ export default function ContactSection() {
             <div className="h-full flex flex-col justify-evenly items-center text-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl px-6 sm:px-8 py-6 sm:py-7 overflow-hidden">
 
               {/* Address */}
-              <div className="w-full flex flex-col items-center text-center">
-                <div className="flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-1.5">
+              <div className="w-full flex flex-col items-center justify-center text-center py-2">
+                <div className="inline-flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-2">
                   <svg className="w-4 h-4 text-cyan-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span>{t("contact.address")}</span>
                 </div>
-                <p className="text-white text-sm sm:text-base font-bold leading-relaxed mb-0 text-center max-w-sm px-2">
+                <p className="text-white text-sm sm:text-base font-bold leading-relaxed mb-0 text-center max-w-sm px-2 mx-auto">
                   Jl. Terogong Raya No. 36B Cilandak Barat,
                   <br className="hidden sm:inline" /> Jakarta Selatan 12430, Indonesia
                 </p>
               </div>
 
               {/* Phone & Inquiry */}
-              <div className="w-full flex flex-col items-center text-center border-t border-white/15 pt-4">
-                <div className="flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-1.5">
+              <div className="w-full flex flex-col items-center justify-center text-center border-t border-white/15 py-3">
+                <div className="inline-flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-2">
                   <svg className="w-4 h-4 text-cyan-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <span>{t("contact.phone")}</span>
                 </div>
-                <div className="space-y-1 text-white text-sm sm:text-base font-semibold text-center">
+                <div className="space-y-1 text-white text-sm sm:text-base font-semibold text-center mx-auto">
                   <p>021 278 28838</p>
                   <p>021 295 53570</p>
                 </div>
               </div>
 
               {/* WhatsApp Official */}
-              <div className="w-full flex flex-col items-center text-center border-t border-white/15 pt-4">
-                <div className="flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse" />
+              <div className="w-full flex flex-col items-center justify-center text-center border-t border-white/15 py-3">
+                <div className="inline-flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse shrink-0" />
                   <span>{t("contact.whatsapp")}</span>
                 </div>
                 <a
                   href="https://api.whatsapp.com/send?phone=6287774443847&text=Hello%20DNA%20Komunika!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-300 hover:text-emerald-200 font-bold text-sm sm:text-base transition-colors inline-block text-center"
+                  className="text-emerald-300 hover:text-emerald-200 font-bold text-sm sm:text-base transition-colors inline-block text-center mx-auto"
                 >
                   +62 877-7444-3847
                 </a>
               </div>
 
               {/* Business Email */}
-              <div className="w-full flex flex-col items-center text-center border-t border-white/15 pt-4">
-                <div className="flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-1.5">
+              <div className="w-full flex flex-col items-center justify-center text-center border-t border-white/15 py-3">
+                <div className="inline-flex items-center justify-center gap-2 text-cyan-200 text-xs font-black uppercase tracking-wider mb-2">
                   <svg className="w-4 h-4 text-cyan-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -184,30 +184,30 @@ export default function ContactSection() {
                 </div>
                 <a
                   href="mailto:info@dnakomunika.com"
-                  className="text-white hover:text-cyan-200 font-bold text-sm sm:text-base transition-colors inline-block break-all text-center"
+                  className="text-white hover:text-cyan-200 font-bold text-sm sm:text-base transition-colors inline-block break-all text-center mx-auto"
                 >
                   info@dnakomunika.com
                 </a>
               </div>
 
               {/* Consultation & Instant WhatsApp Action */}
-              <div className="w-full flex flex-col items-center text-center border-t border-white/15 pt-4">
-                <span className="text-cyan-200 text-xs font-black uppercase tracking-wider block mb-1 text-center">
+              <div className="w-full flex flex-col items-center justify-center text-center border-t border-white/15 py-3">
+                <span className="text-cyan-200 text-xs font-black uppercase tracking-wider block mb-1.5 text-center mx-auto">
                   {t("contact.consultation")}
                 </span>
-                <h4 className="text-base sm:text-lg font-black text-white mb-1.5 leading-tight text-center">
+                <h4 className="text-base sm:text-lg font-black text-white mb-2 leading-tight text-center mx-auto">
                   {t("contact.send_msg")}
                 </h4>
-                <p className="text-white/80 text-xs leading-relaxed mb-3 max-w-sm text-center mx-auto px-2">
+                <p className="text-white/80 text-xs leading-relaxed mb-4 max-w-sm text-center mx-auto px-2">
                   {t("contact.consultation_desc")}
                 </p>
 
-                <div className="w-full flex justify-center">
+                <div className="w-full flex justify-center items-center">
                   <a
                     href="https://api.whatsapp.com/send?phone=6287774443847&text=Hello%20DNA%20Komunika!"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full max-w-xs inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-bold text-sm text-white bg-[#25D366] hover:bg-[#20ba59] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg text-center"
+                    className="w-full max-w-xs inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-bold text-sm text-white bg-[#25D366] hover:bg-[#20ba59] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg text-center mx-auto"
                   >
                     <svg viewBox="0 0 32 32" className="w-5 h-5 fill-white shrink-0">
                       <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.74 5.47 2.03 7.77L0 32l8.47-2.22A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.307 22.013c-.4-.2-2.367-1.167-2.733-1.3-.367-.133-.633-.2-.9.2-.267.4-1.033 1.3-1.267 1.567-.233.267-.467.3-.867.1-.4-.2-1.687-.623-3.213-1.98-1.187-1.057-1.99-2.363-2.223-2.763-.233-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.325-.78-.657-.673-.9-.686-.233-.013-.5-.016-.767-.016-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.333s1.433 3.867 1.633 4.133c.2.267 2.82 4.307 6.833 6.04.957.413 1.703.66 2.287.843.96.307 1.835.263 2.526.16.77-.113 2.367-.967 2.7-1.9.333-.933.333-1.733.233-1.9z" />
