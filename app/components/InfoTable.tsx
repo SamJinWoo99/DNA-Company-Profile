@@ -16,21 +16,21 @@ export default function InfoTable() {
     <section
       className="w-full select-none"
       style={{
-        background: "#f4f4f4",
-        paddingTop: "clamp(4.5rem, 7vh, 6.5rem)",
-        paddingBottom: "clamp(5rem, 8vh, 7rem)",
+        background: "#eeeeee",
+        paddingTop: "clamp(3.5rem, 5.5vh, 4.5rem)",
+        paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
         paddingLeft: "clamp(2rem, 5vw, 5rem)",
         paddingRight: "clamp(2rem, 5vw, 5rem)",
       }}
     >
       <div className="w-full max-w-full">
-        {/* Navigation Links Row: ada efek garis bawah saat kursor diarahkan (hover) */}
-        <div className="flex flex-wrap items-center gap-10 sm:gap-16 mb-28 lg:mb-36">
+        {/* Navigation Links Row: persis proporsi Foto 2 */}
+        <div className="flex flex-wrap items-center gap-12 sm:gap-20 mb-14 sm:mb-16">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="relative text-base sm:text-lg font-normal text-[#4a5568] hover:text-black transition-colors group pb-1"
+              className="relative text-base sm:text-[1.125rem] font-normal text-[#4a5568] hover:text-black transition-colors group pb-1 tracking-normal"
             >
               <span>{link.label}</span>
               {/* Garis bawah animasi saat hover */}
@@ -39,19 +39,19 @@ export default function InfoTable() {
           ))}
         </div>
 
-        {/* Contact CTA: Let's talk & Contact diturunkan jauh ke bawah agar berjarak lega */}
+        {/* Contact CTA: Let's talk & Contact persis proporsi Foto 2 */}
         <div>
-          <span className="text-lg sm:text-xl text-[#718096] font-normal block mb-6">
+          <span className="text-xl sm:text-2xl text-[#828894] font-normal block mb-2 tracking-normal">
             {t("footer.lets_talk")}
           </span>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#0077b6] hover:text-[#005a8d] transition-colors"
+            className="group inline-flex items-center gap-3 text-4xl sm:text-5xl lg:text-[3.25rem] font-semibold text-[#0077b6] hover:text-[#005a8d] transition-colors leading-tight"
           >
             <span>{t("nav.contact")}</span>
             <span
               aria-hidden="true"
-              className="inline-block transition-transform duration-300 group-hover:translate-x-2 text-2xl sm:text-3xl lg:text-4xl"
+              className="inline-block transition-transform duration-300 group-hover:translate-x-2 text-3xl sm:text-4xl lg:text-5xl font-light"
             >
               →
             </span>
