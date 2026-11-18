@@ -17,15 +17,18 @@ export default function InfoTable() {
       className="w-full select-none"
       style={{
         background: "#eeeeee",
-        paddingTop: "clamp(3.5rem, 5.5vh, 4.5rem)",
-        paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
+        paddingTop: "80px",
+        paddingBottom: "100px",
         paddingLeft: "clamp(2rem, 5vw, 5rem)",
         paddingRight: "clamp(2rem, 5vw, 5rem)",
       }}
     >
       <div className="w-full max-w-full">
-        {/* Navigation Links Row: persis proporsi Foto 2 */}
-        <div className="flex flex-wrap items-center gap-12 sm:gap-20 mb-14 sm:mb-16">
+        {/* Navigation Links Row */}
+        <div
+          className="flex flex-wrap items-center gap-12 sm:gap-20"
+          style={{ marginBottom: "120px" }}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -39,9 +42,9 @@ export default function InfoTable() {
           ))}
         </div>
 
-        {/* Contact CTA: Let's talk & Contact persis proporsi Foto 2 */}
+        {/* Contact CTA: Let's talk & Contact berjarak 120px di bawah About */}
         <div>
-          <span className="text-xl sm:text-2xl text-[#828894] font-normal block mb-2 tracking-normal">
+          <span className="text-xl sm:text-2xl text-[#828894] font-normal block mb-3 tracking-normal">
             {t("footer.lets_talk")}
           </span>
           <Link
