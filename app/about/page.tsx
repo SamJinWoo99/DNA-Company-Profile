@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import AboutHeroMeta from "../components/AboutHeroMeta";
-import AboutSection from "../components/AboutSection";
 import Footer from "../components/Footer";
 
 export default function AboutPage() {
@@ -8,11 +7,11 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className="w-full min-h-screen bg-white">
-        {/* Bagian Atas: Banner Hero Biru Meta-Style (Foto 1) dengan efek geser halus */}
+        {/* Halaman About lengkap berurutan rapi:
+            1. Hero Profil Meta-Style dengan strip foto peek di kanan
+            2. Visi & Misi DNA Komunika (2 kolom bersih)
+            3. Services & Expertise DNA Komunika (3 kolom layanan + CTA) */}
         <AboutHeroMeta />
-
-        {/* Bagian Bawah: Tampilan Asli Lengkap DNA Komunika (Foto 2) tetap ada saat di-scroll ke bawah */}
-        <AboutSection />
       </main>
       <Footer />
     </>
