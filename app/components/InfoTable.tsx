@@ -17,29 +17,31 @@ export default function InfoTable() {
       className="w-full select-none"
       style={{
         background: "#f4f4f4",
-        paddingTop: "clamp(4rem, 6vh, 5.5rem)",
-        paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
+        paddingTop: "clamp(4.5rem, 7vh, 6.5rem)",
+        paddingBottom: "clamp(5rem, 8vh, 7rem)",
         paddingLeft: "clamp(2rem, 5vw, 5rem)",
         paddingRight: "clamp(2rem, 5vw, 5rem)",
       }}
     >
       <div className="w-full max-w-full">
-        {/* Navigation Links Row: persis seperti foto 1 dengan jarak lega */}
-        <div className="flex flex-wrap items-center gap-10 sm:gap-16 mb-20 lg:mb-24">
+        {/* Navigation Links Row: ada efek garis bawah saat kursor diarahkan (hover) */}
+        <div className="flex flex-wrap items-center gap-10 sm:gap-16 mb-28 lg:mb-36">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-base sm:text-lg font-normal text-[#4a5568] hover:text-black transition-colors"
+              className="relative text-base sm:text-lg font-normal text-[#4a5568] hover:text-black transition-colors group pb-1"
             >
-              {link.label}
+              <span>{link.label}</span>
+              {/* Garis bawah animasi saat hover */}
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
 
-        {/* Contact CTA: Let's talk & Contact dengan jarak vertikal lega */}
+        {/* Contact CTA: Let's talk & Contact diturunkan jauh ke bawah agar berjarak lega */}
         <div>
-          <span className="text-lg sm:text-xl text-[#718096] font-normal block mb-5">
+          <span className="text-lg sm:text-xl text-[#718096] font-normal block mb-6">
             {t("footer.lets_talk")}
           </span>
           <Link
