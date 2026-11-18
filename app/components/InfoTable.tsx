@@ -10,28 +10,27 @@ export default function InfoTable() {
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.work"), href: "/work" },
     { label: t("nav.award"), href: "/award" },
-    { label: t("nav.contact"), href: "/contact" },
   ];
 
   return (
     <section
       className="w-full select-none"
       style={{
-        background: "#f5f5f5",
-        paddingTop: "clamp(3.5rem, 6vh, 5rem)",
-        paddingBottom: "clamp(3rem, 5vh, 4.5rem)",
-        paddingLeft: "clamp(1.5rem, 4vw, 4rem)",
-        paddingRight: "clamp(1.5rem, 4vw, 4rem)",
+        background: "#f8f9fa",
+        paddingTop: "clamp(4.5rem, 7vh, 6rem)",
+        paddingBottom: "clamp(3.5rem, 6vh, 5rem)",
+        paddingLeft: "clamp(2rem, 5vw, 5rem)",
+        paddingRight: "clamp(2rem, 5vw, 5rem)",
       }}
     >
       <div className="w-full max-w-full">
         {/* Navigation Links Row */}
-        <div className="flex flex-wrap gap-6 sm:gap-10 mb-12">
+        <div className="flex flex-wrap gap-8 sm:gap-14 mb-16">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm sm:text-base font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-base sm:text-lg font-semibold text-gray-700 hover:text-[#0077b6] transition-colors"
             >
               {link.label}
             </Link>
@@ -39,20 +38,20 @@ export default function InfoTable() {
         </div>
 
         {/* Contact CTA */}
-        <div className="pb-10 border-b border-gray-300">
-          <span className="text-xs sm:text-sm text-gray-500 block mb-2">
+        <div className="pb-12 border-b border-gray-300">
+          <span className="text-sm sm:text-base text-gray-500 block mb-4">
             {t("footer.lets_talk")}
           </span>
           <Link
             href="/contact"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0077b6] hover:text-[#005a8d] transition-colors inline-flex items-center gap-3"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0077b6] hover:text-[#005a8d] transition-colors inline-flex items-center gap-4"
           >
             {t("nav.contact")} <span aria-hidden="true">→</span>
           </Link>
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-6 text-xs text-gray-400">
+        <div className="pt-8 text-xs sm:text-sm text-gray-400">
           © {new Date().getFullYear()} DNA Komunika. All rights reserved.
         </div>
       </div>
