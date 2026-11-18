@@ -38,7 +38,7 @@ export default function InfoTable() {
         </div>
 
         {/* Contact CTA */}
-        <div className="pb-12 border-b border-gray-300">
+        <div>
           <span className="text-sm sm:text-base text-gray-500 block mb-4">
             {t("footer.lets_talk")}
           </span>
@@ -48,11 +48,6 @@ export default function InfoTable() {
           >
             {t("nav.contact")} <span aria-hidden="true">→</span>
           </Link>
-        </div>
-
-        {/* Bottom copyright */}
-        <div className="pt-8 text-xs sm:text-sm text-gray-400">
-          © {new Date().getFullYear()} DNA Komunika. All rights reserved.
         </div>
       </div>
     </section>
