@@ -24,9 +24,9 @@ export default function InfoTable() {
       }}
     >
       <div className="w-full max-w-full">
-        {/* Navigation Links Row */}
+        {/* Navigation Links Row: dirapatkan seperti referensi */}
         <div
-          className="flex flex-wrap items-center gap-12 sm:gap-20"
+          className="flex flex-wrap items-center gap-7 sm:gap-9"
           style={{ marginBottom: "120px" }}
         >
           {navLinks.map((link) => (
