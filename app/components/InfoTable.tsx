@@ -16,18 +16,18 @@ export default function InfoTable() {
     <section
       className="w-full select-none"
       style={{
-        background: "#eeeeee",
-        paddingTop: "80px",
-        paddingBottom: "100px",
+        background: "#ffffff",
+        paddingTop: "clamp(3rem, 5vh, 4rem)",
+        paddingBottom: "clamp(3.5rem, 6vh, 4.5rem)",
         paddingLeft: "clamp(2rem, 5vw, 5rem)",
         paddingRight: "clamp(2rem, 5vw, 5rem)",
       }}
     >
       <div className="w-full max-w-full">
-        {/* Navigation Links Row: dirapatkan seperti referensi */}
+        {/* Navigation Links Row */}
         <div
           className="flex flex-wrap items-center gap-7 sm:gap-9"
-          style={{ marginBottom: "120px" }}
+          style={{ marginBottom: "50px" }}
         >
           {navLinks.map((link) => (
             <Link
@@ -42,9 +42,9 @@ export default function InfoTable() {
           ))}
         </div>
 
-        {/* Contact CTA: Let's talk & Contact berjarak 120px di bawah About */}
+        {/* Contact CTA: Jarak pas & rapi */}
         <div>
-          <span className="text-xl sm:text-2xl text-[#828894] font-normal block mb-3 tracking-normal">
+          <span className="text-lg sm:text-xl text-[#718096] font-normal block mb-2 tracking-normal">
             {t("footer.lets_talk")}
           </span>
           <Link
