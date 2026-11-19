@@ -195,9 +195,6 @@ export default function AboutHeroMeta() {
           <div className="w-full max-w-5xl">
             {/* Header Visi & Misi */}
             <div className="mb-16 pb-8 border-b border-gray-200">
-              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
-                {t("about.v_subtitle")}
-              </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
                 {t("about.v_title")}
               </h2>
@@ -281,9 +278,6 @@ export default function AboutHeroMeta() {
             {/* Header Services */}
             <div className="mb-16 pb-8 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
-                  {t("about.s_subtitle")}
-                </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight">
                   {t("about.s_title")}
                 </h2>
