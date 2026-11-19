@@ -45,30 +45,22 @@ export default function AboutHeroMeta() {
         <div className="w-full lg:w-[88%] xl:w-[89%] flex flex-col">
           
           {/* --------------------------------------------------------------------- */}
-          {/* 1. HERO BIRU METADESIGN (Dinaikkan ke atas, badge dihapus)            */}
+          {/* 1. HERO BIRU METADESIGN (Warna biru solid bersih tanpa gambar pattern) */}
+          {/*    Teks dinaikkan ke atas, jarak baris tidak dempet / ada breathing room */}
           {/* --------------------------------------------------------------------- */}
           <section
             className="relative w-full min-h-[92vh] flex flex-col justify-center text-white overflow-hidden"
             style={{
-              background: "#0080c8",
-              paddingTop: "clamp(5rem, 8vh, 6.5rem)", // Dinaikkan ke atas
+              backgroundColor: "#0080c8", // Biru solid murni tanpa background pattern
+              paddingTop: "clamp(5rem, 8vh, 6.5rem)",
               paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
               paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
               paddingRight: "clamp(2rem, 5vw, 5.5rem)",
             }}
           >
-            {/* Subtle DNA background texture */}
-            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none opacity-10 mix-blend-screen">
-              <img
-                src="/about-bg-pattern.jpg"
-                alt="DNA Texture"
-                className="w-full h-full object-cover scale-105"
-              />
-            </div>
-
             <div className="relative z-10 max-w-4xl">
-              {/* Headline Besar MetaDesign */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[4.75rem] font-black tracking-tight leading-[1.08] mb-8 text-white">
+              {/* Headline Besar MetaDesign: Spasi baris lega */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[4.75rem] font-black tracking-tight leading-[1.12] mb-10 text-white">
                 {lang === "en" ? (
                   <>We turn corporate stories into powerful visual identity</>
                 ) : (
@@ -76,8 +68,8 @@ export default function AboutHeroMeta() {
                 )}
               </h1>
 
-              {/* Paragraf MetaDesign */}
-              <p className="text-base sm:text-lg lg:text-[1.2rem] text-white/95 font-normal leading-relaxed max-w-3xl mb-12">
+              {/* Paragraf: Jarak antar kalimat & line height lega agar tidak menempel */}
+              <p className="text-base sm:text-lg lg:text-[1.2rem] text-white/95 font-normal leading-[1.75] max-w-3xl mb-14">
                 {lang === "en" ? (
                   <>
                     We are a creative brand and corporate communication consultancy based in South Jakarta.
@@ -94,20 +86,20 @@ export default function AboutHeroMeta() {
                 )}
               </p>
 
-              {/* 3 Metrik Prestasi */}
-              <div className="flex flex-wrap items-center gap-8 pt-6 border-t border-white/25 max-w-xl">
+              {/* 3 Metrik Prestasi: Diberi margin top dan padding yang lega */}
+              <div className="flex flex-wrap items-center gap-10 pt-8 border-t border-white/25 max-w-xl">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white">12+</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">12+</div>
                   <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_exp")}</div>
                 </div>
-                <div className="w-[1px] h-8 bg-white/25" />
+                <div className="w-[1px] h-9 bg-white/25" />
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white">200+</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">200+</div>
                   <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_proj")}</div>
                 </div>
-                <div className="w-[1px] h-8 bg-white/25" />
+                <div className="w-[1px] h-9 bg-white/25" />
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white">30+</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">30+</div>
                   <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_awards")}</div>
                 </div>
               </div>
@@ -286,7 +278,7 @@ export default function AboutHeroMeta() {
                 </div>
               </div>
 
-              {/* Bottom Banner Hubungi Kami (Diberi margin top besar agar tidak bertabrakan) */}
+              {/* Bottom Banner Hubungi Kami */}
               <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#0077b6] to-[#0091D7] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-8 shadow-xl">
                 <div>
                   <span className="text-xs font-bold tracking-widest uppercase text-cyan-200 block mb-2">
@@ -312,10 +304,10 @@ export default function AboutHeroMeta() {
 
         {/* ======================================================================= */}
         {/* KOLOM KANAN (~11%): STRIP FOTO STICKY MENEMPEL & MENGIKUTI SCROLL       */}
-        {/* (Tetap terlihat menempel di sisi kanan layar saat di-scroll ke bawah)    */}
+        {/* Menggunakan position: fixed atau sticky murni sampai bawah               */}
         {/* ======================================================================= */}
-        <div className="w-full lg:w-[12%] xl:w-[11%] relative bg-black shrink-0">
-          <div className="sticky top-0 h-[320px] lg:h-screen w-full overflow-hidden select-none">
+        <aside className="w-full lg:w-[12%] xl:w-[11%] relative bg-black shrink-0 self-stretch">
+          <div className="sticky top-0 h-[320px] lg:h-screen w-full overflow-hidden select-none z-30">
             <Link
               href="/work"
               className="relative w-full h-full block group cursor-pointer"
@@ -340,8 +332,8 @@ export default function AboutHeroMeta() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Teks Vertikal "Work" persis MetaDesign */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+              {/* Teks Vertikal "Work" persis MetaDesign - Posisi persis di tengah viewport layar */}
+              <div className="fixed lg:absolute inset-y-0 right-0 w-[12%] xl:w-[11%] flex items-center justify-center pointer-events-none z-40">
                 <span
                   className="text-base lg:text-lg font-bold tracking-[0.2em] text-white uppercase whitespace-nowrap drop-shadow-md"
                   style={{
@@ -354,7 +346,7 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Dot Indicator di bagian bawah strip foto */}
-              <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-1.5 z-20 pointer-events-none">
+              <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-1.5 z-40 pointer-events-none">
                 {heroSlides.map((_, idx) => (
                   <span
                     key={idx}
@@ -366,7 +358,7 @@ export default function AboutHeroMeta() {
               </div>
             </Link>
           </div>
-        </div>
+        </aside>
 
       </div>
     </motion.div>
