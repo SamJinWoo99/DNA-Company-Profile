@@ -125,12 +125,12 @@ export default function AboutHeroMeta() {
             </h1>
 
             {/* SPASI ATAS BAWAH LEGA ANTARA JUDUL DAN PARAGRAF */}
-            <div style={{ marginTop: "70px", marginBottom: "80px" }}>
+            <div style={{ marginTop: "38px", marginBottom: "44px" }}>
               <p
                 className="text-white/90 font-normal max-w-3xl tracking-normal text-justify sm:text-left"
                 style={{
                   fontSize: "clamp(1.05rem, 1.25vw, 1.2rem)",
-                  lineHeight: "2.3",
+                  lineHeight: "1.9",
                   letterSpacing: "0.01em",
                 }}
               >
@@ -153,11 +153,11 @@ export default function AboutHeroMeta() {
               </p>
             </div>
 
-            {/* 3 Metrik Prestasi: Spasi padding top 70px pasti renggang */}
+            {/* 3 Metrik Prestasi: Spasi padding top seimbang dan rapi */}
             <div
               className="flex flex-row flex-nowrap items-center border-t border-white/20 w-fit max-w-full"
               style={{
-                paddingTop: "65px",
+                paddingTop: "36px",
                 gap: "clamp(2.5rem, 5vw, 4.5rem)",
               }}
             >
