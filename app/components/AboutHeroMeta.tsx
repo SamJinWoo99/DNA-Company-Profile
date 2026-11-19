@@ -181,13 +181,13 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* VISI & MISI (Sejajar Kiri dengan Hero, Jarak Kanan Pas & Estetik)       */}
+        {/* VISI & MISI (Slide 2: Full Screen Mandiri / Jauh dari Services)         */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full bg-[#f8f9fa] border-t border-gray-200"
+          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-center"
           style={{
-            paddingTop: "clamp(6rem, 10vh, 8.5rem)",
-            paddingBottom: "clamp(6rem, 10vh, 8.5rem)",
+            paddingTop: "clamp(6rem, 12vh, 10rem)",
+            paddingBottom: "clamp(6rem, 12vh, 10rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
@@ -263,13 +263,13 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* SERVICES & EXPERTISE (Sejajar Kiri dengan Hero, Jarak Kanan Pas & Estetik) */}
+        {/* SERVICES & EXPERTISE (Slide 3: Full Screen Mandiri di Bawahnya)         */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full bg-white border-t border-gray-200"
+          className="w-full min-h-screen bg-white border-t border-gray-200 flex flex-col justify-center"
           style={{
-            paddingTop: "clamp(6rem, 10vh, 8.5rem)",
-            paddingBottom: "clamp(7rem, 12vh, 10rem)",
+            paddingTop: "clamp(6rem, 12vh, 10rem)",
+            paddingBottom: "clamp(7rem, 14vh, 12rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
