@@ -181,7 +181,7 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* VISI & MISI (Layout Rapi, Estetik, Jarak Lega)                          */}
+        {/* VISI & MISI (Layout Rapi, Estetik, Jarak Lega, Melebar ke Kanan)       */}
         {/* ----------------------------------------------------------------------- */}
         <section
           className="w-full bg-[#f8f9fa] border-t border-gray-200"
@@ -189,10 +189,10 @@ export default function AboutHeroMeta() {
             paddingTop: "clamp(6rem, 10vh, 8.5rem)",
             paddingBottom: "clamp(6rem, 10vh, 8.5rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(2rem, 5vw, 5rem)",
+            paddingRight: "clamp(2.5rem, 6vw, 6rem)",
           }}
         >
-          <div className="w-full max-w-5xl">
+          <div className="w-full max-w-7xl">
             {/* Header Visi & Misi */}
             <div className="mb-16 pb-8 border-b border-gray-200">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
@@ -200,7 +200,7 @@ export default function AboutHeroMeta() {
               </h2>
             </div>
 
-            {/* 2 Kolom Visi & Misi: Rapi, Lega, Estetik */}
+            {/* 2 Kolom Visi & Misi: Rapi, Melebar, Lega */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
               {/* Box 1: Visi & Tujuan */}
@@ -263,7 +263,7 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* SERVICES & EXPERTISE (Layanan DNA Komunika)                             */}
+        {/* SERVICES & EXPERTISE (Layanan DNA Komunika, Melebar ke Kanan)          */}
         {/* ----------------------------------------------------------------------- */}
         <section
           className="w-full bg-white border-t border-gray-200"
@@ -271,10 +271,10 @@ export default function AboutHeroMeta() {
             paddingTop: "clamp(6rem, 10vh, 8.5rem)",
             paddingBottom: "clamp(7rem, 12vh, 10rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(2rem, 5vw, 5rem)",
+            paddingRight: "clamp(2.5rem, 6vw, 6rem)",
           }}
         >
-          <div className="w-full max-w-5xl">
+          <div className="w-full max-w-7xl">
             {/* Header Services */}
             <div className="mb-16 pb-8 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
@@ -282,7 +282,7 @@ export default function AboutHeroMeta() {
                   {t("about.s_title")}
                 </h2>
               </div>
-              <p className="text-gray-500 max-w-md text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-500 max-w-lg text-sm sm:text-base leading-relaxed">
                 {lang === "en"
                   ? "Delivering specialized publication and brand consulting solutions tailored for high-profile corporations."
                   : "Menghadirkan solusi publikasi dan konsultasi brand terpadu bagi korporasi dan institusi ternama."}
