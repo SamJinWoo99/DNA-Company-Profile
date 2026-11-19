@@ -78,9 +78,8 @@ export default function AboutHeroMeta() {
             {heroSlides.map((_, idx) => (
               <span
                 key={idx}
-                className={`h-1.5 rounded-full transition-all ${
-                  activeSlide === idx ? "w-4 bg-white" : "w-1.5 bg-white/40"
-                }`}
+                className={`h-1.5 rounded-full transition-all ${activeSlide === idx ? "w-4 bg-white" : "w-1.5 bg-white/40"
+                  }`}
               />
             ))}
           </div>
@@ -91,7 +90,7 @@ export default function AboutHeroMeta() {
       {/* 2. AREA KONTEN KIRI: HERO, VISI & MISI, SERVICES                          */}
       {/* ========================================================================= */}
       <div className="w-full lg:pr-[12%] xl:pr-[11%] flex flex-col">
-        
+
         {/* ----------------------------------------------------------------------- */}
         {/* HERO BIRU METADESIGN (Presisi 100% Sesuai Foto 2 Acuan User)            */}
         {/* ----------------------------------------------------------------------- */}
@@ -107,58 +106,60 @@ export default function AboutHeroMeta() {
         >
           {/* Wadah Teks: Diberi max-w-4xl agar baris judul memanjang rapi persis Foto 2 */}
           <div className="relative z-10 w-full max-w-4xl">
-            
-            {/* Headline Besar MetaDesign: 3 Baris Rapi Persis Foto 2 dengan line-height dan margin lega */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-black tracking-tight leading-[1.2] mb-14 text-white">
+
+            {/* Headline Besar MetaDesign */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-black tracking-tight leading-[1.25] text-white">
               {lang === "en" ? (
                 <>
-                  <span className="block mb-2">We turn corporate</span>
-                  <span className="block mb-2">stories into powerful</span>
+                  <span className="block mb-2 sm:mb-3">We turn corporate</span>
+                  <span className="block mb-2 sm:mb-3">stories into powerful</span>
                   <span className="block">visual identity</span>
                 </>
               ) : (
                 <>
-                  <span className="block mb-2">Mengubah cerita korporasi</span>
-                  <span className="block mb-2">menjadi identitas visual</span>
+                  <span className="block mb-2 sm:mb-3">Mengubah cerita korporasi</span>
+                  <span className="block mb-2 sm:mb-3">menjadi identitas visual</span>
                   <span className="block">yang berdaya</span>
                 </>
               )}
             </h1>
 
-            {/* Paragraf: Lebar pas, font jernih, line-height 2.0 (sangat lega), margin bawah lega */}
-            <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/90 font-normal leading-[2] sm:leading-[2.1] max-w-2xl mb-16 tracking-wide">
-              {lang === "en" ? (
-                <>
-                  We are a creative brand and corporate communication consultancy based in South
-                  Jakarta. Since 2013, we have been collaborating with leading State-Owned
-                  Enterprises (BUMN), ministries, and multinational corporations to solve brand,
-                  publication, and annual report challenges with award-winning design
-                  excellence.
-                </>
-              ) : (
-                <>
-                  Kami adalah konsultan brand kreatif dan komunikasi korporat berbasis di Jakarta
-                  Selatan. Sejak 2013, kami bermitra dengan puluhan BUMN terkemuka, kementerian,
-                  dan korporasi multinasional dalam menyelesaikan tantangan branding, desain
-                  publikasi, serta laporan tahunan dengan standar keunggulan global.
-                </>
-              )}
-            </p>
+            {/* SPASI ATAS BAWAH LEGA ANTARA JUDUL DAN PARAGRAF (my-16 sm:my-20) */}
+            <div className="my-14 sm:my-20">
+              <p className="text-base sm:text-lg lg:text-[1.15rem] text-white/90 font-normal leading-[2.1] sm:leading-[2.2] max-w-2xl tracking-normal">
+                {lang === "en" ? (
+                  <>
+                    We are a creative brand and corporate communication consultancy based in South
+                    Jakarta. Since 2013, we have been collaborating with leading State-Owned
+                    Enterprises (BUMN), ministries, and multinational corporations to solve brand,
+                    publication, and annual report challenges with award-winning design
+                    excellence.
+                  </>
+                ) : (
+                  <>
+                    Kami adalah konsultan brand kreatif dan komunikasi korporat berbasis di Jakarta
+                    Selatan. Sejak 2013, kami bermitra dengan puluhan BUMN terkemuka, kementerian,
+                    dan korporasi multinasional dalam menyelesaikan tantangan branding, desain
+                    publikasi, serta laporan tahunan dengan standar keunggulan global.
+                  </>
+                )}
+              </p>
+            </div>
 
-            {/* 3 Metrik Prestasi: flex-row nowrap dengan gap lega agar selalu sejajar mendatar */}
-            <div className="flex flex-row flex-nowrap items-center gap-10 sm:gap-14 pt-10 border-t border-white/20 w-fit max-w-full">
+            {/* 3 Metrik Prestasi: Diberi pt-14 (jarak lega ke atas dari garis pemisah) & flex-nowrap sejajar mendatar */}
+            <div className="flex flex-row flex-nowrap items-center gap-12 sm:gap-16 pt-12 sm:pt-14 border-t border-white/20 w-fit max-w-full">
               <div className="shrink-0 flex flex-col">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-1">12+</span>
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-2">12+</span>
                 <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_exp")}</span>
               </div>
-              <div className="w-[1px] h-10 bg-white/20 shrink-0" />
+              <div className="w-[1px] h-11 bg-white/20 shrink-0" />
               <div className="shrink-0 flex flex-col">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-1">200+</span>
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-2">200+</span>
                 <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_proj")}</span>
               </div>
-              <div className="w-[1px] h-10 bg-white/20 shrink-0" />
+              <div className="w-[1px] h-11 bg-white/20 shrink-0" />
               <div className="shrink-0 flex flex-col">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-1">30+</span>
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-2">30+</span>
                 <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_awards")}</span>
               </div>
             </div>
@@ -191,7 +192,7 @@ export default function AboutHeroMeta() {
 
             {/* 2 Kolom Visi & Misi: Rapi, Lega, Estetik */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-              
+
               {/* Box 1: Visi & Tujuan */}
               <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
