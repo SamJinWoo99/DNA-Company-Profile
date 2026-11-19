@@ -93,30 +93,40 @@ export default function AboutHeroMeta() {
       <div className="w-full lg:pr-[12%] xl:pr-[11%] flex flex-col">
         
         {/* ----------------------------------------------------------------------- */}
-        {/* HERO BIRU METADESIGN (Presisi Sesuai Foto 2 User)                       */}
+        {/* HERO BIRU METADESIGN (Presisi 100% Sesuai Foto 2 Acuan User)            */}
         {/* ----------------------------------------------------------------------- */}
         <section
           className="relative w-full min-h-screen flex flex-col justify-center text-white"
           style={{
             backgroundColor: "#0080c8",
-            paddingTop: "clamp(7rem, 15vh, 11rem)",
-            paddingBottom: "clamp(6rem, 12vh, 9rem)",
-            paddingLeft: "clamp(2.5rem, 7vw, 7.5rem)",
+            paddingTop: "clamp(6.5rem, 12vh, 9.5rem)",
+            paddingBottom: "clamp(6.5rem, 12vh, 10rem)",
+            paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2rem, 5vw, 5rem)",
           }}
         >
-          <div className="relative z-10 max-w-3xl">
-            {/* Headline Besar MetaDesign (Persis proporsi Foto 2) */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.25rem] font-black tracking-tight leading-[1.05] mb-12 text-white">
+          {/* Wadah Teks: Diberi max-w-4xl agar baris judul memanjang rapi persis Foto 2 */}
+          <div className="relative z-10 w-full max-w-4xl">
+            
+            {/* Headline Besar MetaDesign: 3 Baris Rapi Persis Foto 2 */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-black tracking-tight leading-[1.08] mb-12 text-white">
               {lang === "en" ? (
-                <>We turn corporate stories into powerful visual identity</>
+                <>
+                  We turn corporate<br />
+                  stories into powerful<br />
+                  visual identity
+                </>
               ) : (
-                <>Mengubah cerita korporasi menjadi identitas visual yang berdaya</>
+                <>
+                  Mengubah cerita korporasi<br />
+                  menjadi identitas visual<br />
+                  yang berdaya
+                </>
               )}
             </h1>
 
-            {/* Paragraf: font-normal, line-height 1.8, lega persis Foto 2 */}
-            <p className="text-base sm:text-lg lg:text-[1.15rem] text-white/95 font-normal leading-[1.8] max-w-2xl mb-16">
+            {/* Paragraf: Lebar pas, font jernih, line-height 1.75 lega */}
+            <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/95 font-normal leading-[1.75] max-w-2xl mb-12">
               {lang === "en" ? (
                 <>
                   We are a creative brand and corporate communication consultancy based in South
@@ -135,23 +145,24 @@ export default function AboutHeroMeta() {
               )}
             </p>
 
-            {/* 3 Metrik Prestasi: Garis pemisah tipis elegan, angka tebal persis Foto 2 */}
-            <div className="flex flex-wrap items-center gap-12 pt-8 border-t border-white/20 max-w-lg">
-              <div>
+            {/* 3 Metrik Prestasi: flex-nowrap agar 3 kolom sejajar mendatar (TIDAK TURUN KE BAWAH) */}
+            <div className="flex flex-nowrap items-center gap-12 sm:gap-14 pt-8 border-t border-white/20 w-fit">
+              <div className="shrink-0">
                 <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">12+</div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-medium">{t("about.metric_exp")}</div>
+                <div className="text-xs uppercase tracking-wider text-white/75 font-medium whitespace-nowrap">{t("about.metric_exp")}</div>
               </div>
-              <div className="w-[1px] h-9 bg-white/20" />
-              <div>
+              <div className="w-[1px] h-9 bg-white/20 shrink-0" />
+              <div className="shrink-0">
                 <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">200+</div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-medium">{t("about.metric_proj")}</div>
+                <div className="text-xs uppercase tracking-wider text-white/75 font-medium whitespace-nowrap">{t("about.metric_proj")}</div>
               </div>
-              <div className="w-[1px] h-9 bg-white/20" />
-              <div>
+              <div className="w-[1px] h-9 bg-white/20 shrink-0" />
+              <div className="shrink-0">
                 <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">30+</div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-medium">{t("about.metric_awards")}</div>
+                <div className="text-xs uppercase tracking-wider text-white/75 font-medium whitespace-nowrap">{t("about.metric_awards")}</div>
               </div>
             </div>
+
           </div>
         </section>
 
