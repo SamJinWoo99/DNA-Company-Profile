@@ -126,7 +126,7 @@ export default function AboutHeroMeta() {
 
             {/* SPASI ATAS BAWAH LEGA ANTARA JUDUL DAN PARAGRAF (my-16 sm:my-20) */}
             <div className="my-14 sm:my-20">
-              <p className="text-base sm:text-lg lg:text-[1.15rem] text-white/90 font-normal leading-[2.1] sm:leading-[2.2] max-w-2xl tracking-normal">
+              <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/90 font-normal leading-[2.05] sm:leading-[2.15] max-w-3xl tracking-normal">
                 {lang === "en" ? (
                   <>
                     We are a creative brand and corporate communication consultancy based in South
