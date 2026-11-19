@@ -289,59 +289,101 @@ export default function AboutHeroMeta() {
               </p>
             </div>
 
-            {/* 3 Kartu Layanan Unggulan */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-20">
-              {/* Service 1 */}
-              <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
-                <div>
-                  <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
+            {/* 3 Kartu Layanan Unggulan dengan Foto Mockup Produk sesuai Referensi User */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-20 items-stretch">
+              {/* Service 1: Annual & Sustainability Reports */}
+              <div className="bg-[#f8f9fa] border border-gray-200/90 rounded-3xl overflow-hidden hover:border-[#0080c8] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <div className="relative w-full h-56 sm:h-64 bg-gradient-to-b from-[#0284c7] to-[#0369a1] p-5 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/about-service-annual-report.png"
+                    alt="Annual & Sustainability Reports"
+                    className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/90 text-[#0080c8] shadow-sm">
                     01
                   </span>
-                  <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
-                    {t("about.s1_title")}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    {t("about.s1_desc")}
-                  </p>
                 </div>
-                <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                  Annual & ESG Reports
+                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1 bg-white">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                      {t("about.s1_title")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                      {t("about.s1_desc")}
+                    </p>
+                  </div>
+                  <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                      Annual & ESG Reports
+                    </span>
+                    <span className="text-gray-400 group-hover:text-[#0080c8] group-hover:translate-x-1 transition-all font-bold">
+                      →
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              {/* Service 2 */}
-              <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
-                <div>
-                  <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
+              {/* Service 2: Calendar Design */}
+              <div className="bg-[#f8f9fa] border border-gray-200/90 rounded-3xl overflow-hidden hover:border-[#0080c8] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <div className="relative w-full h-56 sm:h-64 bg-gradient-to-b from-gray-700 to-gray-900 p-5 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/about-service-calendar.png"
+                    alt="Calendar Design"
+                    className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/90 text-gray-900 shadow-sm">
                     02
                   </span>
-                  <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
-                    {t("about.s2_title")}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    {t("about.s2_desc")}
-                  </p>
                 </div>
-                <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                  Corporate Publication
+                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1 bg-white">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                      {t("about.s2_title")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                      {t("about.s2_desc")}
+                    </p>
+                  </div>
+                  <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                      Corporate Publication
+                    </span>
+                    <span className="text-gray-400 group-hover:text-[#0080c8] group-hover:translate-x-1 transition-all font-bold">
+                      →
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              {/* Service 3 */}
-              <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
-                <div>
-                  <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
+              {/* Service 3: Corporate Branding & Collateral */}
+              <div className="bg-[#f8f9fa] border border-gray-200/90 rounded-3xl overflow-hidden hover:border-[#0080c8] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <div className="relative w-full h-56 sm:h-64 bg-gradient-to-b from-red-600 to-red-800 p-5 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/about-service-branding.png"
+                    alt="Corporate Branding & Collateral"
+                    className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/90 text-red-600 shadow-sm">
                     03
                   </span>
-                  <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
-                    {t("about.s3_title")}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    {t("about.s3_desc")}
-                  </p>
                 </div>
-                <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                  Brand & Identity Systems
+                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1 bg-white">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                      {t("about.s3_title")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                      {t("about.s3_desc")}
+                    </p>
+                  </div>
+                  <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                      Brand & Identity Systems
+                    </span>
+                    <span className="text-gray-400 group-hover:text-[#0080c8] group-hover:translate-x-1 transition-all font-bold">
+                      →
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
