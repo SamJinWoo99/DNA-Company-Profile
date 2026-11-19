@@ -60,7 +60,7 @@ export default function AboutHeroMeta() {
             </motion.div>
           </AnimatePresence>
 
-          {/* TEKS VERTIKAL "WORK" SELALU DI TENGAH FOTO (PERSIS FOTO 2) */}
+          {/* TEKS VERTIKAL "WORK" SELALU DI TENGAH FOTO */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40">
             <span
               className="text-base lg:text-lg font-bold tracking-[0.25em] text-white uppercase whitespace-nowrap drop-shadow-md select-none"
@@ -89,26 +89,25 @@ export default function AboutHeroMeta() {
 
       {/* ========================================================================= */}
       {/* 2. AREA KONTEN KIRI: HERO, VISI & MISI, SERVICES                          */}
-      {/* (Diberi margin kanan pr-[12%] pada layar besar agar tidak tertutup strip) */}
       {/* ========================================================================= */}
       <div className="w-full lg:pr-[12%] xl:pr-[11%] flex flex-col">
         
         {/* ----------------------------------------------------------------------- */}
-        {/* HERO BIRU METADESIGN (Biru Solid Tanpa Background Pattern)              */}
+        {/* HERO BIRU METADESIGN (Presisi Sesuai Foto 2 User)                       */}
         {/* ----------------------------------------------------------------------- */}
         <section
           className="relative w-full min-h-screen flex flex-col justify-center text-white"
           style={{
             backgroundColor: "#0080c8",
-            paddingTop: "clamp(6.5rem, 12vh, 10rem)",
-            paddingBottom: "clamp(7rem, 14vh, 12rem)",
-            paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
-            paddingRight: "clamp(2rem, 5vw, 5.5rem)",
+            paddingTop: "clamp(7rem, 15vh, 11rem)",
+            paddingBottom: "clamp(6rem, 12vh, 9rem)",
+            paddingLeft: "clamp(2.5rem, 7vw, 7.5rem)",
+            paddingRight: "clamp(2rem, 5vw, 5rem)",
           }}
         >
-          <div className="relative z-10 max-w-4xl">
-            {/* Headline Besar MetaDesign */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[4.75rem] font-black tracking-tight leading-[1.12] mb-10 text-white">
+          <div className="relative z-10 max-w-3xl">
+            {/* Headline Besar MetaDesign (Persis proporsi Foto 2) */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.25rem] font-black tracking-tight leading-[1.05] mb-12 text-white">
               {lang === "en" ? (
                 <>We turn corporate stories into powerful visual identity</>
               ) : (
@@ -116,39 +115,41 @@ export default function AboutHeroMeta() {
               )}
             </h1>
 
-            {/* Paragraf: Jeda & Line Height Lega */}
-            <p className="text-base sm:text-lg lg:text-[1.2rem] text-white/95 font-normal leading-[1.75] max-w-3xl mb-14">
+            {/* Paragraf: font-normal, line-height 1.8, lega persis Foto 2 */}
+            <p className="text-base sm:text-lg lg:text-[1.15rem] text-white/95 font-normal leading-[1.8] max-w-2xl mb-16">
               {lang === "en" ? (
                 <>
-                  We are a creative brand and corporate communication consultancy based in South Jakarta.
-                  Since 2013, we have been collaborating with leading State-Owned Enterprises (BUMN),
-                  ministries, and multinational corporations to solve brand, publication, and annual report challenges
-                  with award-winning design excellence.
+                  We are a creative brand and corporate communication consultancy based in South
+                  Jakarta. Since 2013, we have been collaborating with leading State-Owned
+                  Enterprises (BUMN), ministries, and multinational corporations to solve brand,
+                  publication, and annual report challenges with award-winning design
+                  excellence.
                 </>
               ) : (
                 <>
-                  Kami adalah konsultan brand kreatif dan komunikasi korporat berbasis di Jakarta Selatan.
-                  Sejak 2013, kami bermitra dengan puluhan BUMN terkemuka, kementerian, dan korporasi multinasional
-                  dalam menyelesaikan tantangan branding, desain publikasi, serta laporan tahunan dengan standar keunggulan global.
+                  Kami adalah konsultan brand kreatif dan komunikasi korporat berbasis di Jakarta
+                  Selatan. Sejak 2013, kami bermitra dengan puluhan BUMN terkemuka, kementerian,
+                  dan korporasi multinasional dalam menyelesaikan tantangan branding, desain
+                  publikasi, serta laporan tahunan dengan standar keunggulan global.
                 </>
               )}
             </p>
 
-            {/* 3 Metrik Prestasi */}
-            <div className="flex flex-wrap items-center gap-10 pt-8 border-t border-white/25 max-w-xl">
+            {/* 3 Metrik Prestasi: Garis pemisah tipis elegan, angka tebal persis Foto 2 */}
+            <div className="flex flex-wrap items-center gap-12 pt-8 border-t border-white/20 max-w-lg">
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-white mb-1">12+</div>
-                <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_exp")}</div>
+                <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">12+</div>
+                <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-medium">{t("about.metric_exp")}</div>
               </div>
-              <div className="w-[1px] h-9 bg-white/25" />
+              <div className="w-[1px] h-9 bg-white/20" />
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-white mb-1">200+</div>
-                <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_proj")}</div>
+                <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">200+</div>
+                <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-medium">{t("about.metric_proj")}</div>
               </div>
-              <div className="w-[1px] h-9 bg-white/25" />
+              <div className="w-[1px] h-9 bg-white/20" />
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-white mb-1">30+</div>
-                <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_awards")}</div>
+                <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">30+</div>
+                <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-medium">{t("about.metric_awards")}</div>
               </div>
             </div>
           </div>
