@@ -125,7 +125,7 @@ export default function AboutHeroMeta() {
             </h1>
 
             {/* SPASI ATAS BAWAH LEGA ANTARA JUDUL DAN PARAGRAF */}
-            <div className="mt-14 sm:mt-16 mb-16 sm:mb-20">
+            <div className="mt-20 sm:mt-24 mb-24 sm:mb-28">
               <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/90 font-normal leading-[2.1] sm:leading-[2.2] max-w-3xl tracking-normal">
                 {lang === "en" ? (
                   <>
@@ -146,8 +146,8 @@ export default function AboutHeroMeta() {
               </p>
             </div>
 
-            {/* 3 Metrik Prestasi: Jarak pt-14 sm:pt-16 ekstra lega dari garis pemisah ke angka */}
-            <div className="flex flex-row flex-nowrap items-center gap-12 sm:gap-16 pt-14 sm:pt-16 border-t border-white/20 w-fit max-w-full">
+            {/* 3 Metrik Prestasi: Jarak pt-16 sm:pt-20 ekstra lega dari garis pemisah ke angka */}
+            <div className="flex flex-row flex-nowrap items-center gap-12 sm:gap-16 pt-16 sm:pt-20 border-t border-white/20 w-fit max-w-full">
               <div className="shrink-0 flex flex-col">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-2">12+</span>
                 <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_exp")}</span>
