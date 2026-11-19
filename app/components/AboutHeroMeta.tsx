@@ -181,80 +181,96 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* VISI & MISI (Slide 2: Full Screen Mandiri / Jauh dari Services)         */}
+        {/* VISI & MISI (Persis Foto Referensi 1)                                   */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-center"
+          className="w-full bg-[#f8f9fa] border-t border-gray-200"
           style={{
-            paddingTop: "clamp(6rem, 12vh, 10rem)",
-            paddingBottom: "clamp(6rem, 12vh, 10rem)",
+            paddingTop: "clamp(5rem, 8vh, 7rem)",
+            paddingBottom: "clamp(5rem, 8vh, 7rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
           <div className="w-full max-w-[1480px]">
             {/* Header Visi & Misi */}
-            <div className="mb-16 pb-8 border-b border-gray-200">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
+            <div className="mb-12">
+              <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                 {t("about.v_title")}
               </h2>
             </div>
 
-            {/* 2 Kolom Visi & Misi: Rapi, Lega, Jarak Kanan Pas */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+            {/* 2 Kolom Visi & Misi Persis Foto 1 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
-              {/* Box 1: Visi & Tujuan */}
-              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              {/* Box 1: Vision & Purpose */}
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+                {/* Top Subtle Border Accent */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
+
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-8">
-                    <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
-                    <span>{t("about.v_purpose_badge")}</span>
+                  {/* Top Bar: Badge & Big Watermark 01 */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="inline-flex items-center gap-2 text-[#0080c8] text-xs font-bold uppercase tracking-wider">
+                      <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
+                      <span>{t("about.v_purpose_badge")}</span>
+                    </div>
+                    <span className="text-5xl sm:text-6xl font-black text-gray-200/80 font-mono select-none">
+                      01
+                    </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.v_vision_title")}
                   </h3>
 
-                  <p className="text-gray-600 leading-[1.85] text-base sm:text-lg font-normal">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base font-normal">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
-                <div className="pt-8 mt-12 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 mt-8 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_vision_tag")}
                   </span>
-                  <span className="text-lg font-bold text-[#0080c8]">01</span>
                 </div>
               </div>
 
-              {/* Box 2: Misi & Nilai Utama */}
-              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              {/* Box 2: Core Values */}
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+                {/* Top Subtle Border Accent */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
+
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-8">
-                    <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
-                    <span>{t("about.v_core_badge")}</span>
+                  {/* Top Bar: Badge & Big Watermark 02 */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="inline-flex items-center gap-2 text-[#0080c8] text-xs font-bold uppercase tracking-wider">
+                      <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
+                      <span>{t("about.v_core_badge")}</span>
+                    </div>
+                    <span className="text-5xl sm:text-6xl font-black text-gray-200/80 font-mono select-none">
+                      02
+                    </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.v_core_title")}
                   </h3>
 
-                  <p className="text-gray-600 leading-[1.85] text-base sm:text-lg mb-8 font-normal">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6 font-normal">
                     <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
                     {t("about.v_core_desc")}
                   </p>
 
-                  <blockquote className="border-l-4 border-[#0080c8] pl-5 py-2 text-xl sm:text-2xl font-bold text-gray-900 italic">
+                  <blockquote className="border-l-4 border-[#0080c8] pl-4 py-1 text-lg sm:text-xl font-bold text-gray-900 italic">
                     {t("about.v_core_quote")}
                   </blockquote>
                 </div>
 
-                <div className="pt-8 mt-12 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 mt-8 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_core_tag")}
                   </span>
-                  <span className="text-lg font-bold text-[#0080c8]">02</span>
                 </div>
               </div>
 
@@ -263,22 +279,22 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* SERVICES & EXPERTISE (Slide 3: Full Screen Mandiri di Bawahnya)         */}
+        {/* SERVICES & EXPERTISE (Persis Foto Referensi 2)                           */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full min-h-screen bg-white border-t border-gray-200 flex flex-col justify-center"
+          className="w-full bg-[#f8f9fa] border-t border-gray-200"
           style={{
-            paddingTop: "clamp(6rem, 12vh, 10rem)",
-            paddingBottom: "clamp(7rem, 14vh, 12rem)",
+            paddingTop: "clamp(5rem, 8vh, 7rem)",
+            paddingBottom: "clamp(6rem, 9vh, 8rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
           <div className="w-full max-w-[1480px]">
             {/* Header Services */}
-            <div className="mb-16 pb-8 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight">
+                <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                   {t("about.s_title")}
                 </h2>
               </div>
@@ -289,118 +305,109 @@ export default function AboutHeroMeta() {
               </p>
             </div>
 
-            {/* 3 Kartu Layanan Unggulan dengan Foto Mockup Produk sesuai Referensi User */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-20 items-stretch">
+            {/* 3 Kartu Layanan Unggulan Persis Foto 2 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-14 items-stretch">
+              
               {/* Service 1: Annual & Sustainability Reports */}
-              <div className="bg-[#f8f9fa] border border-gray-200/90 rounded-3xl overflow-hidden hover:border-[#0080c8] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                <div className="relative w-full h-56 sm:h-64 bg-gradient-to-b from-[#0284c7] to-[#0369a1] p-5 flex items-center justify-center overflow-hidden">
-                  <img
-                    src="/about-service-annual-report.png"
-                    alt="Annual & Sustainability Reports"
-                    className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/90 text-[#0080c8] shadow-sm">
-                    01
-                  </span>
+              <div className="bg-white rounded-3xl p-5 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+                <div>
+                  {/* Foto Mockup Box */}
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-6">
+                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-gray-400">
+                      01
+                    </span>
+                    <img
+                      src="/about-service-annual-report.png"
+                      alt="Annual & Sustainability Reports"
+                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                    {t("about.s1_title")}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                    {t("about.s1_desc")}
+                  </p>
                 </div>
-                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1 bg-white">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
-                      {t("about.s1_title")}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {t("about.s1_desc")}
-                    </p>
-                  </div>
-                  <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                      Annual & ESG Reports
-                    </span>
-                    <span className="text-gray-400 group-hover:text-[#0080c8] group-hover:translate-x-1 transition-all font-bold">
-                      →
-                    </span>
-                  </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                    ANNUAL & ESG REPORTS
+                  </span>
                 </div>
               </div>
 
               {/* Service 2: Calendar Design */}
-              <div className="bg-[#f8f9fa] border border-gray-200/90 rounded-3xl overflow-hidden hover:border-[#0080c8] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                <div className="relative w-full h-56 sm:h-64 bg-gradient-to-b from-gray-700 to-gray-900 p-5 flex items-center justify-center overflow-hidden">
-                  <img
-                    src="/about-service-calendar.png"
-                    alt="Calendar Design"
-                    className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/90 text-gray-900 shadow-sm">
-                    02
-                  </span>
+              <div className="bg-white rounded-3xl p-5 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+                <div>
+                  {/* Foto Mockup Box */}
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#4b6572] p-6 flex items-center justify-center overflow-hidden mb-6">
+                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-white/70">
+                      02
+                    </span>
+                    <img
+                      src="/about-service-calendar.png"
+                      alt="Calendar Design"
+                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                    {t("about.s2_title")}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                    {t("about.s2_desc")}
+                  </p>
                 </div>
-                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1 bg-white">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
-                      {t("about.s2_title")}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {t("about.s2_desc")}
-                    </p>
-                  </div>
-                  <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                      Corporate Publication
-                    </span>
-                    <span className="text-gray-400 group-hover:text-[#0080c8] group-hover:translate-x-1 transition-all font-bold">
-                      →
-                    </span>
-                  </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                    CORPORATE PUBLICATION
+                  </span>
                 </div>
               </div>
 
               {/* Service 3: Corporate Branding & Collateral */}
-              <div className="bg-[#f8f9fa] border border-gray-200/90 rounded-3xl overflow-hidden hover:border-[#0080c8] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                <div className="relative w-full h-56 sm:h-64 bg-gradient-to-b from-red-600 to-red-800 p-5 flex items-center justify-center overflow-hidden">
-                  <img
-                    src="/about-service-branding.png"
-                    alt="Corporate Branding & Collateral"
-                    className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/90 text-red-600 shadow-sm">
-                    03
+              <div className="bg-white rounded-3xl p-5 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+                <div>
+                  {/* Foto Mockup Box */}
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#9e0c15] p-6 flex items-center justify-center overflow-hidden mb-6">
+                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-white/70">
+                      03
+                    </span>
+                    <img
+                      src="/about-service-branding.png"
+                      alt="Corporate Branding & Collateral"
+                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                    {t("about.s3_title")}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                    {t("about.s3_desc")}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                    BRAND & IDENTITY SYSTEMS
                   </span>
                 </div>
-                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1 bg-white">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
-                      {t("about.s3_title")}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {t("about.s3_desc")}
-                    </p>
-                  </div>
-                  <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                      Brand & Identity Systems
-                    </span>
-                    <span className="text-gray-400 group-hover:text-[#0080c8] group-hover:translate-x-1 transition-all font-bold">
-                      →
-                    </span>
-                  </div>
-                </div>
               </div>
+
             </div>
 
-            {/* Bottom Banner Hubungi Kami */}
-            <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#0077b6] to-[#0091D7] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-8 shadow-xl">
-              <div>
-                <span className="text-xs font-bold tracking-widest uppercase text-cyan-200 block mb-2">
-                  {t("footer.lets_talk")}
-                </span>
-                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black">
-                  {lang === "en" ? "Ready to transform your brand?" : "Siap mentransformasi brand Anda?"}
-                </h4>
-              </div>
+            {/* Bottom Dark Blue Banner Persis Foto 2: "Ready to transform your brand?" */}
+            <div className="rounded-2xl px-8 py-5 sm:px-10 sm:py-6 bg-[#004780] text-white flex flex-row items-center justify-between gap-6 shadow-md">
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight">
+                {lang === "en" ? "Ready to transform your brand?" : "Siap mentransformasi brand Anda?"}
+              </h4>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#0077b6] font-bold text-base transition-all shadow-md shrink-0 self-start sm:self-auto"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white hover:bg-gray-100 text-[#004780] font-bold text-sm sm:text-base transition-all shadow-sm shrink-0"
               >
                 <span>{t("nav.contact")}</span>
                 <span>→</span>
