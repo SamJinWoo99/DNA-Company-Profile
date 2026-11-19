@@ -125,8 +125,15 @@ export default function AboutHeroMeta() {
             </h1>
 
             {/* SPASI ATAS BAWAH LEGA ANTARA JUDUL DAN PARAGRAF */}
-            <div className="mt-20 sm:mt-24 mb-24 sm:mb-28">
-              <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/90 font-normal leading-[2.1] sm:leading-[2.2] max-w-3xl tracking-normal">
+            <div style={{ marginTop: "70px", marginBottom: "80px" }}>
+              <p
+                className="text-white/90 font-normal max-w-3xl tracking-normal text-justify sm:text-left"
+                style={{
+                  fontSize: "clamp(1.05rem, 1.25vw, 1.2rem)",
+                  lineHeight: "2.3",
+                  letterSpacing: "0.01em",
+                }}
+              >
                 {lang === "en" ? (
                   <>
                     We are a creative brand and corporate communication consultancy based in South
@@ -146,8 +153,14 @@ export default function AboutHeroMeta() {
               </p>
             </div>
 
-            {/* 3 Metrik Prestasi: Jarak pt-16 sm:pt-20 ekstra lega dari garis pemisah ke angka */}
-            <div className="flex flex-row flex-nowrap items-center gap-12 sm:gap-16 pt-16 sm:pt-20 border-t border-white/20 w-fit max-w-full">
+            {/* 3 Metrik Prestasi: Spasi padding top 70px pasti renggang */}
+            <div
+              className="flex flex-row flex-nowrap items-center border-t border-white/20 w-fit max-w-full"
+              style={{
+                paddingTop: "65px",
+                gap: "clamp(2.5rem, 5vw, 4.5rem)",
+              }}
+            >
               <div className="shrink-0 flex flex-col">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-2">12+</span>
                 <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_exp")}</span>
