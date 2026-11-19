@@ -108,25 +108,25 @@ export default function AboutHeroMeta() {
           {/* Wadah Teks: Diberi max-w-4xl agar baris judul memanjang rapi persis Foto 2 */}
           <div className="relative z-10 w-full max-w-4xl">
             
-            {/* Headline Besar MetaDesign: 3 Baris Rapi Persis Foto 2 */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-black tracking-tight leading-[1.08] mb-12 text-white">
+            {/* Headline Besar MetaDesign: 3 Baris Rapi Persis Foto 2 dengan line-height dan margin lega */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-black tracking-tight leading-[1.2] mb-14 text-white">
               {lang === "en" ? (
                 <>
-                  We turn corporate<br />
-                  stories into powerful<br />
-                  visual identity
+                  <span className="block mb-2">We turn corporate</span>
+                  <span className="block mb-2">stories into powerful</span>
+                  <span className="block">visual identity</span>
                 </>
               ) : (
                 <>
-                  Mengubah cerita korporasi<br />
-                  menjadi identitas visual<br />
-                  yang berdaya
+                  <span className="block mb-2">Mengubah cerita korporasi</span>
+                  <span className="block mb-2">menjadi identitas visual</span>
+                  <span className="block">yang berdaya</span>
                 </>
               )}
             </h1>
 
-            {/* Paragraf: Lebar pas, font jernih, line-height 1.75 lega */}
-            <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/95 font-normal leading-[1.75] max-w-2xl mb-12">
+            {/* Paragraf: Lebar pas, font jernih, line-height 2.0 (sangat lega), margin bawah lega */}
+            <p className="text-base sm:text-lg lg:text-[1.125rem] text-white/90 font-normal leading-[2] sm:leading-[2.1] max-w-2xl mb-16 tracking-wide">
               {lang === "en" ? (
                 <>
                   We are a creative brand and corporate communication consultancy based in South
