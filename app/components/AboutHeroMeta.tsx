@@ -186,15 +186,15 @@ export default function AboutHeroMeta() {
         <section
           className="w-full bg-[#f8f9fa] border-t border-gray-200"
           style={{
-            paddingTop: "clamp(5rem, 8vh, 7rem)",
-            paddingBottom: "clamp(5rem, 8vh, 7rem)",
-            paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
-            paddingRight: "clamp(2rem, 5vw, 5.5rem)",
+            paddingTop: "clamp(6rem, 10vh, 8.5rem)",
+            paddingBottom: "clamp(6rem, 10vh, 8.5rem)",
+            paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
+            paddingRight: "clamp(2rem, 5vw, 5rem)",
           }}
         >
-          <div className="w-full max-w-6xl">
+          <div className="w-full max-w-5xl">
             {/* Header Visi & Misi */}
-            <div className="mb-14 pb-6 border-b border-gray-300">
+            <div className="mb-16 pb-8 border-b border-gray-200">
               <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
                 {t("about.v_subtitle")}
               </span>
@@ -204,12 +204,12 @@ export default function AboutHeroMeta() {
             </div>
 
             {/* 2 Kolom Visi & Misi: Rapi, Lega, Estetik */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
               {/* Box 1: Visi & Tujuan */}
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-6">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-8">
                     <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
                     <span>{t("about.v_purpose_badge")}</span>
                   </div>
@@ -218,12 +218,12 @@ export default function AboutHeroMeta() {
                     {t("about.v_vision_title")}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg text-justify font-normal">
+                  <p className="text-gray-600 leading-[1.85] text-base sm:text-lg font-normal">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
-                <div className="pt-8 mt-10 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-8 mt-12 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_vision_tag")}
                   </span>
@@ -232,9 +232,9 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Box 2: Misi & Nilai Utama */}
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-6">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-8">
                     <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
                     <span>{t("about.v_core_badge")}</span>
                   </div>
@@ -243,17 +243,17 @@ export default function AboutHeroMeta() {
                     {t("about.v_core_title")}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg mb-8 text-justify font-normal">
-                    <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>
+                  <p className="text-gray-600 leading-[1.85] text-base sm:text-lg mb-8 font-normal">
+                    <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
                     {t("about.v_core_desc")}
                   </p>
 
-                  <blockquote className="border-l-4 border-[#0080c8] pl-5 py-1 text-xl sm:text-2xl font-bold text-gray-900 italic">
+                  <blockquote className="border-l-4 border-[#0080c8] pl-5 py-2 text-xl sm:text-2xl font-bold text-gray-900 italic">
                     {t("about.v_core_quote")}
                   </blockquote>
                 </div>
 
-                <div className="pt-8 mt-10 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-8 mt-12 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_core_tag")}
                   </span>
@@ -271,15 +271,15 @@ export default function AboutHeroMeta() {
         <section
           className="w-full bg-white border-t border-gray-200"
           style={{
-            paddingTop: "clamp(5rem, 8vh, 7rem)",
-            paddingBottom: "clamp(6rem, 9vh, 8rem)",
-            paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
-            paddingRight: "clamp(2rem, 5vw, 5.5rem)",
+            paddingTop: "clamp(6rem, 10vh, 8.5rem)",
+            paddingBottom: "clamp(7rem, 12vh, 10rem)",
+            paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
+            paddingRight: "clamp(2rem, 5vw, 5rem)",
           }}
         >
-          <div className="w-full max-w-6xl">
+          <div className="w-full max-w-5xl">
             {/* Header Services */}
-            <div className="mb-14 pb-6 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="mb-16 pb-8 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
                 <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
                   {t("about.s_subtitle")}
@@ -296,7 +296,7 @@ export default function AboutHeroMeta() {
             </div>
 
             {/* 3 Kartu Layanan Unggulan */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-20">
               {/* Service 1 */}
               <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
                 <div>
