@@ -97,11 +97,11 @@ export default function AboutHeroMeta() {
         {/* HERO BIRU METADESIGN (Biru Solid Tanpa Background Pattern)              */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="relative w-full min-h-[92vh] flex flex-col justify-center text-white"
+          className="relative w-full min-h-screen flex flex-col justify-center text-white"
           style={{
             backgroundColor: "#0080c8",
-            paddingTop: "clamp(5rem, 8vh, 6.5rem)",
-            paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
+            paddingTop: "clamp(6.5rem, 12vh, 10rem)",
+            paddingBottom: "clamp(7rem, 14vh, 12rem)",
             paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
             paddingRight: "clamp(2rem, 5vw, 5.5rem)",
           }}
