@@ -181,7 +181,7 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* VISI & MISI (Sejajar Kiri dengan Hero, Jarak Kanan Aman & Lega)         */}
+        {/* VISI & MISI (Sejajar Kiri dengan Hero, Jarak Kanan Pas & Estetik)       */}
         {/* ----------------------------------------------------------------------- */}
         <section
           className="w-full bg-[#f8f9fa] border-t border-gray-200"
@@ -189,10 +189,10 @@ export default function AboutHeroMeta() {
             paddingTop: "clamp(6rem, 10vh, 8.5rem)",
             paddingBottom: "clamp(6rem, 10vh, 8.5rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(3rem, 6vw, 5.5rem)",
+            paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
-          <div className="w-full max-w-[1400px]">
+          <div className="w-full max-w-[1480px]">
             {/* Header Visi & Misi */}
             <div className="mb-16 pb-8 border-b border-gray-200">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
@@ -263,7 +263,7 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* SERVICES & EXPERTISE (Sejajar Kiri dengan Hero, Jarak Kanan Aman & Lega) */}
+        {/* SERVICES & EXPERTISE (Sejajar Kiri dengan Hero, Jarak Kanan Pas & Estetik) */}
         {/* ----------------------------------------------------------------------- */}
         <section
           className="w-full bg-white border-t border-gray-200"
@@ -271,10 +271,10 @@ export default function AboutHeroMeta() {
             paddingTop: "clamp(6rem, 10vh, 8.5rem)",
             paddingBottom: "clamp(7rem, 12vh, 10rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(3rem, 6vw, 5.5rem)",
+            paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
-          <div className="w-full max-w-[1400px]">
+          <div className="w-full max-w-[1480px]">
             {/* Header Services */}
             <div className="mb-16 pb-8 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
