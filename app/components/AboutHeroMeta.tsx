@@ -30,335 +30,323 @@ export default function AboutHeroMeta() {
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full flex flex-col bg-white overflow-hidden select-none"
+      className="relative w-full flex flex-col bg-white select-none"
     >
       {/* ========================================================================= */}
-      {/* CONTAINER DUA KOLOM:                                                      */}
-      {/* Kiri: Konten (Hero -> Visi & Misi -> Services)                            */}
-      {/* Kanan: Strip Foto Vertikal "Work" sticky mengikuti scroll sampai Service  */}
+      {/* 1. STRIP FOTO KANAN YANG TETAP MENEMPEL (FIXED) DARI HERO SAMPAI SERVICES */}
       {/* ========================================================================= */}
-      <div className="relative w-full flex flex-col lg:flex-row items-stretch">
+      <aside className="hidden lg:block fixed top-0 right-0 w-[12%] xl:w-[11%] h-screen bg-black z-30 select-none overflow-hidden">
+        <Link
+          href="/work"
+          className="relative w-full h-full block group cursor-pointer"
+          title="Explore Our Work"
+        >
+          {/* Carousel Slide Foto */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeSlide}
+              initial={{ opacity: 0, scale: 1.08 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={heroSlides[activeSlide].image}
+                alt={heroSlides[activeSlide].label}
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90"
+              />
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* TEKS VERTIKAL "WORK" SELALU DI TENGAH FOTO (PERSIS FOTO 2) */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40">
+            <span
+              className="text-base lg:text-lg font-bold tracking-[0.25em] text-white uppercase whitespace-nowrap drop-shadow-md select-none"
+              style={{
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+              }}
+            >
+              Work
+            </span>
+          </div>
+
+          {/* Dot Indicator di bagian bawah strip foto */}
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-1.5 z-40 pointer-events-none">
+            {heroSlides.map((_, idx) => (
+              <span
+                key={idx}
+                className={`h-1.5 rounded-full transition-all ${
+                  activeSlide === idx ? "w-4 bg-white" : "w-1.5 bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+        </Link>
+      </aside>
+
+      {/* ========================================================================= */}
+      {/* 2. AREA KONTEN KIRI: HERO, VISI & MISI, SERVICES                          */}
+      {/* (Diberi margin kanan pr-[12%] pada layar besar agar tidak tertutup strip) */}
+      {/* ========================================================================= */}
+      <div className="w-full lg:pr-[12%] xl:pr-[11%] flex flex-col">
         
-        {/* ======================================================================= */}
-        {/* KOLOM KIRI (LEBAR ~88%): SEMUA KONTEN TEKS & CARD                       */}
-        {/* ======================================================================= */}
-        <div className="w-full lg:w-[88%] xl:w-[89%] flex flex-col">
-          
-          {/* --------------------------------------------------------------------- */}
-          {/* 1. HERO BIRU METADESIGN (Warna biru solid bersih tanpa gambar pattern) */}
-          {/*    Teks dinaikkan ke atas, jarak baris tidak dempet / ada breathing room */}
-          {/* --------------------------------------------------------------------- */}
-          <section
-            className="relative w-full min-h-[92vh] flex flex-col justify-center text-white overflow-hidden"
-            style={{
-              backgroundColor: "#0080c8", // Biru solid murni tanpa background pattern
-              paddingTop: "clamp(5rem, 8vh, 6.5rem)",
-              paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
-              paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
-              paddingRight: "clamp(2rem, 5vw, 5.5rem)",
-            }}
-          >
-            <div className="relative z-10 max-w-4xl">
-              {/* Headline Besar MetaDesign: Spasi baris lega */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[4.75rem] font-black tracking-tight leading-[1.12] mb-10 text-white">
-                {lang === "en" ? (
-                  <>We turn corporate stories into powerful visual identity</>
-                ) : (
-                  <>Mengubah cerita korporasi menjadi identitas visual yang berdaya</>
-                )}
-              </h1>
+        {/* ----------------------------------------------------------------------- */}
+        {/* HERO BIRU METADESIGN (Biru Solid Tanpa Background Pattern)              */}
+        {/* ----------------------------------------------------------------------- */}
+        <section
+          className="relative w-full min-h-[92vh] flex flex-col justify-center text-white"
+          style={{
+            backgroundColor: "#0080c8",
+            paddingTop: "clamp(5rem, 8vh, 6.5rem)",
+            paddingBottom: "clamp(4.5rem, 7vh, 6rem)",
+            paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
+            paddingRight: "clamp(2rem, 5vw, 5.5rem)",
+          }}
+        >
+          <div className="relative z-10 max-w-4xl">
+            {/* Headline Besar MetaDesign */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[4.75rem] font-black tracking-tight leading-[1.12] mb-10 text-white">
+              {lang === "en" ? (
+                <>We turn corporate stories into powerful visual identity</>
+              ) : (
+                <>Mengubah cerita korporasi menjadi identitas visual yang berdaya</>
+              )}
+            </h1>
 
-              {/* Paragraf: Jarak antar kalimat & line height lega agar tidak menempel */}
-              <p className="text-base sm:text-lg lg:text-[1.2rem] text-white/95 font-normal leading-[1.75] max-w-3xl mb-14">
-                {lang === "en" ? (
-                  <>
-                    We are a creative brand and corporate communication consultancy based in South Jakarta.
-                    Since 2013, we have been collaborating with leading State-Owned Enterprises (BUMN),
-                    ministries, and multinational corporations to solve brand, publication, and annual report challenges
-                    with award-winning design excellence.
-                  </>
-                ) : (
-                  <>
-                    Kami adalah konsultan brand kreatif dan komunikasi korporat berbasis di Jakarta Selatan.
-                    Sejak 2013, kami bermitra dengan puluhan BUMN terkemuka, kementerian, dan korporasi multinasional
-                    dalam menyelesaikan tantangan branding, desain publikasi, serta laporan tahunan dengan standar keunggulan global.
-                  </>
-                )}
-              </p>
+            {/* Paragraf: Jeda & Line Height Lega */}
+            <p className="text-base sm:text-lg lg:text-[1.2rem] text-white/95 font-normal leading-[1.75] max-w-3xl mb-14">
+              {lang === "en" ? (
+                <>
+                  We are a creative brand and corporate communication consultancy based in South Jakarta.
+                  Since 2013, we have been collaborating with leading State-Owned Enterprises (BUMN),
+                  ministries, and multinational corporations to solve brand, publication, and annual report challenges
+                  with award-winning design excellence.
+                </>
+              ) : (
+                <>
+                  Kami adalah konsultan brand kreatif dan komunikasi korporat berbasis di Jakarta Selatan.
+                  Sejak 2013, kami bermitra dengan puluhan BUMN terkemuka, kementerian, dan korporasi multinasional
+                  dalam menyelesaikan tantangan branding, desain publikasi, serta laporan tahunan dengan standar keunggulan global.
+                </>
+              )}
+            </p>
 
-              {/* 3 Metrik Prestasi: Diberi margin top dan padding yang lega */}
-              <div className="flex flex-wrap items-center gap-10 pt-8 border-t border-white/25 max-w-xl">
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">12+</div>
-                  <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_exp")}</div>
-                </div>
-                <div className="w-[1px] h-9 bg-white/25" />
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">200+</div>
-                  <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_proj")}</div>
-                </div>
-                <div className="w-[1px] h-9 bg-white/25" />
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">30+</div>
-                  <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_awards")}</div>
-                </div>
+            {/* 3 Metrik Prestasi */}
+            <div className="flex flex-wrap items-center gap-10 pt-8 border-t border-white/25 max-w-xl">
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-white mb-1">12+</div>
+                <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_exp")}</div>
+              </div>
+              <div className="w-[1px] h-9 bg-white/25" />
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-white mb-1">200+</div>
+                <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_proj")}</div>
+              </div>
+              <div className="w-[1px] h-9 bg-white/25" />
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-white mb-1">30+</div>
+                <div className="text-xs uppercase tracking-wider text-white/80">{t("about.metric_awards")}</div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* --------------------------------------------------------------------- */}
-          {/* 2. VISI & MISI (Dirapikan, jarak antar kalimat & align estetik)         */}
-          {/* --------------------------------------------------------------------- */}
-          <section
-            className="w-full bg-[#f8f9fa] border-t border-gray-200"
-            style={{
-              paddingTop: "clamp(5rem, 8vh, 7rem)",
-              paddingBottom: "clamp(5rem, 8vh, 7rem)",
-              paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
-              paddingRight: "clamp(2rem, 5vw, 5.5rem)",
-            }}
-          >
-            <div className="w-full max-w-6xl">
-              {/* Header Visi & Misi */}
-              <div className="mb-14 pb-6 border-b border-gray-300">
+        {/* ----------------------------------------------------------------------- */}
+        {/* VISI & MISI (Layout Rapi, Estetik, Jarak Lega)                          */}
+        {/* ----------------------------------------------------------------------- */}
+        <section
+          className="w-full bg-[#f8f9fa] border-t border-gray-200"
+          style={{
+            paddingTop: "clamp(5rem, 8vh, 7rem)",
+            paddingBottom: "clamp(5rem, 8vh, 7rem)",
+            paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
+            paddingRight: "clamp(2rem, 5vw, 5.5rem)",
+          }}
+        >
+          <div className="w-full max-w-6xl">
+            {/* Header Visi & Misi */}
+            <div className="mb-14 pb-6 border-b border-gray-300">
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
+                {t("about.v_subtitle")}
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
+                {t("about.v_title")}
+              </h2>
+            </div>
+
+            {/* 2 Kolom Visi & Misi: Rapi, Lega, Estetik */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+              
+              {/* Box 1: Visi & Tujuan */}
+              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-6">
+                    <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
+                    <span>{t("about.v_purpose_badge")}</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                    {t("about.v_vision_title")}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg text-justify font-normal">
+                    {t("about.v_vision_desc")}
+                  </p>
+                </div>
+
+                <div className="pt-8 mt-10 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
+                    {t("about.v_vision_tag")}
+                  </span>
+                  <span className="text-lg font-bold text-[#0080c8]">01</span>
+                </div>
+              </div>
+
+              {/* Box 2: Misi & Nilai Utama */}
+              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-6">
+                    <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
+                    <span>{t("about.v_core_badge")}</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                    {t("about.v_core_title")}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg mb-8 text-justify font-normal">
+                    <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>
+                    {t("about.v_core_desc")}
+                  </p>
+
+                  <blockquote className="border-l-4 border-[#0080c8] pl-5 py-1 text-xl sm:text-2xl font-bold text-gray-900 italic">
+                    {t("about.v_core_quote")}
+                  </blockquote>
+                </div>
+
+                <div className="pt-8 mt-10 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
+                    {t("about.v_core_tag")}
+                  </span>
+                  <span className="text-lg font-bold text-[#0080c8]">02</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ----------------------------------------------------------------------- */}
+        {/* SERVICES & EXPERTISE (Layanan DNA Komunika)                             */}
+        {/* ----------------------------------------------------------------------- */}
+        <section
+          className="w-full bg-white border-t border-gray-200"
+          style={{
+            paddingTop: "clamp(5rem, 8vh, 7rem)",
+            paddingBottom: "clamp(6rem, 9vh, 8rem)",
+            paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
+            paddingRight: "clamp(2rem, 5vw, 5.5rem)",
+          }}
+        >
+          <div className="w-full max-w-6xl">
+            {/* Header Services */}
+            <div className="mb-14 pb-6 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div>
                 <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
-                  {t("about.v_subtitle")}
+                  {t("about.s_subtitle")}
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
-                  {t("about.v_title")}
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight">
+                  {t("about.s_title")}
                 </h2>
               </div>
+              <p className="text-gray-500 max-w-md text-sm sm:text-base leading-relaxed">
+                {lang === "en"
+                  ? "Delivering specialized publication and brand consulting solutions tailored for high-profile corporations."
+                  : "Menghadirkan solusi publikasi dan konsultasi brand terpadu bagi korporasi dan institusi ternama."}
+              </p>
+            </div>
 
-              {/* 2 Kolom Visi & Misi: Rapi, Lega, Estetik */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-                
-                {/* Box 1: Visi & Tujuan */}
-                <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-6">
-                      <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
-                      <span>{t("about.v_purpose_badge")}</span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
-                      {t("about.v_vision_title")}
-                    </h3>
-
-                    <p className="text-gray-600 leading-relaxed text-base sm:text-lg text-justify font-normal">
-                      {t("about.v_vision_desc")}
-                    </p>
-                  </div>
-
-                  <div className="pt-8 mt-10 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
-                      {t("about.v_vision_tag")}
-                    </span>
-                    <span className="text-lg font-bold text-[#0080c8]">01</span>
-                  </div>
+            {/* 3 Kartu Layanan Unggulan */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              {/* Service 1 */}
+              <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div>
+                  <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
+                    01
+                  </span>
+                  <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
+                    {t("about.s1_title")}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                    {t("about.s1_desc")}
+                  </p>
                 </div>
-
-                {/* Box 2: Misi & Nilai Utama */}
-                <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0080c8] text-xs font-bold uppercase tracking-wider mb-6">
-                      <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
-                      <span>{t("about.v_core_badge")}</span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
-                      {t("about.v_core_title")}
-                    </h3>
-
-                    <p className="text-gray-600 leading-relaxed text-base sm:text-lg mb-8 text-justify font-normal">
-                      <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>
-                      {t("about.v_core_desc")}
-                    </p>
-
-                    <blockquote className="border-l-4 border-[#0080c8] pl-5 py-1 text-xl sm:text-2xl font-bold text-gray-900 italic">
-                      {t("about.v_core_quote")}
-                    </blockquote>
-                  </div>
-
-                  <div className="pt-8 mt-10 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
-                      {t("about.v_core_tag")}
-                    </span>
-                    <span className="text-lg font-bold text-[#0080c8]">02</span>
-                  </div>
+                <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                  Annual & ESG Reports
                 </div>
+              </div>
 
+              {/* Service 2 */}
+              <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div>
+                  <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
+                    02
+                  </span>
+                  <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
+                    {t("about.s2_title")}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                    {t("about.s2_desc")}
+                  </p>
+                </div>
+                <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                  Corporate Publication
+                </div>
+              </div>
+
+              {/* Service 3 */}
+              <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div>
+                  <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
+                    03
+                  </span>
+                  <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
+                    {t("about.s3_title")}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                    {t("about.s3_desc")}
+                  </p>
+                </div>
+                <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                  Brand & Identity Systems
+                </div>
               </div>
             </div>
-          </section>
 
-          {/* --------------------------------------------------------------------- */}
-          {/* 3. SERVICES & EXPERTISE (Diberi jarak nyaman & tidak tumpang tindih)    */}
-          {/* --------------------------------------------------------------------- */}
-          <section
-            className="w-full bg-white border-t border-gray-200"
-            style={{
-              paddingTop: "clamp(5rem, 8vh, 7rem)",
-              paddingBottom: "clamp(6rem, 9vh, 8rem)",
-              paddingLeft: "clamp(2rem, 6vw, 6.5rem)",
-              paddingRight: "clamp(2rem, 5vw, 5.5rem)",
-            }}
-          >
-            <div className="w-full max-w-6xl">
-              {/* Header Services */}
-              <div className="mb-14 pb-6 border-b border-gray-200 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                  <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0080c8] block mb-3">
-                    {t("about.s_subtitle")}
-                  </span>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight">
-                    {t("about.s_title")}
-                  </h2>
-                </div>
-                <p className="text-gray-500 max-w-md text-sm sm:text-base leading-relaxed">
-                  {lang === "en"
-                    ? "Delivering specialized publication and brand consulting solutions tailored for high-profile corporations."
-                    : "Menghadirkan solusi publikasi dan konsultasi brand terpadu bagi korporasi dan institusi ternama."}
-                </p>
-              </div>
-
-              {/* 3 Kartu Layanan Unggulan */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-                {/* Service 1 */}
-                <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
-                  <div>
-                    <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
-                      01
-                    </span>
-                    <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
-                      {t("about.s1_title")}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {t("about.s1_desc")}
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                    Annual & ESG Reports
-                  </div>
-                </div>
-
-                {/* Service 2 */}
-                <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
-                  <div>
-                    <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
-                      02
-                    </span>
-                    <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
-                      {t("about.s2_title")}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {t("about.s2_desc")}
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                    Corporate Publication
-                  </div>
-                </div>
-
-                {/* Service 3 */}
-                <div className="bg-[#f8f9fa] border border-gray-200 rounded-3xl p-8 sm:p-10 hover:border-[#0080c8] hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between group">
-                  <div>
-                    <span className="text-4xl font-black text-gray-300 group-hover:text-[#0080c8] transition-colors block mb-6 font-mono">
-                      03
-                    </span>
-                    <h3 className="text-2xl font-black text-gray-950 mb-4 leading-snug">
-                      {t("about.s3_title")}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {t("about.s3_desc")}
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-gray-200 text-xs font-bold text-[#0080c8] uppercase tracking-wider">
-                    Brand & Identity Systems
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Banner Hubungi Kami */}
-              <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#0077b6] to-[#0091D7] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-8 shadow-xl">
-                <div>
-                  <span className="text-xs font-bold tracking-widest uppercase text-cyan-200 block mb-2">
-                    {t("footer.lets_talk")}
-                  </span>
-                  <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black">
-                    {lang === "en" ? "Ready to transform your brand?" : "Siap mentransformasi brand Anda?"}
-                  </h4>
-                </div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#0077b6] font-bold text-base transition-all shadow-md shrink-0 self-start sm:self-auto"
-                >
-                  <span>{t("nav.contact")}</span>
-                  <span>→</span>
-                </Link>
-              </div>
-
-            </div>
-          </section>
-
-        </div>
-
-        {/* ======================================================================= */}
-        {/* KOLOM KANAN (~11%): STRIP FOTO STICKY MENEMPEL & MENGIKUTI SCROLL       */}
-        {/* Menggunakan position: fixed atau sticky murni sampai bawah               */}
-        {/* ======================================================================= */}
-        <aside className="w-full lg:w-[12%] xl:w-[11%] relative bg-black shrink-0 self-stretch">
-          <div className="sticky top-0 h-[320px] lg:h-screen w-full overflow-hidden select-none z-30">
-            <Link
-              href="/work"
-              className="relative w-full h-full block group cursor-pointer"
-              title="Explore Our Work"
-            >
-              {/* Carousel Slide Foto */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeSlide}
-                  initial={{ opacity: 0, scale: 1.08 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.8 }}
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <img
-                    src={heroSlides[activeSlide].image}
-                    alt={heroSlides[activeSlide].label}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90"
-                  />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Teks Vertikal "Work" persis MetaDesign - Posisi persis di tengah viewport layar */}
-              <div className="fixed lg:absolute inset-y-0 right-0 w-[12%] xl:w-[11%] flex items-center justify-center pointer-events-none z-40">
-                <span
-                  className="text-base lg:text-lg font-bold tracking-[0.2em] text-white uppercase whitespace-nowrap drop-shadow-md"
-                  style={{
-                    writingMode: "vertical-rl",
-                    transform: "rotate(180deg)",
-                  }}
-                >
-                  Work
+            {/* Bottom Banner Hubungi Kami */}
+            <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#0077b6] to-[#0091D7] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-8 shadow-xl">
+              <div>
+                <span className="text-xs font-bold tracking-widest uppercase text-cyan-200 block mb-2">
+                  {t("footer.lets_talk")}
                 </span>
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black">
+                  {lang === "en" ? "Ready to transform your brand?" : "Siap mentransformasi brand Anda?"}
+                </h4>
               </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#0077b6] font-bold text-base transition-all shadow-md shrink-0 self-start sm:self-auto"
+              >
+                <span>{t("nav.contact")}</span>
+                <span>→</span>
+              </Link>
+            </div>
 
-              {/* Dot Indicator di bagian bawah strip foto */}
-              <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-1.5 z-40 pointer-events-none">
-                {heroSlides.map((_, idx) => (
-                  <span
-                    key={idx}
-                    className={`h-1.5 rounded-full transition-all ${
-                      activeSlide === idx ? "w-4 bg-white" : "w-1.5 bg-white/40"
-                    }`}
-                  />
-                ))}
-              </div>
-            </Link>
           </div>
-        </aside>
+        </section>
 
       </div>
     </motion.div>
