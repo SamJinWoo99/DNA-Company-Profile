@@ -145,21 +145,21 @@ export default function AboutHeroMeta() {
               )}
             </p>
 
-            {/* 3 Metrik Prestasi: flex-nowrap agar 3 kolom sejajar mendatar (TIDAK TURUN KE BAWAH) */}
-            <div className="flex flex-nowrap items-center gap-12 sm:gap-14 pt-8 border-t border-white/20 w-fit">
-              <div className="shrink-0">
-                <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">12+</div>
-                <div className="text-xs uppercase tracking-wider text-white/75 font-medium whitespace-nowrap">{t("about.metric_exp")}</div>
+            {/* 3 Metrik Prestasi: flex-row nowrap dengan gap lega agar selalu sejajar mendatar */}
+            <div className="flex flex-row flex-nowrap items-center gap-10 sm:gap-14 pt-10 border-t border-white/20 w-fit max-w-full">
+              <div className="shrink-0 flex flex-col">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-1">12+</span>
+                <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_exp")}</span>
               </div>
-              <div className="w-[1px] h-9 bg-white/20 shrink-0" />
-              <div className="shrink-0">
-                <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">200+</div>
-                <div className="text-xs uppercase tracking-wider text-white/75 font-medium whitespace-nowrap">{t("about.metric_proj")}</div>
+              <div className="w-[1px] h-10 bg-white/20 shrink-0" />
+              <div className="shrink-0 flex flex-col">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-1">200+</span>
+                <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_proj")}</span>
               </div>
-              <div className="w-[1px] h-9 bg-white/20 shrink-0" />
-              <div className="shrink-0">
-                <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">30+</div>
-                <div className="text-xs uppercase tracking-wider text-white/75 font-medium whitespace-nowrap">{t("about.metric_awards")}</div>
+              <div className="w-[1px] h-10 bg-white/20 shrink-0" />
+              <div className="shrink-0 flex flex-col">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-1">30+</span>
+                <span className="text-xs uppercase tracking-wider text-white/75 font-semibold whitespace-nowrap">{t("about.metric_awards")}</span>
               </div>
             </div>
 
