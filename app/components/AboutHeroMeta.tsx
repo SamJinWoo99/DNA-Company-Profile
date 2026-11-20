@@ -199,7 +199,7 @@ export default function AboutHeroMeta() {
               {/* Kolom Kiri: Teks Vision & Purpose + Core Values (DIBESARKAN) */}
               <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
                 {/* 1. Vision & Purpose */}
-                <div className="mb-14 sm:mb-20">
+                <div className="mb-20 sm:mb-28 lg:mb-32">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-5 sm:mb-6">
                     {t("about.v_vision_title")}
                   </h2>
