@@ -194,7 +194,7 @@ export default function AboutHeroMeta() {
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Visi & Misi */}
-            <div className="mb-8">
+            <div className="mb-14 sm:mb-16">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                 {t("about.v_title")}
               </h2>
