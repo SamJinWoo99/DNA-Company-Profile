@@ -274,10 +274,6 @@ export default function AboutHeroMeta() {
           </div>
         </section>
 
-            </div>
-          </div>
-        </section>
-
         {/* ----------------------------------------------------------------------- */}
         {/* SERVICES & EXPERTISE (Slide 3: Layar Penuh Mandiri di Bawahnya)         */}
         {/* ----------------------------------------------------------------------- */}
