@@ -244,17 +244,17 @@ export default function AboutHeroMeta() {
         {/* SERVICES & EXPERTISE (Slide 3: Layar Penuh Mandiri di Bawahnya)         */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full min-h-screen bg-white border-t border-gray-200 flex flex-col justify-start"
+          className="w-full min-h-screen bg-white border-t border-gray-200 flex flex-col justify-center"
           style={{
-            paddingTop: "clamp(4.5rem, 8vh, 7rem)",
-            paddingBottom: "clamp(5rem, 10vh, 8rem)",
+            paddingTop: "clamp(5rem, 10vh, 8rem)",
+            paddingBottom: "clamp(6rem, 12vh, 10rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
           <div className="w-full max-w-[1450px]">
-            {/* Header Services (Dinaikkan ke atas dengan margin bawah ekstra) */}
-            <div className="mb-20 sm:mb-24 lg:mb-28">
+            {/* Header Services (Dinaikkan posisinya ke atas dengan margin bawah besar ke shape) */}
+            <div style={{ marginBottom: "56px" }}>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight">
                 {t("about.s_title")}
               </h2>
