@@ -196,28 +196,32 @@ export default function AboutHeroMeta() {
             {/* Grid 2 Kolom: Kiri Teks Vision & Core Values, Kanan Ilustrasi Laptop */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               
-              {/* Kolom Kiri: Teks Vision & Purpose + Core Values (DIBESARKAN) */}
+              {/* Kolom Kiri: Teks Vision & Purpose + Core Values */}
               <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
                 {/* 1. Vision & Purpose */}
-                <div className="mb-20 sm:mb-28 lg:mb-32">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-5 sm:mb-6">
+                <div style={{ marginBottom: "56px" }}>
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-6">
                     {t("about.v_vision_title")}
                   </h2>
-                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
-                    {t("about.v_vision_desc")}
-                  </p>
+                  <div style={{ marginTop: "24px", marginBottom: "36px" }}>
+                    <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.9] max-w-2xl">
+                      {t("about.v_vision_desc")}
+                    </p>
+                  </div>
                 </div>
 
                 {/* 2. Core Values */}
                 <div>
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-5 sm:mb-6">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-6">
                     {t("about.v_core_title")}
                   </h2>
-                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
-                    <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
-                    {t("about.v_core_desc")}{" "}
-                    <span className="text-gray-900 font-medium">({t("about.v_core_quote")}).</span>
-                  </p>
+                  <div style={{ marginTop: "24px" }}>
+                    <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.9] max-w-2xl">
+                      <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
+                      {t("about.v_core_desc")}{" "}
+                      <span className="text-gray-900 font-medium">({t("about.v_core_quote")}).</span>
+                    </p>
+                  </div>
                 </div>
               </div>
 
