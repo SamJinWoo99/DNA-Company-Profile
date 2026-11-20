@@ -197,36 +197,37 @@ export default function AboutHeroMeta() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
               {/* Kolom Kiri: Teks Vision & Purpose + Core Values */}
-              <div className="lg:col-span-7 flex flex-col">
+              <div className="lg:col-span-7 flex flex-col justify-center pr-0 lg:pr-8">
                 {/* 1. Vision & Purpose */}
-                <div className="mb-14 sm:mb-16">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight mb-6">
+                <div className="mb-12 sm:mb-16">
+                  <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-gray-950 tracking-tight leading-tight mb-4 sm:mb-5">
                     {t("about.v_vision_title")}
                   </h2>
-                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
+                  <p className="text-gray-600 text-base sm:text-lg lg:text-xl font-normal leading-[1.85] max-w-xl">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
                 {/* 2. Core Values */}
                 <div>
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight mb-6">
+                  <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-gray-950 tracking-tight leading-tight mb-4 sm:mb-5">
                     {t("about.v_core_title")}
                   </h2>
-                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
+                  <p className="text-gray-600 text-base sm:text-lg lg:text-xl font-normal leading-[1.85] max-w-xl">
                     <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
-                    {t("about.v_core_desc")} ({t("about.v_core_quote")}).
+                    {t("about.v_core_desc")}{" "}
+                    <span className="text-gray-900 font-medium">({t("about.v_core_quote")}).</span>
                   </p>
                 </div>
               </div>
 
-              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika */}
+              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika Baru */}
               <div className="lg:col-span-5 flex items-center justify-center">
-                <div className="relative w-full max-w-[480px] lg:max-w-none flex items-center justify-center">
+                <div className="relative w-full max-w-[540px] flex items-center justify-center">
                   <img
-                    src="/laptop-dna-illustration.png"
+                    src="/dna-laptop-illustration.png"
                     alt="DNA Komunika Vision & Purpose"
-                    className="w-full h-auto max-h-[460px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
