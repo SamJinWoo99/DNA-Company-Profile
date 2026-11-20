@@ -189,10 +189,10 @@ export default function AboutHeroMeta() {
             paddingTop: "clamp(6rem, 12vh, 10rem)",
             paddingBottom: "clamp(6rem, 12vh, 10rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(3.5rem, 8vw, 7rem)",
+            paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
-          <div className="w-full max-w-[1300px]">
+          <div className="w-full max-w-[1450px]">
             {/* Header Visi & Misi */}
             <div className="mb-14">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
@@ -287,10 +287,10 @@ export default function AboutHeroMeta() {
             paddingTop: "clamp(6rem, 12vh, 10rem)",
             paddingBottom: "clamp(7rem, 14vh, 12rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(3.5rem, 8vw, 7rem)",
+            paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
-          <div className="w-full max-w-[1300px]">
+          <div className="w-full max-w-[1450px]">
             {/* Header Services */}
             <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
