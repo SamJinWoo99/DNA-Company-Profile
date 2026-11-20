@@ -274,22 +274,22 @@ export default function AboutHeroMeta() {
                     <img
                       src="/about-service-annual-report.png"
                       alt="Annual & Sustainability Reports"
-                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 mx-auto"
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug text-center">
                     {t("about.s1_title")}
                   </h3>
                   <div style={{ marginTop: "12px", marginBottom: "28px" }}>
-                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base">
+                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base text-justify sm:text-center">
                       {t("about.s1_desc")}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
-                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-center mt-auto">
+                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     ANNUAL & ESG REPORTS
                   </span>
                 </div>
@@ -310,18 +310,18 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug text-center">
                     {t("about.s2_title")}
                   </h3>
                   <div style={{ marginTop: "12px", marginBottom: "28px" }}>
-                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base">
+                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base text-justify sm:text-center">
                       {t("about.s2_desc")}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
-                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-center mt-auto">
+                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     CORPORATE PUBLICATION
                   </span>
                 </div>
@@ -338,22 +338,22 @@ export default function AboutHeroMeta() {
                     <img
                       src="/about-service-branding.png"
                       alt="Corporate Branding & Collateral"
-                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 mx-auto"
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug text-center">
                     {t("about.s3_title")}
                   </h3>
                   <div style={{ marginTop: "12px", marginBottom: "28px" }}>
-                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base">
+                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base text-justify sm:text-center">
                       {t("about.s3_desc")}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
-                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-center mt-auto">
+                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     BRAND & IDENTITY SYSTEMS
                   </span>
                 </div>
