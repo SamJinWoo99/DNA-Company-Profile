@@ -204,13 +204,13 @@ export default function AboutHeroMeta() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
               {/* Box 1: Vision & Purpose */}
-              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 {/* Top Subtle Border Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
 
                 <div>
                   {/* Top Bar: Badge & Big Watermark 01 */}
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="inline-flex items-center gap-2 text-[#0080c8] text-xs font-bold uppercase tracking-wider">
                       <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
                       <span>{t("about.v_purpose_badge")}</span>
@@ -220,16 +220,16 @@ export default function AboutHeroMeta() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.v_vision_title")}
                   </h3>
 
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[2] sm:leading-[2.1] tracking-normal mb-8">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base font-normal">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 mt-8 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_vision_tag")}
                   </span>
@@ -237,13 +237,13 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Box 2: Core Values */}
-              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 {/* Top Subtle Border Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
 
                 <div>
                   {/* Top Bar: Badge & Big Watermark 02 */}
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="inline-flex items-center gap-2 text-[#0080c8] text-xs font-bold uppercase tracking-wider">
                       <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
                       <span>{t("about.v_core_badge")}</span>
@@ -253,21 +253,21 @@ export default function AboutHeroMeta() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.v_core_title")}
                   </h3>
 
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[2] sm:leading-[2.1] tracking-normal mb-8">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6 font-normal">
                     <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
                     {t("about.v_core_desc")}
                   </p>
 
-                  <blockquote className="border-l-4 border-[#0080c8] pl-5 py-2 text-xl sm:text-2xl font-bold text-gray-900 italic my-6">
+                  <blockquote className="border-l-4 border-[#0080c8] pl-4 py-1 text-lg sm:text-xl font-bold text-gray-900 italic">
                     {t("about.v_core_quote")}
                   </blockquote>
                 </div>
 
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 mt-8 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_core_tag")}
                   </span>
@@ -323,15 +323,15 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
                     {t("about.s1_title")}
                   </h3>
-                  <p className="text-gray-600 leading-[1.8] text-sm sm:text-base mb-8">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
                     {t("about.s1_desc")}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
                     ANNUAL & ESG REPORTS
                   </span>
@@ -339,7 +339,7 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Service 2: Calendar Design */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-5 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div>
                   {/* Foto Mockup Box */}
                   <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#4b6572] p-6 flex items-center justify-center overflow-hidden mb-6">
@@ -353,15 +353,15 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
                     {t("about.s2_title")}
                   </h3>
-                  <p className="text-gray-600 leading-[1.8] text-sm sm:text-base mb-8">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
                     {t("about.s2_desc")}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
                     CORPORATE PUBLICATION
                   </span>
@@ -369,7 +369,7 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Service 3: Corporate Branding & Collateral */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-5 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div>
                   {/* Foto Mockup Box */}
                   <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#9e0c15] p-6 flex items-center justify-center overflow-hidden mb-6">
@@ -383,15 +383,15 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
                     {t("about.s3_title")}
                   </h3>
-                  <p className="text-gray-600 leading-[1.8] text-sm sm:text-base mb-8">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
                     {t("about.s3_desc")}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
                     BRAND & IDENTITY SYSTEMS
                   </span>
