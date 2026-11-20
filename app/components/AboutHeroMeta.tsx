@@ -254,13 +254,13 @@ export default function AboutHeroMeta() {
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Services */}
-            <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="mb-14 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight">
                   {t("about.s_title")}
                 </h2>
               </div>
-              <p className="text-gray-500 max-w-lg text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-500 max-w-lg text-base sm:text-lg leading-relaxed">
                 {lang === "en"
                   ? "Delivering specialized publication and brand consulting solutions tailored for high-profile corporations."
                   : "Menghadirkan solusi publikasi dan konsultasi brand terpadu bagi korporasi dan institusi ternama."}
@@ -268,13 +268,13 @@ export default function AboutHeroMeta() {
             </div>
 
             {/* 3 Kartu Layanan Unggulan Persis Foto 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-14 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-16 sm:mb-20 items-stretch">
               
               {/* Service 1: Annual & Sustainability Reports */}
-              <div className="bg-white rounded-3xl p-5 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div>
                   {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-6">
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-8">
                     <span className="absolute top-4 left-4 text-xs font-mono font-bold text-gray-400">
                       01
                     </span>
@@ -288,12 +288,14 @@ export default function AboutHeroMeta() {
                   <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.s1_title")}
                   </h3>
-                  <p className="text-gray-600 leading-[1.8] text-sm sm:text-base mb-8">
-                    {t("about.s1_desc")}
-                  </p>
+                  <div style={{ marginTop: "12px", marginBottom: "28px" }}>
+                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base">
+                      {t("about.s1_desc")}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
                     ANNUAL & ESG REPORTS
                   </span>
@@ -301,10 +303,10 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Service 2: Calendar Design */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div>
                   {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-6">
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-8">
                     <span className="absolute top-4 left-4 text-xs font-mono font-bold text-gray-400">
                       02
                     </span>
@@ -318,12 +320,14 @@ export default function AboutHeroMeta() {
                   <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.s2_title")}
                   </h3>
-                  <p className="text-gray-600 leading-[1.8] text-sm sm:text-base mb-8">
-                    {t("about.s2_desc")}
-                  </p>
+                  <div style={{ marginTop: "12px", marginBottom: "28px" }}>
+                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base">
+                      {t("about.s2_desc")}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
                     CORPORATE PUBLICATION
                   </span>
@@ -331,10 +335,10 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Service 3: Corporate Branding & Collateral */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div>
                   {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#9e0c15] p-6 flex items-center justify-center overflow-hidden mb-6">
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#9e0c15] p-6 flex items-center justify-center overflow-hidden mb-8">
                     <span className="absolute top-4 left-4 text-xs font-mono font-bold text-white/70">
                       03
                     </span>
@@ -348,12 +352,14 @@ export default function AboutHeroMeta() {
                   <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.s3_title")}
                   </h3>
-                  <p className="text-gray-600 leading-[1.8] text-sm sm:text-base mb-8">
-                    {t("about.s3_desc")}
-                  </p>
+                  <div style={{ marginTop: "12px", marginBottom: "28px" }}>
+                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base">
+                      {t("about.s3_desc")}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider">
                     BRAND & IDENTITY SYSTEMS
                   </span>
@@ -363,7 +369,7 @@ export default function AboutHeroMeta() {
             </div>
 
             {/* Bottom Dark Blue Banner Persis Foto 2: "Ready to transform your brand?" */}
-            <div className="rounded-2xl px-8 py-5 sm:px-10 sm:py-6 bg-[#004780] text-white flex flex-row items-center justify-between gap-6 shadow-md">
+            <div className="rounded-2xl px-8 py-6 sm:px-12 sm:py-7 bg-[#004780] text-white flex flex-row items-center justify-between gap-6 shadow-md mt-4">
               <h4 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight">
                 {lang === "en" ? "Ready to transform your brand?" : "Siap mentransformasi brand Anda?"}
               </h4>
