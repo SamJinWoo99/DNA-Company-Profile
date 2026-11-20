@@ -181,10 +181,10 @@ export default function AboutHeroMeta() {
         </section>
 
         {/* ----------------------------------------------------------------------- */}
-        {/* VISI & MISI (Slide 2: Layar Penuh Mandiri - Jauh dari Services)         */}
+        {/* VISI & MISI (Slide 2: Layar Penuh Mandiri - Sesuai Desain Laptop Acuan) */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-center"
+          className="w-full min-h-screen bg-white border-t border-gray-200 flex flex-col justify-center"
           style={{
             paddingTop: "clamp(6rem, 12vh, 10rem)",
             paddingBottom: "clamp(6rem, 12vh, 10rem)",
@@ -193,80 +193,41 @@ export default function AboutHeroMeta() {
           }}
         >
           <div className="w-full max-w-[1450px]">
-            {/* Header Visi & Misi */}
-            <div className="mb-14 sm:mb-20">
-              <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
-                {t("about.v_title")}
-              </h2>
-            </div>
-
-            {/* 2 Kolom Visi & Misi Persis Foto 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mt-4">
-
-              {/* Box 1: Vision & Purpose */}
-              <div className="bg-white rounded-3xl p-10 sm:p-14 border border-gray-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
-                <div className="flex flex-col">
-                  {/* Top Bar: Badge & Big Watermark 01 */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="inline-flex items-center gap-2.5 text-[#0080c8] text-xs sm:text-sm font-bold uppercase tracking-wider">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#0080c8]" />
-                      <span>{t("about.v_purpose_badge")}</span>
-                    </div>
-                    <span className="text-6xl sm:text-7xl font-black text-gray-200/80 font-mono select-none leading-none">
-                      01
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-950 mb-6 leading-snug">
+            {/* Grid 2 Kolom: Kiri Teks Vision & Core Values, Kanan Ilustrasi Laptop */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* Kolom Kiri: Teks Vision & Purpose + Core Values */}
+              <div className="lg:col-span-7 flex flex-col">
+                {/* 1. Vision & Purpose */}
+                <div className="mb-14 sm:mb-16">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight mb-6">
                     {t("about.v_vision_title")}
-                  </h3>
-
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[1.9] tracking-normal mb-8">
+                  </h2>
+                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between mt-auto">
-                  <span className="text-xs sm:text-sm font-bold tracking-wider text-gray-400 uppercase">
-                    {t("about.v_vision_tag")}
-                  </span>
+                {/* 2. Core Values */}
+                <div>
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight mb-6">
+                    {t("about.v_core_title")}
+                  </h2>
+                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
+                    <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
+                    {t("about.v_core_desc")} ({t("about.v_core_quote")}).
+                  </p>
                 </div>
               </div>
 
-              {/* Box 2: Core Values */}
-              <div className="bg-white rounded-3xl p-10 sm:p-14 border border-gray-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
-                <div className="flex flex-col">
-                  {/* Top Bar: Badge & Big Watermark 02 */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="inline-flex items-center gap-2.5 text-[#0080c8] text-xs sm:text-sm font-bold uppercase tracking-wider">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#0080c8]" />
-                      <span>{t("about.v_core_badge")}</span>
-                    </div>
-                    <span className="text-6xl sm:text-7xl font-black text-gray-200/80 font-mono select-none leading-none">
-                      02
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-950 mb-6 leading-snug">
-                    {t("about.v_core_title")}
-                  </h3>
-
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[1.9] tracking-normal mb-6">
-                    <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
-                    {t("about.v_core_desc")}
-                  </p>
-
-                  <div className="border-l-4 border-[#0080c8] pl-5 py-2.5 my-6 bg-blue-50/40 rounded-r-xl">
-                    <p className="text-xl sm:text-2xl font-bold text-gray-900 italic leading-snug">
-                      {t("about.v_core_quote")}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between mt-auto">
-                  <span className="text-xs sm:text-sm font-bold tracking-wider text-gray-400 uppercase">
-                    {t("about.v_core_tag")}
-                  </span>
+              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika */}
+              <div className="lg:col-span-5 flex items-center justify-center">
+                <div className="relative w-full max-w-[480px] lg:max-w-none flex items-center justify-center">
+                  <img
+                    src="/laptop-dna-illustration.png"
+                    alt="DNA Komunika Vision & Purpose"
+                    className="w-full h-auto max-h-[460px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               </div>
 
