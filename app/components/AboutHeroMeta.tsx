@@ -186,34 +186,34 @@ export default function AboutHeroMeta() {
         <section
           className="w-full min-h-screen bg-white border-t border-gray-200 flex flex-col justify-center"
           style={{
-            paddingTop: "clamp(6rem, 12vh, 10rem)",
-            paddingBottom: "clamp(6rem, 12vh, 10rem)",
+            paddingTop: "clamp(5rem, 10vh, 8rem)",
+            paddingBottom: "clamp(5rem, 10vh, 8rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
-            paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
+            paddingRight: "clamp(2rem, 4vw, 4rem)",
           }}
         >
-          <div className="w-full max-w-[1450px]">
+          <div className="w-full max-w-[1550px]">
             {/* Grid 2 Kolom: Kiri Teks Vision & Core Values, Kanan Ilustrasi Laptop */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               
-              {/* Kolom Kiri: Teks Vision & Purpose + Core Values */}
-              <div className="lg:col-span-7 flex flex-col justify-center pr-0 lg:pr-8">
+              {/* Kolom Kiri: Teks Vision & Purpose + Core Values (DIBESARKAN) */}
+              <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
                 {/* 1. Vision & Purpose */}
-                <div className="mb-12 sm:mb-16">
-                  <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-gray-950 tracking-tight leading-tight mb-4 sm:mb-5">
+                <div className="mb-14 sm:mb-20">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-5 sm:mb-6">
                     {t("about.v_vision_title")}
                   </h2>
-                  <p className="text-gray-600 text-base sm:text-lg lg:text-xl font-normal leading-[1.85] max-w-xl">
+                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
                 {/* 2. Core Values */}
                 <div>
-                  <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-gray-950 tracking-tight leading-tight mb-4 sm:mb-5">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-gray-950 tracking-tight leading-[1.1] mb-5 sm:mb-6">
                     {t("about.v_core_title")}
                   </h2>
-                  <p className="text-gray-600 text-base sm:text-lg lg:text-xl font-normal leading-[1.85] max-w-xl">
+                  <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.8] max-w-2xl">
                     <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
                     {t("about.v_core_desc")}{" "}
                     <span className="text-gray-900 font-medium">({t("about.v_core_quote")}).</span>
@@ -221,13 +221,13 @@ export default function AboutHeroMeta() {
                 </div>
               </div>
 
-              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika Baru */}
-              <div className="lg:col-span-5 flex items-center justify-center">
-                <div className="relative w-full max-w-[540px] flex items-center justify-center">
+              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika (DIBESARKAN LEBIH DOMINAN) */}
+              <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center">
+                <div className="relative w-full max-w-[650px] xl:max-w-[720px] flex items-center justify-center">
                   <img
                     src="/dna-laptop-illustration.png"
                     alt="DNA Komunika Vision & Purpose"
-                    className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto max-h-[600px] xl:max-h-[660px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
