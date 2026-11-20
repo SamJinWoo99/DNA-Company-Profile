@@ -368,20 +368,6 @@ export default function AboutHeroMeta() {
 
             </div>
 
-            {/* Bottom Dark Blue Banner Persis Foto 2: "Ready to transform your brand?" */}
-            <div className="rounded-2xl px-8 py-6 sm:px-12 sm:py-7 bg-[#004780] text-white flex flex-row items-center justify-between gap-6 shadow-md mt-4">
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight">
-                {lang === "en" ? "Ready to transform your brand?" : "Siap mentransformasi brand Anda?"}
-              </h4>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white hover:bg-gray-100 text-[#004780] font-bold text-sm sm:text-base transition-all shadow-sm shrink-0"
-              >
-                <span>{t("nav.contact")}</span>
-                <span>→</span>
-              </Link>
-            </div>
-
           </div>
         </section>
 
