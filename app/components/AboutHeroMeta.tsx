@@ -186,7 +186,7 @@ export default function AboutHeroMeta() {
         <section
           className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-start"
           style={{
-            paddingTop: "clamp(4.5rem, 8vh, 7rem)",
+            paddingTop: "clamp(5rem, 9vh, 8rem)",
             paddingBottom: "clamp(5rem, 10vh, 8rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
@@ -194,17 +194,17 @@ export default function AboutHeroMeta() {
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Visi & Misi */}
-            <div className="pb-12 sm:pb-16 mb-6">
+            <div className="mb-12 sm:mb-16">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                 {t("about.v_title")}
               </h2>
             </div>
 
             {/* 2 Kolom Visi & Misi Persis Foto 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch mt-6 sm:mt-10">
 
               {/* Box 1: Vision & Purpose */}
-              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+              <div className="bg-white rounded-2xl pt-10 sm:pt-14 pb-8 sm:pb-10 px-8 sm:px-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 {/* Top Subtle Border Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
 
@@ -237,7 +237,7 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Box 2: Core Values */}
-              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+              <div className="bg-white rounded-2xl pt-10 sm:pt-14 pb-8 sm:pb-10 px-8 sm:px-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 {/* Top Subtle Border Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
 
