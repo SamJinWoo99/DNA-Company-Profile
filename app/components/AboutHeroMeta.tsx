@@ -184,17 +184,17 @@ export default function AboutHeroMeta() {
         {/* VISI & MISI (Slide 2: Layar Penuh Mandiri - Jauh dari Services)         */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-center"
+          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-start"
           style={{
-            paddingTop: "clamp(6rem, 12vh, 10rem)",
-            paddingBottom: "clamp(6rem, 12vh, 10rem)",
+            paddingTop: "clamp(3.5rem, 6vh, 5.5rem)",
+            paddingBottom: "clamp(4rem, 8vh, 6rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Visi & Misi */}
-            <div className="mb-14">
+            <div className="mb-8">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                 {t("about.v_title")}
               </h2>
@@ -204,13 +204,13 @@ export default function AboutHeroMeta() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
               {/* Box 1: Vision & Purpose */}
-              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 {/* Top Subtle Border Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
 
                 <div>
                   {/* Top Bar: Badge & Big Watermark 01 */}
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="inline-flex items-center gap-2 text-[#0080c8] text-xs font-bold uppercase tracking-wider">
                       <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
                       <span>{t("about.v_purpose_badge")}</span>
@@ -220,16 +220,16 @@ export default function AboutHeroMeta() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.v_vision_title")}
                   </h3>
 
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[2] sm:leading-[2.1] tracking-normal mb-8">
+                  <p className="text-gray-600 text-sm sm:text-base font-normal leading-relaxed mb-6">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
 
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_vision_tag")}
                   </span>
@@ -237,13 +237,13 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Box 2: Core Values */}
-              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 {/* Top Subtle Border Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
 
                 <div>
                   {/* Top Bar: Badge & Big Watermark 02 */}
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="inline-flex items-center gap-2 text-[#0080c8] text-xs font-bold uppercase tracking-wider">
                       <span className="w-2 h-2 rounded-full bg-[#0080c8]" />
                       <span>{t("about.v_core_badge")}</span>
@@ -253,21 +253,23 @@ export default function AboutHeroMeta() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-6 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-950 mb-4 leading-snug">
                     {t("about.v_core_title")}
                   </h3>
 
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[2] sm:leading-[2.1] tracking-normal mb-8">
+                  <p className="text-gray-600 text-sm sm:text-base font-normal leading-relaxed mb-4">
                     <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
                     {t("about.v_core_desc")}
                   </p>
 
-                  <blockquote className="border-l-4 border-[#0080c8] pl-5 py-2 text-xl sm:text-2xl font-bold text-gray-900 italic my-6">
-                    {t("about.v_core_quote")}
-                  </blockquote>
+                  <div className="border-l-4 border-[#0080c8] pl-4 py-1.5 my-4">
+                    <p className="text-lg sm:text-xl font-bold text-gray-900 italic leading-snug">
+                      {t("about.v_core_quote")}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
                     {t("about.v_core_tag")}
                   </span>
