@@ -186,15 +186,15 @@ export default function AboutHeroMeta() {
         <section
           className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-start"
           style={{
-            paddingTop: "clamp(3.5rem, 6vh, 5.5rem)",
-            paddingBottom: "clamp(4rem, 8vh, 6rem)",
+            paddingTop: "clamp(4.5rem, 8vh, 7rem)",
+            paddingBottom: "clamp(5rem, 10vh, 8rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Visi & Misi */}
-            <div className="mb-14 sm:mb-16">
+            <div className="pb-12 sm:pb-16 mb-6">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                 {t("about.v_title")}
               </h2>
