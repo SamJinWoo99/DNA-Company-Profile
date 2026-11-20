@@ -254,17 +254,10 @@ export default function AboutHeroMeta() {
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Services */}
-            <div className="mb-14 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight">
-                  {t("about.s_title")}
-                </h2>
-              </div>
-              <p className="text-gray-500 max-w-lg text-base sm:text-lg leading-relaxed">
-                {lang === "en"
-                  ? "Delivering specialized publication and brand consulting solutions tailored for high-profile corporations."
-                  : "Menghadirkan solusi publikasi dan konsultasi brand terpadu bagi korporasi dan institusi ternama."}
-              </p>
+            <div className="mb-14 sm:mb-16">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight">
+                {t("about.s_title")}
+              </h2>
             </div>
 
             {/* 3 Kartu Layanan Unggulan Persis Foto 2 */}
