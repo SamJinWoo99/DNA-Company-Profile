@@ -184,10 +184,10 @@ export default function AboutHeroMeta() {
         {/* VISI & MISI (Slide 2: Layar Penuh Mandiri - Jauh dari Services)         */}
         {/* ----------------------------------------------------------------------- */}
         <section
-          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-start"
+          className="w-full min-h-screen bg-[#f8f9fa] border-t border-gray-200 flex flex-col justify-center"
           style={{
-            paddingTop: "clamp(5rem, 9vh, 8rem)",
-            paddingBottom: "clamp(6rem, 11vh, 9rem)",
+            paddingTop: "clamp(6rem, 12vh, 10rem)",
+            paddingBottom: "clamp(6rem, 12vh, 10rem)",
             paddingLeft: "clamp(2.5rem, 6.5vw, 6.5rem)",
             paddingRight: "clamp(2.5rem, 5vw, 4.5rem)",
           }}
@@ -201,7 +201,7 @@ export default function AboutHeroMeta() {
             </div>
 
             {/* 2 Kolom Visi & Misi Persis Foto 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mt-4">
 
               {/* Box 1: Vision & Purpose */}
               <div className="bg-white rounded-3xl p-10 sm:p-14 border border-gray-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
@@ -221,7 +221,7 @@ export default function AboutHeroMeta() {
                     {t("about.v_vision_title")}
                   </h3>
 
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[1.9] tracking-normal mb-8 text-justify sm:text-left">
+                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[1.9] tracking-normal mb-8">
                     {t("about.v_vision_desc")}
                   </p>
                 </div>
@@ -251,7 +251,7 @@ export default function AboutHeroMeta() {
                     {t("about.v_core_title")}
                   </h3>
 
-                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[1.9] tracking-normal mb-6 text-justify sm:text-left">
+                  <p className="text-gray-600 text-base sm:text-lg font-normal leading-[1.9] tracking-normal mb-6">
                     <strong className="text-gray-900 font-semibold">{t("about.v_core_desc_prefix")}</strong>{" "}
                     {t("about.v_core_desc")}
                   </p>
@@ -338,14 +338,14 @@ export default function AboutHeroMeta() {
               <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div>
                   {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#4b6572] p-6 flex items-center justify-center overflow-hidden mb-6">
-                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-white/70">
+                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-6">
+                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-gray-400">
                       02
                     </span>
                     <img
                       src="/about-service-calendar.png"
                       alt="Calendar Design"
-                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 mx-auto"
                     />
                   </div>
 
