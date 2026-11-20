@@ -194,20 +194,17 @@ export default function AboutHeroMeta() {
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Visi & Misi */}
-            <div className="mb-20 sm:mb-24">
+            <div className="mb-8">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-950 tracking-tight">
                 {t("about.v_title")}
               </h2>
             </div>
 
             {/* 2 Kolom Visi & Misi Persis Foto 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch mt-12 sm:mt-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch mt-8">
 
               {/* Box 1: Vision & Purpose */}
-              <div className="bg-white rounded-2xl pt-10 sm:pt-14 pb-8 sm:pb-10 px-8 sm:px-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
-                {/* Top Subtle Border Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
-
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 <div>
                   {/* Top Bar: Badge & Big Watermark 01 */}
                   <div className="flex items-center justify-between mb-6">
@@ -237,10 +234,7 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Box 2: Core Values */}
-              <div className="bg-white rounded-2xl pt-10 sm:pt-14 pb-8 sm:pb-10 px-8 sm:px-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
-                {/* Top Subtle Border Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-transparent" />
-
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between relative overflow-hidden group">
                 <div>
                   {/* Top Bar: Badge & Big Watermark 02 */}
                   <div className="flex items-center justify-between mb-6">
