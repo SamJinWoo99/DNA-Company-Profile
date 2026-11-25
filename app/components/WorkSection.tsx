@@ -659,6 +659,9 @@ export default function WorkSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [zoomScale, setZoomScale] = useState<number>(1);
+  const [panPosition, setPanPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [dragStart, setDragStart] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const workCategories = [
     { id: "All", title: t("work.cat_all"), number: "01" },
@@ -1136,28 +1139,70 @@ export default function WorkSection() {
         const handlePrev = (e: React.MouseEvent) => {
           e.stopPropagation();
           setZoomScale(1);
+          setPanPosition({ x: 0, y: 0 });
           setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
         };
 
         const handleNext = (e: React.MouseEvent) => {
           e.stopPropagation();
           setZoomScale(1);
+          setPanPosition({ x: 0, y: 0 });
           setActiveImageIndex((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
         };
 
         const handleZoomIn = (e: React.MouseEvent) => {
           e.stopPropagation();
-          setZoomScale((prev) => Math.min(prev + 0.35, 3.5));
+          setZoomScale((prev) => Math.min(prev + 0.35, 4));
         };
 
         const handleZoomOut = (e: React.MouseEvent) => {
           e.stopPropagation();
-          setZoomScale((prev) => Math.max(prev - 0.35, 1));
+          setZoomScale((prev) => {
+            const next = Math.max(prev - 0.35, 1);
+            if (next === 1) setPanPosition({ x: 0, y: 0 });
+            return next;
+          });
         };
 
         const handleResetZoom = (e: React.MouseEvent) => {
           e.stopPropagation();
           setZoomScale(1);
+          setPanPosition({ x: 0, y: 0 });
+        };
+
+        // Scroll wheel to zoom in / out
+        const handleWheel = (e: React.WheelEvent) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const delta = e.deltaY < 0 ? 0.25 : -0.25;
+          setZoomScale((prev) => {
+            const next = Math.min(Math.max(prev + delta, 1), 4);
+            if (next === 1) setPanPosition({ x: 0, y: 0 });
+            return next;
+          });
+        };
+
+        // Mouse Drag to Pan (geser foto saat zoom > 1)
+        const handleMouseDown = (e: React.MouseEvent) => {
+          if (zoomScale <= 1) return;
+          e.preventDefault();
+          e.stopPropagation();
+          setIsDragging(true);
+          setDragStart({ x: e.clientX - panPosition.x, y: e.clientY - panPosition.y });
+        };
+
+        const handleMouseMove = (e: React.MouseEvent) => {
+          if (!isDragging || zoomScale <= 1) return;
+          e.preventDefault();
+          e.stopPropagation();
+          setPanPosition({
+            x: e.clientX - dragStart.x,
+            y: e.clientY - dragStart.y,
+          });
+        };
+
+        const handleMouseUp = () => {
+          setIsDragging(false);
         };
 
         return (
@@ -1167,7 +1212,9 @@ export default function WorkSection() {
               setSelectedProject(null);
               setActiveImageIndex(0);
               setZoomScale(1);
+              setPanPosition({ x: 0, y: 0 });
             }}
+            onMouseUp={handleMouseUp}
           >
             <div
               className="relative max-w-5xl w-full rounded-3xl overflow-hidden bg-slate-900 border border-white/20 shadow-2xl flex flex-col"
@@ -1179,6 +1226,7 @@ export default function WorkSection() {
                   setSelectedProject(null);
                   setActiveImageIndex(0);
                   setZoomScale(1);
+                  setPanPosition({ x: 0, y: 0 });
                 }}
                 className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none shadow-lg"
                 aria-label="Close"
@@ -1187,21 +1235,42 @@ export default function WorkSection() {
               </button>
 
               {/* High-res Image Preview & Carousel Controls */}
-              <div className="relative w-full h-[52vh] sm:h-[60vh] max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2 group select-none">
+              <div
+                className="relative w-full h-[52vh] sm:h-[60vh] max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2 group select-none"
+                onWheel={handleWheel}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+              >
                 <div
-                  className="w-full h-full flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing"
-                  onDoubleClick={() => setZoomScale((prev) => (prev > 1 ? 1 : 2))}
-                  title="Double-click to zoom"
+                  className={`w-full h-full flex items-center justify-center overflow-hidden ${
+                    zoomScale > 1
+                      ? isDragging
+                        ? "cursor-grabbing"
+                        : "cursor-grab"
+                      : "cursor-zoom-in"
+                  }`}
+                  onMouseDown={handleMouseDown}
+                  onDoubleClick={() => {
+                    setZoomScale((prev) => {
+                      if (prev > 1) {
+                        setPanPosition({ x: 0, y: 0 });
+                        return 1;
+                      }
+                      return 2.2;
+                    });
+                  }}
+                  title={zoomScale > 1 ? "Scroll untuk zoom, drag untuk geser foto" : "Scroll / double-click untuk zoom"}
                 >
                   <img
                     key={currentImg}
                     src={currentImg}
                     alt={`${selectedProject.title} - Slide ${activeImageIndex + 1}`}
                     style={{
-                      transform: `scale(${zoomScale})`,
-                      transition: "transform 0.25s cubic-bezier(0.2, 0, 0, 1)",
+                      transform: `translate(${panPosition.x}px, ${panPosition.y}px) scale(${zoomScale})`,
+                      transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.2, 0, 0, 1)",
                     }}
-                    className="w-full h-full object-contain rounded-2xl select-none"
+                    className="w-full h-full object-contain rounded-2xl select-none pointer-events-none"
                     draggable={false}
                   />
                 </div>
