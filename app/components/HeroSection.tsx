@@ -100,11 +100,7 @@ export default function HeroSection() {
             className="animate-fade-in flex flex-col justify-start"
             style={{ padding: "0 clamp(2.5rem, 8%, 5rem)" }}
           >
-            <p className="text-blue-100 text-sm font-medium tracking-widest uppercase mb-4">
-              {slides[current].tag}
-            </p>
-
-            <h1 className="text-white font-black text-4xl lg:text-5xl xl:text-6xl leading-tight mb-8 max-w-lg">
+            <h1 className="text-white font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] tracking-tight leading-[1.25] mb-8 max-w-xl">
               {t("hero.left_heading")}
             </h1>
 
@@ -123,11 +119,7 @@ export default function HeroSection() {
             className="hidden lg:flex flex-col justify-start animate-slide-in"
             style={{ padding: "0 clamp(2.5rem, 8%, 5rem)" }}
           >
-            <p className="text-white/80 text-sm font-medium tracking-widest uppercase mb-4 drop-shadow">
-              {slides[current].tag}
-            </p>
-
-            <h2 className="text-white font-black text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-lg mb-8 drop-shadow-md">
+            <h2 className="text-white font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] tracking-tight leading-[1.25] max-w-xl mb-8 drop-shadow-md">
               {slides[current].title}
             </h2>
 

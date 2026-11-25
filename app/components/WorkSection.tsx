@@ -674,9 +674,9 @@ export default function WorkSection() {
   return (
     <section
       id="work"
-      className="relative min-h-screen w-full flex flex-col justify-start overflow-hidden text-white"
+      className="relative min-h-screen w-full flex flex-col justify-start overflow-hidden bg-white text-slate-900"
       style={{
-        backgroundColor: "#0077b6",
+        backgroundColor: "#ffffff",
         paddingTop: "clamp(5rem, 8vh, 6.5rem)",
         paddingBottom: "clamp(5rem, 8vh, 7rem)",
         paddingLeft: "clamp(1.5rem, 4vw, 4rem)",
@@ -691,13 +691,13 @@ export default function WorkSection() {
         {/* TOP BAR: Category Filter Tabs                            */}
         {/* ======================================================== */}
         <div
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/20 select-none shrink-0"
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 select-none shrink-0"
           style={{ marginBottom: "2.5rem" }}
         >
           {/* Left: Section Breadcrumb Badge */}
           <div className="flex items-center gap-3 pb-3">
-            <span className="w-7 h-0.5 bg-cyan-300 rounded-full inline-block" />
-            <span className="text-xs font-bold tracking-widest uppercase text-cyan-200 leading-none">
+            <span className="w-7 h-0.5 bg-[#0080c8] rounded-full inline-block" />
+            <span className="text-xs font-bold tracking-widest uppercase text-[#0080c8] leading-none">
               {t("work.top_badge")}
             </span>
           </div>
@@ -714,8 +714,8 @@ export default function WorkSection() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`relative flex items-center pb-3 text-sm sm:text-base font-bold transition-all duration-200 whitespace-nowrap cursor-pointer select-none outline-none focus:outline-none focus:ring-0 border-b-2 ${
                     isActive
-                      ? "border-white text-white"
-                      : "border-transparent text-white/70 hover:text-white"
+                      ? "border-[#0080c8] text-[#0080c8]"
+                      : "border-transparent text-slate-500 hover:text-slate-900"
                   }`}
                   style={{ gap: "0.65rem" }}
                 >
@@ -723,8 +723,8 @@ export default function WorkSection() {
                   <span
                     className={`text-xs font-mono font-bold rounded-lg transition-colors leading-none shrink-0 flex items-center justify-center text-center ${
                       isActive
-                        ? "bg-white/25 text-cyan-200 shadow-sm"
-                        : "bg-white/10 text-white/60"
+                        ? "bg-[#0080c8] text-white shadow-sm"
+                        : "bg-slate-100 text-slate-600"
                     }`}
                     style={{
                       width: "28px",
@@ -740,12 +740,12 @@ export default function WorkSection() {
                     {tab.title}
                   </span>
 
-                  {/* Count Pill - Lingkaran/pill presisi, tidak gepeng atau mepet garis */}
+                  {/* Count Pill */}
                   <span
                     className={`text-[11px] font-mono font-bold rounded-full transition-colors shrink-0 flex items-center justify-center leading-none ${
                       isActive
-                        ? "bg-white text-slate-900 shadow-sm font-extrabold"
-                        : "bg-white/15 text-white/80"
+                        ? "bg-[#0080c8] text-white shadow-sm font-extrabold"
+                        : "bg-slate-200 text-slate-700"
                     }`}
                     style={{
                       minWidth: "22px",
@@ -769,27 +769,22 @@ export default function WorkSection() {
         >
           <div>
             <span
-              className="text-cyan-200 text-xs sm:text-sm font-bold uppercase tracking-widest block"
+              className="text-[#0080c8] text-xs sm:text-sm font-bold uppercase tracking-widest block"
               style={{ marginBottom: "0.35rem" }}
             >
               {t("work.badge")}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
               {t("work.title")}
             </h2>
           </div>
-          <p className="text-white/80 max-w-xl text-sm sm:text-base leading-relaxed hidden md:block">
-            {t("work.desc")}
-          </p>
         </div>
 
         {/* Project Year Filter Bar (2026 - 2013) */}
         <div
           className="flex flex-col rounded-3xl border border-white/20 shadow-2xl relative z-10"
           style={{
-            backgroundColor: "rgba(3, 15, 38, 0.75)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
+            backgroundColor: "#0d2847",
             padding: "1.75rem 2rem",
             marginBottom: "3.75rem",
           }}
@@ -976,7 +971,7 @@ export default function WorkSection() {
 
                 {/* Card Text Content */}
                 <div
-                  className="flex-1 flex flex-col justify-start bg-gradient-to-b from-black/40 via-black/60 to-black/80"
+                  className="flex-1 flex flex-col justify-start bg-gradient-to-b from-[#0e3b64] via-[#092d4f] to-[#05213b]"
                   style={{
                     padding: "1.25rem 1.25rem 1.35rem 1.25rem",
                     minHeight: "115px",
@@ -1009,12 +1004,17 @@ export default function WorkSection() {
         )}
 
         {/* ======================================================== */}
+        {/* GARIS PEMBATAS ANTARA OUR WORK & OUR CLIENTS             */}
+        {/* ======================================================== */}
+        <div className="w-full my-12 sm:my-16 border-t border-slate-200" />
+
+        {/* ======================================================== */}
         {/* OUR CLIENTS SECTION (Pure Logos, Tanpa Box, Kanan & Kiri)*/}
         {/* ======================================================== */}
         <div
           className="w-full flex flex-col relative z-10"
           style={{
-            marginTop: "3rem",
+            marginTop: "1rem",
             marginBottom: "1rem",
           }}
         >
@@ -1025,20 +1025,17 @@ export default function WorkSection() {
           >
             <div>
               <span
-                className="text-cyan-200 text-xs sm:text-sm font-bold uppercase tracking-widest block"
+                className="text-[#0080c8] text-xs sm:text-sm font-bold uppercase tracking-widest block"
                 style={{ marginBottom: "0.35rem" }}
               >
                 {t("work.clients_badge")}
               </span>
               <h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight"
+                className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight"
               >
                 {t("work.clients_title")}
               </h2>
             </div>
-            <p className="text-white/80 max-w-2xl text-sm sm:text-base leading-relaxed hidden md:block whitespace-pre-line text-right">
-              {t("work.clients_desc")}
-            </p>
           </div>
 
           {/* Infinite Moving Sliders: Pure Logos, Centered in the Section Box with generous padding */}
@@ -1060,7 +1057,7 @@ export default function WorkSection() {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className={`w-auto object-contain filter brightness-0 invert opacity-100 group-hover:scale-105 transition-all duration-300 pointer-events-none ${
+                      className={`w-auto object-contain [filter:brightness(0)_saturate(100%)_invert(35%)_sepia(85%)_saturate(1800%)_hue-rotate(180deg)_brightness(95%)_contrast(100%)] opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 pointer-events-none ${
                         isWide
                           ? "h-[32px] sm:h-[36px] md:h-[40px] max-w-[260px]"
                           : "h-[42px] sm:h-[46px] md:h-[50px] max-w-[190px]"
@@ -1088,7 +1085,7 @@ export default function WorkSection() {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className={`w-auto object-contain filter brightness-0 invert opacity-100 group-hover:scale-105 transition-all duration-300 pointer-events-none ${
+                      className={`w-auto object-contain [filter:brightness(0)_saturate(100%)_invert(35%)_sepia(85%)_saturate(1800%)_hue-rotate(180deg)_brightness(95%)_contrast(100%)] opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 pointer-events-none ${
                         isWide
                           ? "h-[32px] sm:h-[36px] md:h-[40px] max-w-[260px]"
                           : "h-[42px] sm:h-[46px] md:h-[50px] max-w-[190px]"
@@ -1101,12 +1098,12 @@ export default function WorkSection() {
           </div>
 
           {/* Bottom Trust Badge - Jarak simetris sama persis dengan jarak dari header atas */}
-          <div className="mt-14 sm:mt-16 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
+          <div className="mt-14 sm:mt-16 pt-7 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-300 inline-block animate-pulse" />
-              <span>{t("work.partners_count")}</span>
+              <span className="w-2 h-2 rounded-full bg-[#0080c8] inline-block animate-pulse" />
+              <span className="font-medium">{t("work.partners_count")}</span>
             </span>
-            <span className="text-cyan-200 font-semibold">
+            <span className="text-[#0080c8] font-semibold">
               {t("work.categories")}
             </span>
           </div>

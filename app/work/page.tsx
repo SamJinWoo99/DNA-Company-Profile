@@ -1,15 +1,17 @@
 import Navbar from "../components/Navbar";
-import WorkSection from "../components/WorkSection";
+import WorkHeroMeta from "../components/WorkHeroMeta";
 import Footer from "../components/Footer";
 
 export default function WorkPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
-        <WorkSection />
+      <main className="w-full min-h-screen bg-white">
+        <WorkHeroMeta />
       </main>
-      <Footer />
+      <div className="w-full lg:pl-[12%] xl:pl-[11%]">
+        <Footer />
+      </div>
     </>
   );
 }

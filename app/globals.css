@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --dna-blue: #1a8cc7;
-  --dna-blue-dark: #1570a6;
+  --dna-blue: #0080c8;
+  --dna-blue-dark: #006ca8;
   --dna-blue-light: #2fa4e7;
   --dna-dark: #111827;
   --dna-gray: #6b7280;

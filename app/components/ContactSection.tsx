@@ -111,9 +111,6 @@ export default function ContactSection() {
               {t("contact.title_white")} {t("contact.title_yellow")} {t("contact.title_post")}
             </h2>
           </div>
-          <p className="text-white/80 max-w-xl text-sm sm:text-base leading-relaxed hidden md:block">
-            {t("contact.desc")}
-          </p>
         </div>
 
         {/* ======================================================== */}

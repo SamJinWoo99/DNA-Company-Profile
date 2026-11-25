@@ -30,66 +30,12 @@ export default function AboutHeroMeta() {
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="relative w-full flex flex-col bg-white select-none"
+      className="relative w-full flex min-h-screen bg-white select-none"
     >
-      {/* ========================================================================= */}
-      {/* 1. STRIP FOTO KANAN YANG TETAP MENEMPEL (FIXED) DARI HERO SAMPAI SERVICES */}
-      {/* ========================================================================= */}
-      <aside className="hidden lg:block fixed top-0 right-0 w-[12%] xl:w-[11%] h-screen bg-black z-30 select-none overflow-hidden">
-        <Link
-          href="/work"
-          className="relative w-full h-full block group cursor-pointer"
-          title="Explore Our Work"
-        >
-          {/* Carousel Slide Foto */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeSlide}
-              initial={{ opacity: 0, scale: 1.08 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.8 }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <img
-                src={heroSlides[activeSlide].image}
-                alt={heroSlides[activeSlide].label}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90"
-              />
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
-            </motion.div>
-          </AnimatePresence>
-
-          {/* TEKS VERTIKAL "WORK" SELALU DI TENGAH FOTO */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40">
-            <span
-              className="text-base lg:text-lg font-bold tracking-[0.25em] text-white uppercase whitespace-nowrap drop-shadow-md select-none"
-              style={{
-                writingMode: "vertical-rl",
-                transform: "rotate(180deg)",
-              }}
-            >
-              Work
-            </span>
-          </div>
-
-          {/* Dot Indicator di bagian bawah strip foto */}
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-1.5 z-40 pointer-events-none">
-            {heroSlides.map((_, idx) => (
-              <span
-                key={idx}
-                className={`h-1.5 rounded-full transition-all ${activeSlide === idx ? "w-4 bg-white" : "w-1.5 bg-white/40"
-                  }`}
-              />
-            ))}
-          </div>
-        </Link>
-      </aside>
-
       {/* ========================================================================= */}
       {/* 2. AREA KONTEN KIRI: HERO, VISI & MISI, SERVICES                          */}
       {/* ========================================================================= */}
-      <div className="w-full lg:pr-[12%] xl:pr-[11%] flex flex-col">
+      <div className="flex-1 min-w-0 flex flex-col bg-white">
 
         {/* ----------------------------------------------------------------------- */}
         {/* HERO BIRU METADESIGN (Presisi 100% Sesuai Foto 2 Acuan User)            */}
@@ -225,14 +171,97 @@ export default function AboutHeroMeta() {
                 </div>
               </div>
 
-              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika (DIBESARKAN LEBIH DOMINAN) */}
+              {/* Kolom Kanan: Ilustrasi Laptop DNA Komunika dengan Animasi Melayang & Kelap-Kelip Glow */}
               <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center">
                 <div className="relative w-full max-w-[650px] xl:max-w-[720px] flex items-center justify-center">
-                  <img
-                    src="/dna-laptop-illustration.png"
-                    alt="DNA Komunika Vision & Purpose"
-                    className="w-full h-auto max-h-[600px] xl:max-h-[660px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                  
+                  {/* Efek Cahaya Glow Kelap-Kelip (Pulsing Glow Ambient) */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.15, 1],
+                      opacity: [0.25, 0.55, 0.25],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="absolute -inset-4 bg-gradient-to-tr from-[#0080c8]/25 via-amber-300/20 to-blue-400/30 rounded-full blur-3xl pointer-events-none"
                   />
+
+                  {/* Sparkle Bintang Kelap-Kelip 1 */}
+                  <motion.div
+                    animate={{
+                      scale: [0, 1.2, 0],
+                      opacity: [0, 0.9, 0],
+                      rotate: [0, 90, 180],
+                    }}
+                    transition={{
+                      duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.2,
+                    }}
+                    className="absolute top-4 right-10 text-amber-400 text-2xl font-black pointer-events-none select-none drop-shadow-md z-10"
+                  >
+                    ✦
+                  </motion.div>
+
+                  {/* Sparkle Bintang Kelap-Kelip 2 */}
+                  <motion.div
+                    animate={{
+                      scale: [0, 1.3, 0],
+                      opacity: [0, 0.9, 0],
+                      rotate: [0, -90, -180],
+                    }}
+                    transition={{
+                      duration: 3.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1.4,
+                    }}
+                    className="absolute bottom-16 left-6 text-[#0080c8] text-xl font-black pointer-events-none select-none drop-shadow-md z-10"
+                  >
+                    ✦
+                  </motion.div>
+
+                  {/* Sparkle Bintang Kelap-Kelip 3 */}
+                  <motion.div
+                    animate={{
+                      scale: [0, 1, 0],
+                      opacity: [0, 0.8, 0],
+                    }}
+                    transition={{
+                      duration: 2.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.8,
+                    }}
+                    className="absolute top-1/3 left-4 text-orange-400 text-lg font-black pointer-events-none select-none drop-shadow-md z-10"
+                  >
+                    ★
+                  </motion.div>
+
+                  {/* Gambar Laptop Melayang Halus (Smooth Floating Motion) */}
+                  <motion.div
+                    animate={{
+                      y: [-12, 14, -12],
+                      rotate: [-1, 1.2, -1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="relative z-10 w-full flex items-center justify-center cursor-pointer"
+                  >
+                    <img
+                      src="/dna-vision-floating.png"
+                      alt="DNA Komunika Vision & Purpose"
+                      className="w-full h-auto max-h-[600px] xl:max-h-[660px] object-contain drop-shadow-[0_25px_35px_rgba(0,128,200,0.18)] hover:scale-105 transition-transform duration-500"
+                    />
+                  </motion.div>
+
                 </div>
               </div>
 
@@ -254,7 +283,7 @@ export default function AboutHeroMeta() {
         >
           <div className="w-full max-w-[1450px]">
             {/* Header Services (Dinaikkan posisinya ke atas dengan margin bawah besar ke shape) */}
-            <div style={{ marginBottom: "56px" }}>
+            <div style={{ marginBottom: "80px" }}>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight">
                 {t("about.s_title")}
               </h2>
@@ -264,31 +293,33 @@ export default function AboutHeroMeta() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-16 sm:mb-20 items-stretch">
               
               {/* Service 1: Annual & Sustainability Reports */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
-                <div>
-                  {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-8">
-                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-gray-400">
+              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+                <div className="flex flex-col flex-1">
+                  {/* Foto Mockup Box: Full memenuhi shape rounded */}
+                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#eaedf0] flex items-center justify-center overflow-hidden mb-6 shadow-inner">
+                    <span className="absolute top-4 left-5 z-20 text-xl sm:text-2xl font-mono font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                       01
                     </span>
                     <img
                       src="/about-service-annual-report.png"
                       alt="Annual & Sustainability Reports"
-                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 mx-auto"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug text-center">
-                    {t("about.s1_title")}
-                  </h3>
-                  <div style={{ marginTop: "12px", marginBottom: "28px" }}>
-                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base text-justify sm:text-center">
+                  {/* Kontainer Teks: Layout rapat & presisi persis Foto 2 */}
+                  <div className="flex flex-col justify-start items-center text-center pt-2 pb-6">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-2 leading-snug">
+                      {t("about.s1_title")}
+                    </h3>
+                    <p className="text-gray-600 leading-[1.65] text-sm sm:text-base max-w-sm mx-auto">
                       {t("about.s1_desc")}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-center mt-auto">
+                {/* Footer Tag Bawah */}
+                <div className="pt-4 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     ANNUAL & ESG REPORTS
                   </span>
@@ -296,31 +327,33 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Service 2: Calendar Design */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
-                <div>
-                  {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#f0f2f5] p-6 flex items-center justify-center overflow-hidden mb-8">
-                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-gray-400">
+              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+                <div className="flex flex-col flex-1">
+                  {/* Foto Mockup Box: Full memenuhi shape rounded */}
+                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#eaedf0] flex items-center justify-center overflow-hidden mb-6 shadow-inner">
+                    <span className="absolute top-4 left-5 z-20 text-xl sm:text-2xl font-mono font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                       02
                     </span>
                     <img
                       src="/about-service-calendar.png"
                       alt="Calendar Design"
-                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 mx-auto"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug text-center">
-                    {t("about.s2_title")}
-                  </h3>
-                  <div style={{ marginTop: "12px", marginBottom: "28px" }}>
-                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base text-justify sm:text-center">
+                  {/* Kontainer Teks: Layout rapat & presisi persis Foto 2 */}
+                  <div className="flex flex-col justify-start items-center text-center pt-2 pb-6">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-2 leading-snug">
+                      {t("about.s2_title")}
+                    </h3>
+                    <p className="text-gray-600 leading-[1.65] text-sm sm:text-base max-w-sm mx-auto">
                       {t("about.s2_desc")}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-center mt-auto">
+                {/* Footer Tag Bawah */}
+                <div className="pt-4 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     CORPORATE PUBLICATION
                   </span>
@@ -328,31 +361,33 @@ export default function AboutHeroMeta() {
               </div>
 
               {/* Service 3: Corporate Branding & Collateral */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
-                <div>
-                  {/* Foto Mockup Box */}
-                  <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-[#9e0c15] p-6 flex items-center justify-center overflow-hidden mb-8">
-                    <span className="absolute top-4 left-4 text-xs font-mono font-bold text-white/70">
+              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+                <div className="flex flex-col flex-1">
+                  {/* Foto Mockup Box: Full memenuhi shape rounded */}
+                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#9e0c15] flex items-center justify-center overflow-hidden mb-6 shadow-inner">
+                    <span className="absolute top-4 left-5 z-20 text-xl sm:text-2xl font-mono font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                       03
                     </span>
                     <img
                       src="/about-service-branding.png"
                       alt="Corporate Branding & Collateral"
-                      className="max-h-full max-w-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 mx-auto"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug text-center">
-                    {t("about.s3_title")}
-                  </h3>
-                  <div style={{ marginTop: "12px", marginBottom: "28px" }}>
-                    <p className="text-gray-600 leading-[1.8] text-sm sm:text-base text-justify sm:text-center">
+                  {/* Kontainer Teks: Layout rapat & presisi persis Foto 2 */}
+                  <div className="flex flex-col justify-start items-center text-center pt-2 pb-6">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-2 leading-snug">
+                      {t("about.s3_title")}
+                    </h3>
+                    <p className="text-gray-600 leading-[1.65] text-sm sm:text-base max-w-sm mx-auto">
                       {t("about.s3_desc")}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-center mt-auto">
+                {/* Footer Tag Bawah */}
+                <div className="pt-4 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     BRAND & IDENTITY SYSTEMS
                   </span>
@@ -365,6 +400,61 @@ export default function AboutHeroMeta() {
         </section>
 
       </div>
+
+      {/* ========================================================================= */}
+      {/* 1. STRIP FOTO KANAN (STICKY DI DESKTOP) - PERSIS UKURAN ASLI 12% / 11%   */}
+      {/* ========================================================================= */}
+      <aside className="hidden lg:flex flex-col justify-between items-center w-[12%] xl:w-[11%] shrink-0 h-screen sticky top-0 bg-black z-30 select-none overflow-hidden shadow-md">
+        <Link
+          href="/work"
+          className="relative w-full h-full block group cursor-pointer"
+          title="Explore Our Work"
+        >
+          {/* Carousel Slide Foto */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeSlide}
+              initial={{ opacity: 0, scale: 1.08 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={heroSlides[activeSlide].image}
+                alt={heroSlides[activeSlide].label}
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90"
+              />
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* TEKS VERTIKAL "WORK" SELALU DI TENGAH FOTO */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40">
+            <span
+              className="text-base lg:text-lg font-bold tracking-[0.25em] text-white uppercase whitespace-nowrap drop-shadow-md select-none"
+              style={{
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+              }}
+            >
+              Work
+            </span>
+          </div>
+
+          {/* Dot Indicator di bagian bawah strip foto */}
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-1.5 z-40 pointer-events-none">
+            {heroSlides.map((_, idx) => (
+              <span
+                key={idx}
+                className={`h-1.5 rounded-full transition-all ${activeSlide === idx ? "w-4 bg-white" : "w-1.5 bg-white/40"
+                  }`}
+              />
+            ))}
+          </div>
+        </Link>
+      </aside>
+
     </motion.div>
   );
 }

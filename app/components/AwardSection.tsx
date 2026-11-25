@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Trophy, 
   Search, 
@@ -372,12 +372,20 @@ const prestigeAwards: AwardItem[] = [
 
 export default function AwardSection() {
   const { lang, t } = useLanguage();
+  const [cardsVisible, setCardsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [selectedYear, setSelectedYear] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [viewMode, setViewMode] = useState<'grid' | 'spotlight' | 'timeline'>('grid');
   const [spotlightIndex, setSpotlightIndex] = useState(0);
   const [activeModalAward, setActiveModalAward] = useState<AwardItem | null>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCardsVisible(true);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, []);
 
   const formatBadgeType = (badge: string) => {
     switch (badge.toLowerCase()) {
@@ -559,16 +567,15 @@ export default function AwardSection() {
               {t("award.headline")} {t("award.headline_accent")}
             </h2>
           </div>
-          <p className="text-white/80 max-w-lg text-sm sm:text-base leading-relaxed hidden md:block whitespace-pre-line text-right">
-            {t("award.desc")}
-          </p>
         </div>
 
         {/* ======================================================== */}
         {/* YEAR FILTER & CONTROL BAR (Identik Kotak Kaca Our Work)   */}
         {/* ======================================================== */}
         <div
-          className="flex flex-col rounded-3xl border border-white/20 shadow-2xl relative z-10"
+          className={`flex flex-col rounded-3xl border border-white/20 shadow-2xl relative z-10 transition-all duration-700 ease-out ${
+            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
           style={{
             backgroundColor: "rgba(3, 15, 38, 0.75)",
             backdropFilter: "blur(20px)",
@@ -760,7 +767,9 @@ export default function AwardSection() {
             {/* 1. GRID VIEW MODE (5 Kolom Penuh Identik Our Work) */}
             {viewMode === 'grid' && (
               <div
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-stretch animate-fade-in"
+                className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-stretch transition-all duration-700 delay-150 ease-out ${
+                  cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
                 style={{
                   gap: "2rem",
                   marginTop: "0.5rem",
