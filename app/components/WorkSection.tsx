@@ -65,6 +65,8 @@ const projects: Project[] = [
       "/work-tripatra-calendar-2026-slide-3.jpg",
       "/work-tripatra-calendar-2026-slide-4.jpg",
       "/work-tripatra-calendar-2026-slide-5.jpg",
+      "/work-tripatra-calendar-2026-slide-6.jpg",
+      "/work-tripatra-calendar-2026-slide-7.jpg",
     ],
     description: "Vibrant corporate desk calendar themed 'Excellent Performance for Better Success' with custom hand-drawn character illustrations celebrating engineering teamwork and industrial plant safety.",
   },
