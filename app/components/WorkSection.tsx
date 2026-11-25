@@ -658,6 +658,7 @@ export default function WorkSection() {
   const [selectedYear, setSelectedYear] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
+  const [zoomScale, setZoomScale] = useState<number>(1);
 
   const workCategories = [
     { id: "All", title: t("work.cat_all"), number: "01" },
@@ -1134,12 +1135,29 @@ export default function WorkSection() {
 
         const handlePrev = (e: React.MouseEvent) => {
           e.stopPropagation();
+          setZoomScale(1);
           setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
         };
 
         const handleNext = (e: React.MouseEvent) => {
           e.stopPropagation();
+          setZoomScale(1);
           setActiveImageIndex((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
+        };
+
+        const handleZoomIn = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setZoomScale((prev) => Math.min(prev + 0.35, 3.5));
+        };
+
+        const handleZoomOut = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setZoomScale((prev) => Math.max(prev - 0.35, 1));
+        };
+
+        const handleResetZoom = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setZoomScale(1);
         };
 
         return (
@@ -1148,6 +1166,7 @@ export default function WorkSection() {
             onClick={() => {
               setSelectedProject(null);
               setActiveImageIndex(0);
+              setZoomScale(1);
             }}
           >
             <div
@@ -1159,21 +1178,33 @@ export default function WorkSection() {
                 onClick={() => {
                   setSelectedProject(null);
                   setActiveImageIndex(0);
+                  setZoomScale(1);
                 }}
-                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none"
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none shadow-lg"
                 aria-label="Close"
               >
                 ✕
               </button>
 
               {/* High-res Image Preview & Carousel Controls */}
-              <div className="relative w-full h-[52vh] sm:h-[60vh] max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2 group">
-                <img
-                  key={currentImg}
-                  src={currentImg}
-                  alt={`${selectedProject.title} - Slide ${activeImageIndex + 1}`}
-                  className="w-full h-full object-contain rounded-2xl select-none transition-all duration-300"
-                />
+              <div className="relative w-full h-[52vh] sm:h-[60vh] max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2 group select-none">
+                <div
+                  className="w-full h-full flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing"
+                  onDoubleClick={() => setZoomScale((prev) => (prev > 1 ? 1 : 2))}
+                  title="Double-click to zoom"
+                >
+                  <img
+                    key={currentImg}
+                    src={currentImg}
+                    alt={`${selectedProject.title} - Slide ${activeImageIndex + 1}`}
+                    style={{
+                      transform: `scale(${zoomScale})`,
+                      transition: "transform 0.25s cubic-bezier(0.2, 0, 0, 1)",
+                    }}
+                    className="w-full h-full object-contain rounded-2xl select-none"
+                    draggable={false}
+                  />
+                </div>
 
                 {/* Navigasi Panah Kiri & Kanan (jika lebih dari 1 gambar) */}
                 {totalSlides > 1 && (
@@ -1197,12 +1228,46 @@ export default function WorkSection() {
                       </svg>
                     </button>
 
-                    {/* Counter Badge Slide (misal: 1 / 5) */}
+                    {/* Counter Badge Slide (misal: 1 / 7) */}
                     <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/70 border border-white/20 text-xs font-mono font-semibold text-white backdrop-blur">
                       {activeImageIndex + 1} / {totalSlides}
                     </div>
                   </>
                 )}
+
+                {/* ZOOM CONTROLS (- / + / RESET) */}
+                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 bg-black/75 backdrop-blur-md border border-white/20 rounded-full px-2 py-1 shadow-xl">
+                  {/* Zoom Out Button */}
+                  <button
+                    onClick={handleZoomOut}
+                    disabled={zoomScale <= 1}
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer select-none text-base font-bold"
+                    title="Zoom Out (-)"
+                    aria-label="Zoom Out"
+                  >
+                    −
+                  </button>
+
+                  {/* Zoom Percentage Indicator / Click to Reset */}
+                  <button
+                    onClick={handleResetZoom}
+                    className="px-2 py-0.5 text-xs font-mono font-bold text-cyan-300 hover:text-white transition-colors cursor-pointer select-none"
+                    title="Click to reset zoom"
+                  >
+                    {Math.round(zoomScale * 100)}%
+                  </button>
+
+                  {/* Zoom In Button */}
+                  <button
+                    onClick={handleZoomIn}
+                    disabled={zoomScale >= 3.5}
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer select-none text-base font-bold"
+                    title="Zoom In (+)"
+                    aria-label="Zoom In"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
 
               {/* THUMBNAIL STRIP / SLOT SLIDER (Mendukung hingga 10 slot) */}
@@ -1215,6 +1280,7 @@ export default function WorkSection() {
                         key={`thumb-${idx}`}
                         onClick={(e) => {
                           e.stopPropagation();
+                          setZoomScale(1);
                           setActiveImageIndex(idx);
                         }}
                         className={`relative rounded-lg overflow-hidden border-2 transition-all duration-200 shrink-0 w-14 h-10 sm:w-16 sm:h-11 cursor-pointer ${
