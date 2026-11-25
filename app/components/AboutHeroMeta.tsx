@@ -318,9 +318,9 @@ export default function AboutHeroMeta() {
                   </div>
                 </div>
 
-                {/* Footer Tag Bawah */}
-                <div className="pt-5 pb-3 border-t border-gray-100 flex items-center justify-center mt-auto">
-                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
+                {/* Footer Tag Bawah: Shape Kapsul / Pill persis Foto 2 dengan jarak lega */}
+                <div className="pt-6 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
+                  <span className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-50/80 border border-[#0080c8]/20 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
                     ANNUAL & ESG REPORTS
                   </span>
                 </div>
@@ -352,9 +352,9 @@ export default function AboutHeroMeta() {
                   </div>
                 </div>
 
-                {/* Footer Tag Bawah */}
-                <div className="pt-5 pb-3 border-t border-gray-100 flex items-center justify-center mt-auto">
-                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
+                {/* Footer Tag Bawah: Shape Kapsul / Pill persis Foto 2 dengan jarak lega */}
+                <div className="pt-6 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
+                  <span className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-50/80 border border-[#0080c8]/20 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
                     CORPORATE PUBLICATION
                   </span>
                 </div>
@@ -386,9 +386,9 @@ export default function AboutHeroMeta() {
                   </div>
                 </div>
 
-                {/* Footer Tag Bawah */}
-                <div className="pt-5 pb-3 border-t border-gray-100 flex items-center justify-center mt-auto">
-                  <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
+                {/* Footer Tag Bawah: Shape Kapsul / Pill persis Foto 2 dengan jarak lega */}
+                <div className="pt-6 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
+                  <span className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-50/80 border border-[#0080c8]/20 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
                     BRAND & IDENTITY SYSTEMS
                   </span>
                 </div>
