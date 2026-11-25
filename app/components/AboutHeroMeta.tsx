@@ -307,19 +307,19 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  {/* Kontainer Teks: Layout rapat & presisi persis Foto 2 */}
-                  <div className="flex flex-col justify-start items-center text-center pt-2 pb-6">
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-2 leading-snug">
+                  {/* Kontainer Teks: Spasi lega & teratur antara judul, deskripsi, dan tag */}
+                  <div className="flex flex-col justify-start items-center text-center pt-3 pb-8">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                       {t("about.s1_title")}
                     </h3>
-                    <p className="text-gray-600 leading-[1.65] text-sm sm:text-base max-w-sm mx-auto">
+                    <p className="text-gray-600 leading-[1.75] text-sm sm:text-base max-w-sm mx-auto mb-2">
                       {t("about.s1_desc")}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer Tag Bawah */}
-                <div className="pt-4 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
+                <div className="pt-5 pb-3 border-t border-gray-100 flex items-center justify-center mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     ANNUAL & ESG REPORTS
                   </span>
@@ -341,19 +341,19 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  {/* Kontainer Teks: Layout rapat & presisi persis Foto 2 */}
-                  <div className="flex flex-col justify-start items-center text-center pt-2 pb-6">
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-2 leading-snug">
+                  {/* Kontainer Teks: Spasi lega & teratur antara judul, deskripsi, dan tag */}
+                  <div className="flex flex-col justify-start items-center text-center pt-3 pb-8">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                       {t("about.s2_title")}
                     </h3>
-                    <p className="text-gray-600 leading-[1.65] text-sm sm:text-base max-w-sm mx-auto">
+                    <p className="text-gray-600 leading-[1.75] text-sm sm:text-base max-w-sm mx-auto mb-2">
                       {t("about.s2_desc")}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer Tag Bawah */}
-                <div className="pt-4 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
+                <div className="pt-5 pb-3 border-t border-gray-100 flex items-center justify-center mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     CORPORATE PUBLICATION
                   </span>
@@ -375,19 +375,19 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  {/* Kontainer Teks: Layout rapat & presisi persis Foto 2 */}
-                  <div className="flex flex-col justify-start items-center text-center pt-2 pb-6">
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-2 leading-snug">
+                  {/* Kontainer Teks: Spasi lega & teratur antara judul, deskripsi, dan tag */}
+                  <div className="flex flex-col justify-start items-center text-center pt-3 pb-8">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                       {t("about.s3_title")}
                     </h3>
-                    <p className="text-gray-600 leading-[1.65] text-sm sm:text-base max-w-sm mx-auto">
+                    <p className="text-gray-600 leading-[1.75] text-sm sm:text-base max-w-sm mx-auto mb-2">
                       {t("about.s3_desc")}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer Tag Bawah */}
-                <div className="pt-4 pb-2 border-t border-gray-100 flex items-center justify-center mt-auto">
+                <div className="pt-5 pb-3 border-t border-gray-100 flex items-center justify-center mt-auto">
                   <span className="text-xs font-bold text-[#0080c8] uppercase tracking-wider text-center">
                     BRAND & IDENTITY SYSTEMS
                   </span>
