@@ -11,6 +11,7 @@ type Project = {
   client: string;
   year: string;
   image: string;
+  images?: string[];
   description: string;
 };
 
@@ -58,6 +59,13 @@ const projects: Project[] = [
     client: "PT Tripatra Engineers and Constructors",
     year: "2026",
     image: "/work-tripatra-calendar-2026.jpg",
+    images: [
+      "/work-tripatra-calendar-2026.jpg",
+      "/work-tripatra-calendar-2026-slide-2.jpg",
+      "/work-tripatra-calendar-2026-slide-3.jpg",
+      "/work-tripatra-calendar-2026-slide-4.jpg",
+      "/work-tripatra-calendar-2026-slide-5.jpg",
+    ],
     description: "Vibrant corporate desk calendar themed 'Excellent Performance for Better Success' with custom hand-drawn character illustrations celebrating engineering teamwork and industrial plant safety.",
   },
   {
@@ -647,6 +655,7 @@ export default function WorkSection() {
   const [activeTab, setActiveTab] = useState<string>("All");
   const [selectedYear, setSelectedYear] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
   const workCategories = [
     { id: "All", title: t("work.cat_all"), number: "01" },
@@ -1113,93 +1122,180 @@ export default function WorkSection() {
       {/* ======================================================== */}
       {/* LIGHTBOX MODAL (Click project to view full photo)        */}
       {/* ======================================================== */}
-      {selectedProject && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-slate-950/90 backdrop-blur-xl animate-fade-in"
-          onClick={() => setSelectedProject(null)}
-        >
+      {selectedProject && (() => {
+        // Daftar gambar untuk slide (jika ada images[], gunakan itu; fallback ke [image])
+        const projectImages = selectedProject.images && selectedProject.images.length > 0
+          ? selectedProject.images
+          : [selectedProject.image];
+        const currentImg = projectImages[activeImageIndex] || projectImages[0] || selectedProject.image;
+        const totalSlides = projectImages.length;
+
+        const handlePrev = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
+        };
+
+        const handleNext = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setActiveImageIndex((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
+        };
+
+        return (
           <div
-            className="relative max-w-4xl w-full rounded-3xl overflow-hidden bg-slate-900 border border-white/20 shadow-2xl flex flex-col"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/90 backdrop-blur-xl animate-fade-in"
+            onClick={() => {
+              setSelectedProject(null);
+              setActiveImageIndex(0);
+            }}
           >
-            {/* Close button */}
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none"
-              aria-label="Close"
-            >
-              ✕
-            </button>
-
-            {/* High-res Image Preview */}
-            <div className="relative w-full max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-auto max-h-[65vh] object-contain rounded-2xl"
-              />
-            </div>
-
-            {/* Modal Detail Footer */}
             <div
-              className="bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-white/10"
-              style={{
-                padding: "2rem 2.25rem",
-              }}
+              className="relative max-w-5xl w-full rounded-3xl overflow-hidden bg-slate-900 border border-white/20 shadow-2xl flex flex-col"
+              onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex-1 pr-4">
-                <span
-                  className="text-xs font-bold uppercase tracking-wider text-cyan-300 block"
-                  style={{
-                    letterSpacing: "0.1em",
-                    marginBottom: "0.6rem",
-                  }}
-                >
-                  {selectedProject.client} • {selectedProject.year}
-                </span>
-                <h4
-                  className="text-xl sm:text-2xl font-black text-white"
-                  style={{
-                    letterSpacing: "0.01em",
-                    lineHeight: "1.35",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  {selectedProject.title}
-                </h4>
-                <p
-                  className="text-sm text-white/80 max-w-2xl"
-                  style={{
-                    lineHeight: "1.65",
-                    letterSpacing: "0.01em",
-                  }}
-                >
-                  {selectedProject.description}
-                </p>
+              {/* Close button */}
+              <button
+                onClick={() => {
+                  setSelectedProject(null);
+                  setActiveImageIndex(0);
+                }}
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+
+              {/* High-res Image Preview & Carousel Controls */}
+              <div className="relative w-full h-[52vh] sm:h-[60vh] max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2 group">
+                <img
+                  key={currentImg}
+                  src={currentImg}
+                  alt={`${selectedProject.title} - Slide ${activeImageIndex + 1}`}
+                  className="w-full h-full object-contain rounded-2xl select-none transition-all duration-300"
+                />
+
+                {/* Navigasi Panah Kiri & Kanan (jika lebih dari 1 gambar) */}
+                {totalSlides > 1 && (
+                  <>
+                    <button
+                      onClick={handlePrev}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/60 hover:bg-[#0080c8] text-white flex items-center justify-center border border-white/30 backdrop-blur transition-all duration-200 cursor-pointer shadow-lg hover:scale-110"
+                      aria-label="Previous Slide"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/60 hover:bg-[#0080c8] text-white flex items-center justify-center border border-white/30 backdrop-blur transition-all duration-200 cursor-pointer shadow-lg hover:scale-110"
+                      aria-label="Next Slide"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+
+                    {/* Counter Badge Slide (misal: 1 / 5) */}
+                    <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/70 border border-white/20 text-xs font-mono font-semibold text-white backdrop-blur">
+                      {activeImageIndex + 1} / {totalSlides}
+                    </div>
+                  </>
+                )}
               </div>
 
-              <div className="shrink-0 self-start sm:self-center">
-                <span
-                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md"
-                  style={{
-                    padding: "0.55rem 1.35rem",
-                    letterSpacing: "0.08em",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {selectedProject.category === "Annual Report"
-                    ? t("work.cat_ar")
-                    : selectedProject.category === "Calendar Design"
-                    ? t("work.cat_cal")
-                    : selectedProject.category === "Branding & Print"
-                    ? t("work.cat_brand")
-                    : selectedProject.category}
-                </span>
+              {/* THUMBNAIL STRIP / SLOT SLIDER (Mendukung hingga 10 slot) */}
+              {totalSlides > 1 && (
+                <div className="w-full bg-slate-950/70 border-t border-white/10 px-4 py-2.5 flex items-center justify-center gap-2 overflow-x-auto select-none">
+                  {projectImages.map((imgSrc, idx) => {
+                    const isActive = activeImageIndex === idx;
+                    return (
+                      <button
+                        key={`thumb-${idx}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveImageIndex(idx);
+                        }}
+                        className={`relative rounded-lg overflow-hidden border-2 transition-all duration-200 shrink-0 w-14 h-10 sm:w-16 sm:h-11 cursor-pointer ${
+                          isActive
+                            ? "border-[#0080c8] scale-105 shadow-[0_0_12px_rgba(0,128,200,0.6)]"
+                            : "border-white/20 opacity-60 hover:opacity-100 hover:border-white/50"
+                        }`}
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`Thumbnail ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                        <span className="absolute bottom-0.5 right-0.5 px-1 rounded bg-black/70 text-[9px] font-mono text-white leading-none">
+                          {idx + 1}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Modal Detail Footer */}
+              <div
+                className="bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-white/10"
+                style={{
+                  padding: "1.75rem 2.25rem",
+                }}
+              >
+                <div className="flex-1 pr-4">
+                  <span
+                    className="text-xs font-bold uppercase tracking-wider text-cyan-300 block"
+                    style={{
+                      letterSpacing: "0.1em",
+                      marginBottom: "0.4rem",
+                    }}
+                  >
+                    {selectedProject.client} • {selectedProject.year}
+                  </span>
+                  <h4
+                    className="text-xl sm:text-2xl font-black text-white"
+                    style={{
+                      letterSpacing: "0.01em",
+                      lineHeight: "1.35",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    {selectedProject.title}
+                  </h4>
+                  <p
+                    className="text-sm text-white/80 max-w-2xl"
+                    style={{
+                      lineHeight: "1.65",
+                      letterSpacing: "0.01em",
+                    }}
+                  >
+                    {selectedProject.description}
+                  </p>
+                </div>
+
+                <div className="shrink-0 self-start sm:self-center">
+                  <span
+                    className="inline-flex items-center justify-center rounded-full bg-cyan-400 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md"
+                    style={{
+                      padding: "0.55rem 1.35rem",
+                      letterSpacing: "0.08em",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {selectedProject.category === "Annual Report"
+                      ? t("work.cat_ar")
+                      : selectedProject.category === "Calendar Design"
+                      ? t("work.cat_cal")
+                      : selectedProject.category === "Branding & Print"
+                      ? t("work.cat_brand")
+                      : selectedProject.category}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       <style jsx>{`
         @keyframes fadeIn {
