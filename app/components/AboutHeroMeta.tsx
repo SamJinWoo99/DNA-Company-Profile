@@ -293,10 +293,10 @@ export default function AboutHeroMeta() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-16 sm:mb-20 items-stretch">
               
               {/* Service 1: Annual & Sustainability Reports */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 pb-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 pb-10 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div className="flex flex-col flex-1">
-                  {/* Foto Mockup Box: Full memenuhi shape rounded */}
-                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#eaedf0] flex items-center justify-center overflow-hidden mb-6 shadow-inner">
+                  {/* Foto Mockup Box: Jarak lega ke kalimat di bawahnya (mb-8) */}
+                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#eaedf0] flex items-center justify-center overflow-hidden mb-8 shadow-inner">
                     <span className="absolute top-4 left-5 z-20 text-xl sm:text-2xl font-mono font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                       01
                     </span>
@@ -307,30 +307,30 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  {/* Kontainer Teks: Spasi lega & teratur */}
-                  <div className="flex flex-col justify-start items-center text-center pt-3 pb-6">
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                  {/* Kontainer Teks: Spasi lega & teratur antara judul dan deskripsi */}
+                  <div className="flex flex-col justify-start items-center text-center pt-1 pb-8">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                       {t("about.s1_title")}
                     </h3>
-                    <p className="text-gray-600 leading-[1.7] text-sm sm:text-base max-w-sm mx-auto">
+                    <p className="text-gray-600 leading-[1.75] text-sm sm:text-base max-w-sm mx-auto">
                       {t("about.s1_desc")}
                     </p>
                   </div>
                 </div>
 
-                {/* Footer Tag Bawah: Shape Kapsul / Pill di tengah bawah dengan padding lega */}
-                <div className="pt-6 mt-auto border-t border-gray-100 flex items-center justify-center">
-                  <span className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-50/90 border border-[#0080c8]/25 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
+                {/* Footer Tag Bawah: Shape Kapsul / Pill dengan spasi atas & bawah lega */}
+                <div className="pt-8 pb-2 mt-auto border-t border-gray-100 flex items-center justify-center">
+                  <span className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-50/90 border border-[#0080c8]/25 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
                     ANNUAL & ESG REPORTS
                   </span>
                 </div>
               </div>
 
               {/* Service 2: Calendar Design */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 pb-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 pb-10 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div className="flex flex-col flex-1">
-                  {/* Foto Mockup Box: Full memenuhi shape rounded */}
-                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#eaedf0] flex items-center justify-center overflow-hidden mb-6 shadow-inner">
+                  {/* Foto Mockup Box: Jarak lega ke kalimat di bawahnya (mb-8) */}
+                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#eaedf0] flex items-center justify-center overflow-hidden mb-8 shadow-inner">
                     <span className="absolute top-4 left-5 z-20 text-xl sm:text-2xl font-mono font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                       02
                     </span>
@@ -341,30 +341,30 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  {/* Kontainer Teks: Spasi lega & teratur */}
-                  <div className="flex flex-col justify-start items-center text-center pt-3 pb-6">
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                  {/* Kontainer Teks: Spasi lega & teratur antara judul dan deskripsi */}
+                  <div className="flex flex-col justify-start items-center text-center pt-1 pb-8">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                       {t("about.s2_title")}
                     </h3>
-                    <p className="text-gray-600 leading-[1.7] text-sm sm:text-base max-w-sm mx-auto">
+                    <p className="text-gray-600 leading-[1.75] text-sm sm:text-base max-w-sm mx-auto">
                       {t("about.s2_desc")}
                     </p>
                   </div>
                 </div>
 
-                {/* Footer Tag Bawah: Shape Kapsul / Pill di tengah bawah dengan padding lega */}
-                <div className="pt-6 mt-auto border-t border-gray-100 flex items-center justify-center">
-                  <span className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-50/90 border border-[#0080c8]/25 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
+                {/* Footer Tag Bawah: Shape Kapsul / Pill dengan spasi atas & bawah lega */}
+                <div className="pt-8 pb-2 mt-auto border-t border-gray-100 flex items-center justify-center">
+                  <span className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-50/90 border border-[#0080c8]/25 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
                     CORPORATE PUBLICATION
                   </span>
                 </div>
               </div>
 
               {/* Service 3: Corporate Branding & Collateral */}
-              <div className="bg-white rounded-3xl p-6 sm:p-7 pb-8 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 pb-10 border border-gray-200/90 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between group">
                 <div className="flex flex-col flex-1">
-                  {/* Foto Mockup Box: Full memenuhi shape rounded */}
-                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#9e0c15] flex items-center justify-center overflow-hidden mb-6 shadow-inner">
+                  {/* Foto Mockup Box: Jarak lega ke kalimat di bawahnya (mb-8) */}
+                  <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#9e0c15] flex items-center justify-center overflow-hidden mb-8 shadow-inner">
                     <span className="absolute top-4 left-5 z-20 text-xl sm:text-2xl font-mono font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                       03
                     </span>
@@ -375,20 +375,20 @@ export default function AboutHeroMeta() {
                     />
                   </div>
 
-                  {/* Kontainer Teks: Spasi lega & teratur */}
-                  <div className="flex flex-col justify-start items-center text-center pt-3 pb-6">
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-3 leading-snug">
+                  {/* Kontainer Teks: Spasi lega & teratur antara judul dan deskripsi */}
+                  <div className="flex flex-col justify-start items-center text-center pt-1 pb-8">
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-4 leading-snug">
                       {t("about.s3_title")}
                     </h3>
-                    <p className="text-gray-600 leading-[1.7] text-sm sm:text-base max-w-sm mx-auto">
+                    <p className="text-gray-600 leading-[1.75] text-sm sm:text-base max-w-sm mx-auto">
                       {t("about.s3_desc")}
                     </p>
                   </div>
                 </div>
 
-                {/* Footer Tag Bawah: Shape Kapsul / Pill di tengah bawah dengan padding lega */}
-                <div className="pt-6 mt-auto border-t border-gray-100 flex items-center justify-center">
-                  <span className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-50/90 border border-[#0080c8]/25 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
+                {/* Footer Tag Bawah: Shape Kapsul / Pill dengan spasi atas & bawah lega */}
+                <div className="pt-8 pb-2 mt-auto border-t border-gray-100 flex items-center justify-center">
+                  <span className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-50/90 border border-[#0080c8]/25 text-xs sm:text-[13px] font-bold text-[#0080c8] tracking-wider uppercase text-center shadow-sm">
                     BRAND & IDENTITY SYSTEMS
                   </span>
                 </div>
