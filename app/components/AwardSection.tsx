@@ -379,6 +379,10 @@ export default function AwardSection() {
   const [viewMode, setViewMode] = useState<'grid' | 'spotlight' | 'timeline'>('grid');
   const [spotlightIndex, setSpotlightIndex] = useState(0);
   const [activeModalAward, setActiveModalAward] = useState<AwardItem | null>(null);
+  const [zoomScale, setZoomScale] = useState<number>(1);
+  const [panPosition, setPanPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [dragStart, setDragStart] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -1224,126 +1228,257 @@ export default function AwardSection() {
       </div>
 
       {/* ======================================================== */}
-      {/* DETAIL MODAL POPUP (Design Bersih, Simpel & Serasi dg Work) */}
+      {/* AWARD DETAIL LIGHTBOX MODAL DENGAN FITUR ZOOM & PAN      */}
       {/* ======================================================== */}
-      {activeModalAward && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-slate-950/90 backdrop-blur-xl animate-fade-in"
-          onClick={() => setActiveModalAward(null)}
-        >
+      {activeModalAward && (() => {
+        const handleZoomIn = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setZoomScale((prev) => Math.min(prev + 0.35, 4));
+        };
+
+        const handleZoomOut = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setZoomScale((prev) => {
+            const next = Math.max(prev - 0.35, 1);
+            if (next === 1) setPanPosition({ x: 0, y: 0 });
+            return next;
+          });
+        };
+
+        const handleResetZoom = (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setZoomScale(1);
+          setPanPosition({ x: 0, y: 0 });
+        };
+
+        // Scroll wheel to zoom in / out
+        const handleWheel = (e: React.WheelEvent) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const delta = e.deltaY < 0 ? 0.25 : -0.25;
+          setZoomScale((prev) => {
+            const next = Math.min(Math.max(prev + delta, 1), 4);
+            if (next === 1) setPanPosition({ x: 0, y: 0 });
+            return next;
+          });
+        };
+
+        // Mouse Drag to Pan (geser foto saat zoom > 1)
+        const handleMouseDown = (e: React.MouseEvent) => {
+          if (zoomScale <= 1) return;
+          e.preventDefault();
+          e.stopPropagation();
+          setIsDragging(true);
+          setDragStart({ x: e.clientX - panPosition.x, y: e.clientY - panPosition.y });
+        };
+
+        const handleMouseMove = (e: React.MouseEvent) => {
+          if (!isDragging || zoomScale <= 1) return;
+          e.preventDefault();
+          e.stopPropagation();
+          setPanPosition({
+            x: e.clientX - dragStart.x,
+            y: e.clientY - dragStart.y,
+          });
+        };
+
+        const handleMouseUp = () => {
+          setIsDragging(false);
+        };
+
+        return (
           <div 
-            className="relative max-w-4xl w-full rounded-3xl overflow-hidden bg-slate-900 border border-white/20 shadow-2xl flex flex-col my-auto"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/90 backdrop-blur-xl animate-fade-in"
+            onClick={() => {
+              setActiveModalAward(null);
+              setZoomScale(1);
+              setPanPosition({ x: 0, y: 0 });
+            }}
+            onMouseUp={handleMouseUp}
           >
-            {/* Close Button */}
-            <button 
-              onClick={() => setActiveModalAward(null)}
-              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none shadow-lg active:scale-95"
-              aria-label="Close"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* High-res Photo Container (Persis seperti Lightbox Modal Work) */}
-            <div className="relative w-full max-h-[60vh] overflow-hidden bg-black flex items-center justify-center p-4 sm:p-6">
-              <img 
-                src={activeModalAward.image} 
-                alt={activeModalAward.subCategory} 
-                className="w-full h-auto max-h-[55vh] object-contain rounded-2xl drop-shadow-2xl"
-              />
-            </div>
-
-            {/* Modal Detail Body - Bersih, Rapih, Serasi dengan Work Modal */}
             <div 
-              className="bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-white/10"
-              style={{
-                padding: "2rem 2.25rem",
-              }}
+              className="relative max-w-5xl w-full rounded-3xl overflow-hidden bg-slate-900 border border-white/20 shadow-2xl flex flex-col my-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Left Content */}
-              <div className="flex-1 pr-4 space-y-3">
-                {/* Meta Header */}
-                <div className="flex flex-wrap items-center gap-2">
-                  <span 
-                    className="text-xs font-bold uppercase tracking-wider text-cyan-300"
-                    style={{ letterSpacing: "0.1em" }}
+              {/* Close Button */}
+              <button 
+                onClick={() => {
+                  setActiveModalAward(null);
+                  setZoomScale(1);
+                  setPanPosition({ x: 0, y: 0 });
+                }}
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-slate-950/80 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition-colors cursor-pointer border border-white/20 select-none shadow-lg active:scale-95"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* High-res Photo Container & Zoom/Pan Area */}
+              <div 
+                className="relative w-full h-[52vh] sm:h-[60vh] max-h-[65vh] overflow-hidden bg-black flex items-center justify-center p-2 group select-none"
+                onWheel={handleWheel}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+              >
+                <div
+                  className={`w-full h-full flex items-center justify-center overflow-hidden ${
+                    zoomScale > 1
+                      ? isDragging
+                        ? "cursor-grabbing"
+                        : "cursor-grab"
+                      : "cursor-zoom-in"
+                  }`}
+                  onMouseDown={handleMouseDown}
+                  onDoubleClick={() => {
+                    setZoomScale((prev) => {
+                      if (prev > 1) {
+                        setPanPosition({ x: 0, y: 0 });
+                        return 1;
+                      }
+                      return 2.2;
+                    });
+                  }}
+                  title={zoomScale > 1 ? "Scroll untuk zoom, drag untuk geser foto" : "Scroll / double-click untuk zoom"}
+                >
+                  <img 
+                    src={activeModalAward.image} 
+                    alt={activeModalAward.subCategory} 
+                    style={{
+                      transform: `translate(${panPosition.x}px, ${panPosition.y}px) scale(${zoomScale})`,
+                      transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.2, 0, 0, 1)",
+                    }}
+                    className="w-full h-full object-contain rounded-2xl select-none pointer-events-none drop-shadow-2xl"
+                    draggable={false}
+                  />
+                </div>
+
+                {/* ZOOM CONTROLS (- / + / RESET) */}
+                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 bg-black/75 backdrop-blur-md border border-white/20 rounded-full px-2 py-1 shadow-xl">
+                  {/* Zoom Out Button */}
+                  <button
+                    onClick={handleZoomOut}
+                    disabled={zoomScale <= 1}
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer select-none text-base font-bold"
+                    title="Zoom Out (-)"
+                    aria-label="Zoom Out"
                   >
-                    {activeModalAward.client} • {activeModalAward.year}
-                  </span>
-                  <span className="text-white/40 text-xs">•</span>
-                  <span className="text-xs font-semibold text-white/70">
-                    {activeModalAward.awardName}
-                  </span>
-                  {activeModalAward.location && (
-                    <>
-                      <span className="text-white/40 text-xs">•</span>
-                      <span className="text-xs text-cyan-200/90 flex items-center gap-1 font-medium">
-                        <Globe className="w-3.5 h-3.5 inline shrink-0" />
-                        {activeModalAward.location}
-                      </span>
-                    </>
+                    −
+                  </button>
+
+                  {/* Zoom Percentage Indicator / Click to Reset */}
+                  <button
+                    onClick={handleResetZoom}
+                    className="px-2 py-0.5 text-xs font-mono font-bold text-cyan-300 hover:text-white transition-colors cursor-pointer select-none"
+                    title="Click to reset zoom"
+                  >
+                    {Math.round(zoomScale * 100)}%
+                  </button>
+
+                  {/* Zoom In Button */}
+                  <button
+                    onClick={handleZoomIn}
+                    disabled={zoomScale >= 4}
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer select-none text-base font-bold"
+                    title="Zoom In (+)"
+                    aria-label="Zoom In"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              {/* Modal Detail Body - Bersih, Rapih, Serasi dengan Work Modal */}
+              <div 
+                className="bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-white/10"
+                style={{
+                  padding: "1.75rem 2.25rem",
+                }}
+              >
+                {/* Left Content */}
+                <div className="flex-1 pr-4 space-y-3">
+                  {/* Meta Header */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span 
+                      className="text-xs font-bold uppercase tracking-wider text-cyan-300"
+                      style={{ letterSpacing: "0.1em" }}
+                    >
+                      {activeModalAward.client} • {activeModalAward.year}
+                    </span>
+                    <span className="text-white/40 text-xs">•</span>
+                    <span className="text-xs font-semibold text-white/70">
+                      {activeModalAward.awardName}
+                    </span>
+                    {activeModalAward.location && (
+                      <>
+                        <span className="text-white/40 text-xs">•</span>
+                        <span className="text-xs text-cyan-200/90 flex items-center gap-1 font-medium">
+                          <Globe className="w-3.5 h-3.5 inline shrink-0" />
+                          {activeModalAward.location}
+                        </span>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Main Title */}
+                  <h4 
+                    className="text-xl sm:text-2xl font-black text-white"
+                    style={{
+                      letterSpacing: "0.01em",
+                      lineHeight: "1.35",
+                    }}
+                  >
+                    {lang === "id" && activeModalAward.subCategory_id ? activeModalAward.subCategory_id : activeModalAward.subCategory}
+                  </h4>
+
+                  {/* Description */}
+                  <p 
+                    className="text-sm text-white/80 max-w-2xl"
+                    style={{
+                      lineHeight: "1.65",
+                      letterSpacing: "0.01em",
+                    }}
+                  >
+                    {lang === "id" && activeModalAward.description_id ? activeModalAward.description_id : activeModalAward.description}
+                  </p>
+
+                  {/* Scope of Work Tags */}
+                  {((lang === "id" && activeModalAward.scope_id) ? activeModalAward.scope_id : activeModalAward.scope) && (
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      {((lang === "id" && activeModalAward.scope_id) ? activeModalAward.scope_id : activeModalAward.scope).map((tag, idx) => (
+                        <span 
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs text-white/90"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300 shrink-0" />
+                          <span>{tag}</span>
+                        </span>
+                      ))}
+                    </div>
                   )}
                 </div>
 
-                {/* Main Title */}
-                <h4 
-                  className="text-xl sm:text-2xl font-black text-white"
-                  style={{
-                    letterSpacing: "0.01em",
-                    lineHeight: "1.35",
-                  }}
-                >
-                  {lang === "id" && activeModalAward.subCategory_id ? activeModalAward.subCategory_id : activeModalAward.subCategory}
-                </h4>
-
-                {/* Description */}
-                <p 
-                  className="text-sm text-white/80 max-w-2xl"
-                  style={{
-                    lineHeight: "1.65",
-                    letterSpacing: "0.01em",
-                  }}
-                >
-                  {lang === "id" && activeModalAward.description_id ? activeModalAward.description_id : activeModalAward.description}
-                </p>
-
-                {/* Scope of Work Tags */}
-                {((lang === "id" && activeModalAward.scope_id) ? activeModalAward.scope_id : activeModalAward.scope) && (
-                  <div className="flex flex-wrap items-center gap-2 pt-1">
-                    {((lang === "id" && activeModalAward.scope_id) ? activeModalAward.scope_id : activeModalAward.scope).map((tag, idx) => (
-                      <span 
-                        key={idx}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs text-white/90"
-                      >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300 shrink-0" />
-                        <span>{tag}</span>
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Right Pill: Award Category / Badge (Persis seperti pill kanan di Work Modal) */}
-              <div className="shrink-0 self-start sm:self-center flex flex-col items-end gap-2">
-                <span 
-                  className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r ${activeModalAward.badgeClass} text-slate-950 text-xs font-black uppercase tracking-wider shadow-md`}
-                  style={{
-                    padding: "0.55rem 1.35rem",
-                    letterSpacing: "0.08em",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  ★ {formatBadgeType(activeModalAward.badgeType)}
-                </span>
-                <span className="text-[11px] font-mono text-white/40 tracking-wider">
-                  {activeModalAward.id}
-                </span>
+                {/* Right Pill: Award Category / Badge (Persis seperti pill kanan di Work Modal) */}
+                <div className="shrink-0 self-start sm:self-center flex flex-col items-end gap-2">
+                  <span 
+                    className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r ${activeModalAward.badgeClass} text-slate-950 text-xs font-black uppercase tracking-wider shadow-md`}
+                    style={{
+                      padding: "0.55rem 1.35rem",
+                      letterSpacing: "0.08em",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    ★ {formatBadgeType(activeModalAward.badgeType)}
+                  </span>
+                  <span className="text-[11px] font-mono text-white/40 tracking-wider">
+                    {activeModalAward.id}
+                  </span>
+                </div>
               </div>
             </div>
-
           </div>
-        </div>
-      )}
+        );
+      })()}
 
     </section>
   );
